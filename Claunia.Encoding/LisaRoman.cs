@@ -28,13 +28,16 @@ using System;
 
 namespace Claunia.Encoding
 {
+    /// <summary>
+    /// Represents an Apple Lisa character encoding of Unicode characters.
+    /// </summary>
     public class LisaRoman : System.Text.Encoding
     {
         const string _bodyname = "lisa";
         const int _codepage = 0;
         const string _encodingname = "Apple Lisa";
         const string _headername = "lisa";
-        const string _webname = "lisa";
+        const string _webname = "";
         const int _windowsCodepage = 10000;
 
         const bool browserDisplay = false;
@@ -108,6 +111,9 @@ namespace Claunia.Encoding
             get { return _headername; }
         }
 
+        /// <summary>
+        /// Ggets the name registered with the Internet Assigned Numbers Authority (IANA) for the current encoding.
+        /// </summary>
         public override string WebName {
             get { return _webname; }
         }
