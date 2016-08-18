@@ -25,11 +25,10 @@
 // THE SOFTWARE.
 
 using NUnit.Framework;
-using Claunia.Encoding;
 
 namespace Claunia.Encoding.Tests
 {
-    [TestFixture()]
+    [TestFixture]
     public class LisaRoman
     {
         const string Punctuations = "!\"#$%&()*+,-./:;<=>?@[\\]^_{|}~";
@@ -62,7 +61,7 @@ namespace Claunia.Encoding.Tests
         const string Mathematics = "≠∞±≤≥µ∂∑∏π∫Ω¬√ƒ≈∆÷◊";
         readonly byte[] MathematicsBytes = { 0xAD, 0xB0, 0xB1, 0xB2, 0xB3, 0xB5, 0xB6, 0xB7, 0xB8, 0xB9, 0xBA, 0xBD, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xD6, 0xD7 };
 
-        [Test()]
+        [Test]
         public void UnicodeToLisa()
         {
             byte[] byteArray;
@@ -95,7 +94,7 @@ namespace Claunia.Encoding.Tests
             Assert.AreEqual(MathematicsBytes, byteArray);
         }
 
-        [Test()]
+        [Test]
         public void LisaToUnicode()
         {
             string testString;
@@ -128,7 +127,7 @@ namespace Claunia.Encoding.Tests
             Assert.AreEqual(Mathematics, testString);
         }
 
-        [Test()]
+        [Test]
         public void LisaPangrams()
         {
             byte[] byteArray;
