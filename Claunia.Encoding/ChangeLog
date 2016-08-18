@@ -1,0 +1,9 @@
+2016-08-18  Natalia Portillo  <claunia@claunia.com>
+
+	* Encoding.cs:
+	* Pangrams.cs:
+	* LisaRoman.cs:
+	* Claunia.Encoding.csproj:
+	* AssemblyInfo.cs: First version, supports only Apple Lisa
+	encoding.
+
