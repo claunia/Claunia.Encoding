@@ -36,6 +36,7 @@
     <Compile Include="LisaRoman.cs" />
     <Compile Include="Encoding.cs" />
     <Compile Include="Pangrams.cs" />
+    <Compile Include="ATASCII.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\LICENSE.MIT">

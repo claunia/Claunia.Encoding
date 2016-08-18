@@ -1,5 +1,11 @@
 2016-08-19  Natalia Portillo  <claunia@claunia.com>
 
+	* ATASCII.cs: Added ATASCII.
+
+	* Claunia.Encoding.Tests.csproj: A
+
+2016-08-19  Natalia Portillo  <claunia@claunia.com>
+
 	* LisaRoman.cs: Code cleanup.
 
 2016-08-18  Natalia Portillo  <claunia@claunia.com>
