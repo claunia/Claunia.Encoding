@@ -1,5 +1,9 @@
 2016-08-19  Natalia Portillo  <claunia@claunia.com>
 
+	* LisaRoman.cs: Corrected classification of a character.
+
+2016-08-19  Natalia Portillo  <claunia@claunia.com>
+
 	* ATASCII.cs: Added ATASCII.
 
 	* Claunia.Encoding.Tests.csproj: A

@@ -1,5 +1,11 @@
 2016-08-19  Natalia Portillo  <claunia@claunia.com>
 
+	* Pangrams.cs: Added XML documentation.
+
+	* ATASCII.cs: Corrected XML documentation.
+
+2016-08-19  Natalia Portillo  <claunia@claunia.com>
+
 	* ATASCII.cs: Added control codes that have a corresponding
 	Unicode control character.
 
