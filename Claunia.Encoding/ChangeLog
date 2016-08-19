@@ -1,5 +1,10 @@
 2016-08-19  Natalia Portillo  <claunia@claunia.com>
 
+	* ATASCII.cs: Added control codes that have a corresponding
+	Unicode control character.
+
+2016-08-19  Natalia Portillo  <claunia@claunia.com>
+
 	* ATASCII.cs: Added ATASCII.
 
 	* Encoding.cs:
