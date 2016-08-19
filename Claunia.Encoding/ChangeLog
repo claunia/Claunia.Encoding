@@ -1,5 +1,12 @@
 2016-08-19  Natalia Portillo  <claunia@claunia.com>
 
+	* AtariST.cs:
+	* Encoding.cs:
+	* AtariST_1.cs:
+	* Claunia.Encoding.csproj: Added Atari ST encoding.
+
+2016-08-19  Natalia Portillo  <claunia@claunia.com>
+
 	* Pangrams.cs: Added XML documentation.
 
 	* ATASCII.cs: Corrected XML documentation.

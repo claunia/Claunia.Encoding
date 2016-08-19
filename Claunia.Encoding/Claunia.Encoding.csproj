@@ -37,6 +37,7 @@
     <Compile Include="Encoding.cs" />
     <Compile Include="Pangrams.cs" />
     <Compile Include="ATASCII.cs" />
+    <Compile Include="AtariST.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\LICENSE.MIT">
