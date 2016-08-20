@@ -539,19 +539,19 @@ namespace Claunia.Encoding
         };
 
         /// <summary>
-        /// Converts a LisaRoman character to an Unicode character
+        /// Converts a Atari ST character to an Unicode character
         /// </summary>
         /// <returns>Unicode character.</returns>
-        /// <param name="character">LisaRoman character.</param>
+        /// <param name="character">Atari ST character.</param>
         static char GetChar(byte character)
         {
             return AtariSTTable[character];
         }
 
         /// <summary>
-        /// Converts a Unicode character to an LisaRoman character
+        /// Converts a Unicode character to an Atari ST character
         /// </summary>
-        /// <returns>LisaRoman character.</returns>
+        /// <returns>Atari ST character.</returns>
         /// <param name="character">Unicode character.</param>
         static byte GetByte(char character)
         {

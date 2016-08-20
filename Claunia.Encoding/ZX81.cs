@@ -1,5 +1,5 @@
 ﻿//
-// ATASCII.cs
+// ZX81.cs
 //
 // Author:
 //       Natalia Portillo <claunia@claunia.com>
@@ -29,14 +29,14 @@ using System;
 namespace Claunia.Encoding
 {
     /// <summary>
-    /// Represents an ATARI Standard Code for Information Interchange character encoding of Unicode characters.
+    /// Represents a ZX81 character encoding of Unicode characters.
     /// </summary>
-    public class ATASCII : System.Text.Encoding
+    public class ZX81 : System.Text.Encoding
     {
-        const string _bodyname = "atascii";
+        const string _bodyname = "zx81";
         const int _codepage = 0;
-        const string _encodingname = "ATARI Standard Code for Information Interchange";
-        const string _headername = "atascii";
+        const string _encodingname = "Sinclair ZX81 character set";
+        const string _headername = "zx81";
         const string _webname = "";
         const int _windowsCodepage = 0;
 
@@ -468,352 +468,242 @@ namespace Claunia.Encoding
         }
 
         /// <summary>
-        /// The ATASCII to Unicode character map.
+        /// The ZX81 to Unicode character map.
         /// </summary>
-        static readonly char[] ATASCIITable = {
+        static readonly char[] ZX81Table = {
             // 0x00
-            '\u2665','\u251C','\uFFFD','\u2518','\u2524','\u2510','\u2571','\u2572',
+            '\u0020','\u2598','\u259D','\u2580','\u2596','\u258C','\u259E','\u259B',
             // 0x08
-            '\u25E2','\u2597','\u25E3','\u259D','\u2598','\uFFFD','\u2582','\u2596',
+            '\u2592','\uFFFD','\uFFFD','\u0022','\u00A3','\u0024','\u003A','\u003F',
             // 0x10
-            '\u2663','\u250C','\u2500','\u253C','\u25CF','\u2584','\u258E','\u252C',
+            '\u0028','\u0029','\u003E','\u003C','\u003D','\u002B','\u002D','\u002A',
             // 0x18
-            '\u2534','\u258C','\u2514','\u001B','\u2191','\u2193','\u2190','\u2192',
+            '\u002F','\u003B','\u002C','\u002E','\u0030','\u0031','\u0032','\u0033',
             // 0x20
-            '\u0020','\u0021','\u0022','\u0023','\u0024','\u0025','\u0026','\u0027',
+            '\u0034','\u0035','\u0036','\u0037','\u0038','\u0039','\u0041','\u0042',
             // 0x28
-            '\u0028','\u0029','\u002A','\u002B','\u002C','\u002D','\u002E','\u002F',
+            '\u0043','\u0044','\u0045','\u0046','\u0047','\u0048','\u0049','\u004A',
             // 0x30
-            '\u0030','\u0031','\u0032','\u0033','\u0034','\u0035','\u0036','\u0037',
+            '\u004B','\u004C','\u004D','\u004E','\u004F','\u0050','\u0051','\u0052',
             // 0x38
-            '\u0038','\u0039','\u003A','\u003B','\u003C','\u003D','\u003E','\u003F',
+            '\u0053','\u0054','\u0055','\u0056','\u0057','\u0058','\u0059','\u005A',
             // 0x40
-            '\u0040','\u0041','\u0042','\u0043','\u0044','\u0045','\u0046','\u0047',
+            '\uFFFF','\uFFFF','\uFFFF','\u0000','\u0000','\u0000','\u0000','\u0000',
             // 0x48
-            '\u0048','\u0049','\u004A','\u004B','\u004C','\u004D','\u004E','\u004F',
+            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
             // 0x50
-            '\u0050','\u0051','\u0052','\u0053','\u0054','\u0055','\u0056','\u0057',
+            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
             // 0x58
-            '\u0058','\u0059','\u005A','\u005B','\u005C','\u005D','\u005E','\u005F',
+            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
             // 0x60
-            '\u2666','\u0061','\u0062','\u0063','\u0064','\u0065','\u0066','\u0067',
+            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
             // 0x68
-            '\u0068','\u0069','\u006A','\u006B','\u006C','\u006D','\u006E','\u006F',
+            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
             // 0x70
-            '\u0070','\u0071','\u0072','\u0073','\u0074','\u0075','\u0076','\u0077',
+            '\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\u000A','\u0008',
             // 0x78
-            '\u0078','\u0079','\u007A','\u2660','\u007C','\u21B0','\u25C0','\u25B6',
+            '\uFFFF','\uFFFF','\u0000','\u0000','\u0000','\u0000','\uFFFF','\uFFFF',
             // 0x80
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\u2588','\u259F','\u2599','\u2584','\u259C','\u2590','\u259A','\u2597',
             // 0x88
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\u2592','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD',
             // 0x90
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD',
             // 0x98
-            '\u0000','\u0000','\u0000','\u000D','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD',
             // 0xA0
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD',
             // 0xA8
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD',
             // 0xB0
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD',
             // 0xB8
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD','\uFFFD',
             // 0xC0
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFF','\uFFFF','\uFFFF','\u0000','\uFFFF','\uFFFF','\uFFFF','\uFFFF',
             // 0xC8
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF',
             // 0xD0
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF',
             // 0xD8
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF',
             // 0xE0
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF',
             // 0xE8
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF',
             // 0xF0
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000',
+            '\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF',
             // 0xF8
-            '\u0000','\u0000','\u0000','\u0000','\u0000','\u0007','\u0000','\u0000'
+            '\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF','\uFFFF'
         };
 
         /// <summary>
-        /// Converts a ATASCII character to an Unicode character
+        /// Converts a ZX81 character to an Unicode character
         /// </summary>
         /// <returns>Unicode character.</returns>
-        /// <param name="character">ATASCII character.</param>
+        /// <param name="character">ZX81 character.</param>
         static char GetChar(byte character)
         {
-            return ATASCIITable[character];
+            return ZX81Table[character];
         }
 
         /// <summary>
-        /// Converts a Unicode character to an ATASCII character
+        /// Converts a Unicode character to an ZX81 character
         /// </summary>
-        /// <returns>ATASCII character.</returns>
+        /// <returns>ZX81 character.</returns>
         /// <param name="character">Unicode character.</param>
         static byte GetByte(char character)
         {
             switch(character) {
-                case '\u2665':
-                    return 0x00;
-                case '\u251C':
-                    return 0x01;
-                case '\u2518':
-                    return 0x03;
-                case '\u2524':
-                    return 0x04;
-                case '\u2510':
-                    return 0x05;
-                case '\u2571':
-                    return 0x06;
-                case '\u2572':
-                    return 0x07;
-                case '\u25E2':
-                    return 0x08;
-                case '\u2597':
-                    return 0x09;
-                case '\u25E3':
-                    return 0x0A;
-                case '\u259D':
-                    return 0x0B;
-                case '\u2598':
-                    return 0x0C;
-                case '\u2582':
-                    return 0x0E;
-                case '\u2596':
-                    return 0x0F;
-                case '\u2663':
-                    return 0x10;
-                case '\u250C':
-                    return 0x11;
-                case '\u2500':
-                    return 0x12;
-                case '\u253C':
-                    return 0x13;
-                case '\u25CF':
-                    return 0x14;
-                case '\u2584':
-                    return 0x15;
-                case '\u258E':
-                    return 0x16;
-                case '\u252C':
-                    return 0x17;
-                case '\u2534':
-                    return 0x18;
-                case '\u258C':
-                    return 0x19;
-                case '\u2514':
-                    return 0x1A;
-                case '\u001B':
-                    return 0x1B;
-                case '\u2191':
-                    return 0x1C;
-                case '\u2193':
-                    return 0x1D;
-                case '\u2190':
-                    return 0x1E;
-                case '\u2192':
-                    return 0x1F;
                 case '\u0020':
-                    return 0x20;
-                case '\u0021':
-                    return 0x21;
+                    return 0x00;
+                case '\u2598':
+                    return 0x01;
+                case '\u259D':
+                    return 0x02;
+                case '\u2580':
+                    return 0x03;
+                case '\u2596':
+                    return 0x04;
+                case '\u258C':
+                    return 0x05;
+                case '\u259E':
+                    return 0x06;
+                case '\u259B':
+                    return 0x07;
+                case '\u2592':
+                    return 0x08;
                 case '\u0022':
-                    return 0x22;
-                case '\u0023':
-                    return 0x23;
+                    return 0x0B;
+                case '\u00A3':
+                    return 0x0C;
                 case '\u0024':
-                    return 0x24;
-                case '\u0025':
-                    return 0x25;
-                case '\u0026':
-                    return 0x26;
-                case '\u0027':
-                    return 0x27;
-                case '\u0028':
-                    return 0x28;
-                case '\u0029':
-                    return 0x29;
-                case '\u002A':
-                    return 0x2A;
-                case '\u002B':
-                    return 0x2B;
-                case '\u002C':
-                    return 0x2C;
-                case '\u002D':
-                    return 0x2D;
-                case '\u002E':
-                    return 0x2E;
-                case '\u002F':
-                    return 0x2F;
-                case '\u0030':
-                    return 0x30;
-                case '\u0031':
-                    return 0x31;
-                case '\u0032':
-                    return 0x32;
-                case '\u0033':
-                    return 0x33;
-                case '\u0034':
-                    return 0x34;
-                case '\u0035':
-                    return 0x35;
-                case '\u0036':
-                    return 0x36;
-                case '\u0037':
-                    return 0x37;
-                case '\u0038':
-                    return 0x38;
-                case '\u0039':
-                    return 0x39;
+                    return 0x0D;
                 case '\u003A':
-                    return 0x3A;
-                case '\u003B':
-                    return 0x3B;
-                case '\u003C':
-                    return 0x3C;
-                case '\u003D':
-                    return 0x3D;
-                case '\u003E':
-                    return 0x3E;
+                    return 0x0E;
                 case '\u003F':
-                    return 0x3F;
-                case '\u0040':
-                    return 0x40;
+                    return 0x0F;
+                case '\u0028':
+                    return 0x10;
+                case '\u0029':
+                    return 0x11;
+                case '\u003E':
+                    return 0x12;
+                case '\u003C':
+                    return 0x13;
+                case '\u003D':
+                    return 0x14;
+                case '\u002B':
+                    return 0x15;
+                case '\u002D':
+                    return 0x16;
+                case '\u002A':
+                    return 0x17;
+                case '\u002F':
+                    return 0x18;
+                case '\u003B':
+                    return 0x19;
+                case '\u002C':
+                    return 0x1A;
+                case '\u002E':
+                    return 0x1B;
+                case '\u0030':
+                    return 0x1C;
+                case '\u0031':
+                    return 0x1D;
+                case '\u0032':
+                    return 0x1E;
+                case '\u0033':
+                    return 0x1F;
+                case '\u0034':
+                    return 0x20;
+                case '\u0035':
+                    return 0x21;
+                case '\u0036':
+                    return 0x22;
+                case '\u0037':
+                    return 0x23;
+                case '\u0038':
+                    return 0x24;
+                case '\u0039':
+                    return 0x25;
                 case '\u0041':
-                    return 0x41;
+                    return 0x26;
                 case '\u0042':
-                    return 0x42;
+                    return 0x27;
                 case '\u0043':
-                    return 0x43;
+                    return 0x28;
                 case '\u0044':
-                    return 0x44;
+                    return 0x29;
                 case '\u0045':
-                    return 0x45;
+                    return 0x2A;
                 case '\u0046':
-                    return 0x46;
+                    return 0x2B;
                 case '\u0047':
-                    return 0x47;
+                    return 0x2C;
                 case '\u0048':
-                    return 0x48;
+                    return 0x2D;
                 case '\u0049':
-                    return 0x49;
+                    return 0x2E;
                 case '\u004A':
-                    return 0x4A;
+                    return 0x2F;
                 case '\u004B':
-                    return 0x4B;
+                    return 0x30;
                 case '\u004C':
-                    return 0x4C;
+                    return 0x31;
                 case '\u004D':
-                    return 0x4D;
+                    return 0x32;
                 case '\u004E':
-                    return 0x4E;
+                    return 0x33;
                 case '\u004F':
-                    return 0x4F;
+                    return 0x34;
                 case '\u0050':
-                    return 0x50;
+                    return 0x35;
                 case '\u0051':
-                    return 0x51;
+                    return 0x36;
                 case '\u0052':
-                    return 0x52;
+                    return 0x37;
                 case '\u0053':
-                    return 0x53;
+                    return 0x38;
                 case '\u0054':
-                    return 0x54;
+                    return 0x39;
                 case '\u0055':
-                    return 0x55;
+                    return 0x3A;
                 case '\u0056':
-                    return 0x56;
+                    return 0x3B;
                 case '\u0057':
-                    return 0x57;
+                    return 0x3C;
                 case '\u0058':
-                    return 0x58;
+                    return 0x3D;
                 case '\u0059':
-                    return 0x59;
+                    return 0x3E;
                 case '\u005A':
-                    return 0x5A;
-                case '\u005B':
-                    return 0x5B;
-                case '\u005C':
-                    return 0x5C;
-                case '\u005D':
-                    return 0x5D;
-                case '\u005E':
-                    return 0x5E;
-                case '\u005F':
-                    return 0x5F;
-                case '\u2666':
-                    return 0x60;
-                case '\u0061':
-                    return 0x61;
-                case '\u0062':
-                    return 0x62;
-                case '\u0063':
-                    return 0x63;
-                case '\u0064':
-                    return 0x64;
-                case '\u0065':
-                    return 0x65;
-                case '\u0066':
-                    return 0x66;
-                case '\u0067':
-                    return 0x67;
-                case '\u0068':
-                    return 0x68;
-                case '\u0069':
-                    return 0x69;
-                case '\u006A':
-                    return 0x6A;
-                case '\u006B':
-                    return 0x6B;
-                case '\u006C':
-                    return 0x6C;
-                case '\u006D':
-                    return 0x6D;
-                case '\u006E':
-                    return 0x6E;
-                case '\u006F':
-                    return 0x6F;
-                case '\u0070':
-                    return 0x70;
-                case '\u0071':
-                    return 0x71;
-                case '\u0072':
-                    return 0x72;
-                case '\u0073':
-                    return 0x73;
-                case '\u0074':
-                    return 0x74;
-                case '\u0075':
-                    return 0x75;
-                case '\u0076':
-                    return 0x76;
-                case '\u0077':
-                    return 0x77;
-                case '\u0078':
-                    return 0x78;
-                case '\u0079':
-                    return 0x79;
-                case '\u007A':
-                    return 0x7A;
-                case '\u2660':
-                    return 0x7B;
-                case '\u007C':
-                    return 0x7C;
-                case '\u21B0':
-                    return 0x7D;
-                case '\u25C0':
-                    return 0x7E;
-                case '\u25B6':
-                    return 0x7F;
+                    return 0x3F;
                 case '\u000D':
-                    return 0x9B;
-                case '\u0007':
-                    return 0xFD;
+                    return 0x74;
+                case '\u000A':
+                    return 0x76;
+                case '\u0008':
+                    return 0x77;
+                case '\u2588':
+                    return 0x80;
+                case '\u259F':
+                    return 0x81;
+                case '\u2599':
+                    return 0x82;
+                case '\u2584':
+                    return 0x83;
+                case '\u259C':
+                    return 0x84;
+                case '\u2590':
+                    return 0x85;
+                case '\u259A':
+                    return 0x86;
+                case '\u2597':
+                    return 0x87;
                 default:
                     // Fallback to '?'
-                    return 0x3F;
+                    return 0x0F;
             }
         }
     }

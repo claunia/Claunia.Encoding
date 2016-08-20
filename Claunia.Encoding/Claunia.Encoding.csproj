@@ -38,6 +38,9 @@
     <Compile Include="Pangrams.cs" />
     <Compile Include="ATASCII.cs" />
     <Compile Include="AtariST.cs" />
+    <Compile Include="ZX80.cs" />
+    <Compile Include="ZX81.cs" />
+    <Compile Include="ZXSpectrum.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\LICENSE.MIT">

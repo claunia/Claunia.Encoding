@@ -1,3 +1,13 @@
+2016-08-20  Natalia Portillo  <claunia@claunia.com>
+
+	* ZX80.cs:
+	* ZX81.cs:
+	* ZXSpectrum.cs:
+	* Claunia.Encoding.csproj: Added Sinclair ZX character sets.
+
+	* ATASCII.cs:
+	* AtariST.cs: Comment typos.
+
 2016-08-19  Natalia Portillo  <claunia@claunia.com>
 
 	* AtariST.cs:
