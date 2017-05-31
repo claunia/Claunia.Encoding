@@ -31,6 +31,7 @@ namespace Claunia.Encoding
         public static System.Text.Encoding LisaEncoding = new LisaRoman();
         public static System.Text.Encoding AtariEncoding = new ATASCII();
         public static System.Text.Encoding AtariSTEncoding = new AtariST();
+        public static System.Text.Encoding PETEncoding = new PETSCII();
     }
 }
 
