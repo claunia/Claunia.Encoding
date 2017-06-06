@@ -26,11 +26,26 @@
 
 namespace Claunia.Encoding
 {
+    /// <summary>
+    /// This class contains static instances of the supported encodings.
+    /// </summary>
     public static class Encoding
     {
+        /// <summary>
+        /// Static instance for the LisaRoman encoding
+        /// </summary>
         public static System.Text.Encoding LisaEncoding = new LisaRoman();
+        /// <summary>
+        /// Static instance for the ATASCII encoding
+        /// </summary>
         public static System.Text.Encoding AtariEncoding = new ATASCII();
+        /// <summary>
+        /// Static instance for the Atari ST encoding
+        /// </summary>
         public static System.Text.Encoding AtariSTEncoding = new AtariST();
+        /// <summary>
+        /// Static instance for the PETSCII encoding
+        /// </summary>
         public static System.Text.Encoding PETEncoding = new PETSCII();
     }
 }

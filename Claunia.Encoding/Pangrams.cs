@@ -26,6 +26,9 @@
 using System;
 namespace Claunia.Encoding
 {
+    /// <summary>
+    /// Class containing pangrams for several languages that can be used to test encoding.
+    /// </summary>
     public static class Pangrams
     {
         /// <summary>A pangram that contains all (or most) Arabic characters.</summary>
