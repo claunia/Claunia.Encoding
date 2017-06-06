@@ -24,35 +24,16 @@ Global
 		Policies = $0
 		$0.StandardHeader = $1
 		$1.Text = @\n${FileName}\n \nAuthor:\n      ${AuthorName} <${AuthorEmail}>\n\nCopyright (c) ${Year} ${CopyrightHolder}\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.
-		$1.IncludeInNewFiles = True
 		$0.TextStylePolicy = $2
-		$2.FileWidth = 120
-		$2.inheritsSet = VisualStudio
-		$2.inheritsScope = text/plain
 		$2.scope = text/plain
+		$2.TabsToSpaces = True
 		$0.CSharpFormattingPolicy = $3
-		$3.IndentSwitchSection = True
-		$3.inheritsSet = Mono
-		$3.inheritsScope = text/x-csharp
 		$3.scope = text/x-csharp
-		$3.NewLinesForBracesInProperties = True
-		$3.NewLinesForBracesInAccessors = True
-		$3.NewLinesForBracesInAnonymousMethods = True
-		$3.NewLinesForBracesInControlBlocks = True
-		$3.NewLinesForBracesInAnonymousTypes = True
-		$3.NewLinesForBracesInObjectCollectionArrayInitializers = True
-		$3.NewLinesForBracesInLambdaExpressionBody = True
-		$3.NewLineForElse = True
-		$3.NewLineForCatch = True
-		$3.NewLineForFinally = True
 		$3.NewLineForMembersInObjectInit = True
 		$3.NewLineForMembersInAnonymousTypes = True
 		$3.NewLineForClausesInQuery = True
-		$3.SpacingAfterMethodDeclarationName = False
-		$3.SpaceAfterMethodCallName = False
-		$3.SpaceAfterControlFlowStatementKeyword = False
-		$3.SpaceBeforeOpenSquareBracket = False
 		$3.WrappingPreserveSingleLine = False
 		$3.WrappingKeepStatementsOnSingleLine = False
+		version = 1.0.1
 	EndGlobalSection
 EndGlobal
