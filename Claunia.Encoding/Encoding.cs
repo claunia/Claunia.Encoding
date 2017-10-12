@@ -24,12 +24,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+
 namespace Claunia.Encoding
 {
     /// <summary>
     /// This class contains static instances of the supported encodings.
     /// </summary>
-    public static class Encoding
+    public abstract class Encoding : System.Text.Encoding
     {
         /// <summary>
         /// Static instance for the LisaRoman encoding
@@ -47,6 +51,85 @@ namespace Claunia.Encoding
         /// Static instance for the PETSCII encoding
         /// </summary>
         public static System.Text.Encoding PETEncoding = new PETSCII();
+
+        /// <summary>
+        /// Returns an array that contains all encodings.
+        /// </summary>
+        /// <returns>An array that contains all encodings.</returns>
+        public static EncodingInfo[] GetEncodings()
+        {
+            List<EncodingInfo> encodings = new List<EncodingInfo>();
+
+            foreach(Type type in Assembly.GetExecutingAssembly().GetTypes()) {
+                if(type.IsSubclassOf(typeof(Encoding))) {
+                    Encoding filter = (Encoding)type.GetConstructor(new Type[] {}).Invoke(new object[] { });
+                    encodings.Add(new EncodingInfo(filter.CodePage, filter.BodyName, filter.EncodingName, false, type));
+                }
+            }
+
+            return encodings.ToArray();
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the current encoding can be used by browser clients for displaying content.
+        /// </summary>
+        public abstract bool IsBrowserDisplay { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the current encoding can be used by browser clients for saving content.
+        /// </summary>
+        public abstract bool IsBrowserSave{ get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the current encoding can be used by mail and news clients for displaying content.
+        /// </summary>
+        public abstract bool IsMailNewsDisplay{ get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the current encoding can be used by mail and news clients for saving content.
+        /// </summary>
+        public abstract bool IsMailNewsSave{ get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the current encoding is read-only.
+        /// </summary>
+        /// <value>The is single byte.</value>
+        public abstract bool IsReadOnly{ get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the current encoding uses single-byte code points.
+        /// </summary>
+        public abstract bool IsSingleByte{ get; }
+
+        /// <summary>
+        /// Gets the code page identifier of the current Encoding.
+        /// </summary>
+        public abstract int CodePage{ get; }
+
+        /// <summary>
+        /// Gets a name for the current encoding that can be used with mail agent body tags
+        /// </summary>
+        public abstract string BodyName{ get; }
+
+        /// <summary>
+        /// Gets a name for the current encoding that can be used with mail agent header tags
+        /// </summary>
+        public abstract string HeaderName{ get; }
+
+        /// <summary>
+        /// Ggets the name registered with the Internet Assigned Numbers Authority (IANA) for the current encoding.
+        /// </summary>
+        public abstract override string WebName{ get; }
+
+        /// <summary>
+        /// Gets the human-readable description of the current encoding.
+        /// </summary>
+        public abstract string EncodingName{ get; }
+
+        /// <summary>
+        /// Gets the Windows operating system code page that most closely corresponds to the current encoding.
+        /// </summary>
+        public abstract int WindowsCodePage{ get; }
     }
 }
 

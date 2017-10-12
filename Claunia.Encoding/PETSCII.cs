@@ -31,7 +31,7 @@ namespace Claunia.Encoding
     /// <summary>
     /// Represents an Commodore PET Standard Code for Information Interchange (aka CBM ASCII) character encoding of Unicode characters.
     /// </summary>
-    public class PETSCII : System.Text.Encoding
+    public class PETSCII : Encoding
     {
         const string _bodyname = "petscii";
         const int _codepage = 0;
@@ -50,7 +50,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets a value indicating whether the current encoding can be used by browser clients for displaying content.
         /// </summary>
-        public bool IsBrowserDisplay
+        public override bool IsBrowserDisplay
         {
             get { return browserDisplay; }
         }
@@ -58,7 +58,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets a value indicating whether the current encoding can be used by browser clients for saving content.
         /// </summary>
-        public bool IsBrowserSave
+        public override bool IsBrowserSave
         {
             get { return browserSave; }
         }
@@ -66,7 +66,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets a value indicating whether the current encoding can be used by mail and news clients for displaying content.
         /// </summary>
-        public bool IsMailNewsDisplay
+        public override bool IsMailNewsDisplay
         {
             get { return mailNewsDisplay; }
         }
@@ -74,7 +74,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets a value indicating whether the current encoding can be used by mail and news clients for saving content.
         /// </summary>
-        public bool IsMailNewsSave
+        public override bool IsMailNewsSave
         {
             get { return mailNewsSave; }
         }
@@ -82,7 +82,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets a value indicating whether the current encoding is read-only.
         /// </summary>
-        public bool IsReadOnly
+        public override bool IsReadOnly
         {
             get { return readOnly; }
         }
@@ -90,7 +90,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets a value indicating whether the current encoding uses single-byte code points.
         /// </summary>
-        public bool IsSingleByte
+        public override bool IsSingleByte
         {
             get { return singleByte; }
         }
@@ -98,7 +98,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets the code page identifier of the current Encoding.
         /// </summary>
-        public int CodePage
+        public override int CodePage
         {
             get { return _codepage; }
         }
@@ -106,7 +106,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets a name for the current encoding that can be used with mail agent body tags
         /// </summary>
-        public string BodyName
+        public override string BodyName
         {
             get { return _bodyname; }
         }
@@ -114,7 +114,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets a name for the current encoding that can be used with mail agent header tags
         /// </summary>
-        public string HeaderName
+        public override string HeaderName
         {
             get { return _headername; }
         }
@@ -130,7 +130,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets the human-readable description of the current encoding.
         /// </summary>
-        public string EncodingName
+        public override string EncodingName
         {
             get { return _encodingname; }
         }
@@ -138,7 +138,7 @@ namespace Claunia.Encoding
         /// <summary>
         /// Gets the Windows operating system code page that most closely corresponds to the current encoding.
         /// </summary>
-        public int WindowsCodePage
+        public override int WindowsCodePage
         {
             get { return _windowsCodepage; }
         }

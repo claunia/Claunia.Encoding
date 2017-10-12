@@ -37,6 +37,7 @@
     <Compile Include="LisaRoman.cs" />
     <Compile Include="ATASCII.cs" />
     <Compile Include="AtariST.cs" />
+    <Compile Include="GetEncs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
