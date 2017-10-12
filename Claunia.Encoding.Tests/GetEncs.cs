@@ -52,5 +52,19 @@ namespace Claunia.Encoding.Tests
 				Console.WriteLine("{0,-8} {1,-8} ", e.IsSingleByte, e.IsReadOnly);
             }
         }
-    }
+		
+        [Test]
+		// Well basically this is taken from MSDN's documentation :p
+		public void GetInternalEncoding()
+		{
+			System.Text.Encoding e = Encoding.GetEncoding("lisa");
+		}
+
+        [Test]
+        // Well basically this is taken from MSDN's documentation :p
+        public void GetExternalEncoding()
+        {
+            System.Text.Encoding e = Encoding.GetEncoding("shift_jis");
+        }
+	}
 }

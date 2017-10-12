@@ -71,6 +71,24 @@ namespace Claunia.Encoding
         }
 
         /// <summary>
+        /// Returns the encoding associated with the specified code page name.
+        /// </summary>
+        /// <returns>The encoding associated with the specified code page.</returns>
+        /// <param name="name">The code page name of the preferred encoding. Any value returned by the WebName property is valid. Possible values are listed in the Name column of the table that appears in the Encoding class topic.</param>
+        public static System.Text.Encoding GetEncoding(string name)
+        {
+            foreach(Type type in Assembly.GetExecutingAssembly().GetTypes()) {
+                if(type.IsSubclassOf(typeof(Encoding))) {
+                    Encoding encoding = (Encoding)type.GetConstructor(new Type[] { }).Invoke(new object[] { });
+                    if(encoding.BodyName == name.ToLowerInvariant())
+                        return encoding;
+                }
+            }
+
+            return System.Text.Encoding.GetEncoding(name);
+        }
+
+        /// <summary>
         /// Gets a value indicating whether the current encoding can be used by browser clients for displaying content.
         /// </summary>
         public abstract bool IsBrowserDisplay { get; }
