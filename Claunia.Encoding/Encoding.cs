@@ -62,8 +62,8 @@ namespace Claunia.Encoding
 
             foreach(Type type in Assembly.GetExecutingAssembly().GetTypes()) {
                 if(type.IsSubclassOf(typeof(Encoding))) {
-                    Encoding filter = (Encoding)type.GetConstructor(new Type[] {}).Invoke(new object[] { });
-                    encodings.Add(new EncodingInfo(filter.CodePage, filter.BodyName, filter.EncodingName, false, type));
+                    Encoding encoding = (Encoding)type.GetConstructor(new Type[] {}).Invoke(new object[] { });
+                    encodings.Add(new EncodingInfo(encoding.CodePage, encoding.BodyName, encoding.EncodingName, false, type));
                 }
             }
 

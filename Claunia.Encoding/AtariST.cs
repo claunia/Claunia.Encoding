@@ -36,7 +36,7 @@ namespace Claunia.Encoding
     {
         const string _bodyname = "atarist";
         const int _codepage = 0;
-        const string _encodingname = "Atari ST";
+        const string _encodingname = "Western European (Atari ST)";
         const string _headername = "atarist";
         const string _webname = "";
         const int _windowsCodepage = 0;

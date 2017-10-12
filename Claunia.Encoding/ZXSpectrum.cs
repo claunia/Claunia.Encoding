@@ -35,7 +35,7 @@ namespace Claunia.Encoding
     {
         const string _bodyname = "spectrum";
         const int _codepage = 0;
-        const string _encodingname = "ZX Spectrum";
+        const string _encodingname = "Sinclair ZX Spectrum character set";
         const string _headername = "spectrum";
         const string _webname = "";
         const int _windowsCodepage = 0;

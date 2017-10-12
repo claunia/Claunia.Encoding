@@ -35,7 +35,7 @@ namespace Claunia.Encoding
     {
         const string _bodyname = "atascii";
         const int _codepage = 0;
-        const string _encodingname = "ATARI Standard Code for Information Interchange";
+        const string _encodingname = "Atari Standard Code for Information Interchange";
         const string _headername = "atascii";
         const string _webname = "";
         const int _windowsCodepage = 0;

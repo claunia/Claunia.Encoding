@@ -35,7 +35,7 @@ namespace Claunia.Encoding
     {
         const string _bodyname = "lisa";
         const int _codepage = 0;
-        const string _encodingname = "Apple Lisa";
+        const string _encodingname = "Western European (Apple Lisa)";
         const string _headername = "lisa";
         const string _webname = "";
         const int _windowsCodepage = 10000;

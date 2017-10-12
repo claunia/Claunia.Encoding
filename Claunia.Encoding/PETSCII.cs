@@ -35,7 +35,7 @@ namespace Claunia.Encoding
     {
         const string _bodyname = "petscii";
         const int _codepage = 0;
-        const string _encodingname = "PET Standard Code for Information Interchange";
+        const string _encodingname = "Commodore PET Standard Code for Information Interchange";
         const string _headername = "petscii";
         const string _webname = "";
         const int _windowsCodepage = 0;
