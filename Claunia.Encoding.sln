@@ -29,11 +29,6 @@ Global
 		$2.TabsToSpaces = True
 		$0.CSharpFormattingPolicy = $3
 		$3.scope = text/x-csharp
-		$3.NewLineForMembersInObjectInit = True
-		$3.NewLineForMembersInAnonymousTypes = True
-		$3.NewLineForClausesInQuery = True
-		$3.WrappingPreserveSingleLine = False
-		$3.WrappingKeepStatementsOnSingleLine = False
-		version = 1.0.1
+		version = 1.1.0
 	EndGlobalSection
 EndGlobal
