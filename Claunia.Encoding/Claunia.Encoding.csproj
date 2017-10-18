@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Claunia.Encoding</PackageId>
-    <PackageVersion>1.2.7</PackageVersion>
+    <PackageVersion>1.2.8</PackageVersion>
     <Authors>Natalia Portillo</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Owners>Natalia Portillo</Owners>
@@ -22,8 +22,8 @@
     <Title>Claunia.Encoding</Title>
     <Description>Library to provide codepage conversion to and from archaic and old computer systems and Unicode.</Description>
     <PackageLicenseUrl>https://raw.githubusercontent.com/claunia/Claunia.Encoding/master/LICENSE.MIT</PackageLicenseUrl>
-    <ReleaseVersion>1.2.7</ReleaseVersion>
-    <PackageReleaseNotes>Added MacCentralEuropean.</PackageReleaseNotes>
+    <ReleaseVersion>1.2.8</ReleaseVersion>
+    <PackageReleaseNotes>Added MacCyrillic.</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,6 +63,7 @@
     <Compile Include="MacGreek.cs" />
     <Compile Include="MacCroatian.cs" />
     <Compile Include="MacCentralEuropean.cs" />
+    <Compile Include="MacCyrillic.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\LICENSE.MIT">

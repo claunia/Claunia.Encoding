@@ -14,6 +14,7 @@ Supported encodings
 * MacArabic
 * MacCentralEuropean
 * MacCroatian
+* MacCyrillic
 * MacFarsi
 * MacGreek
 * MacHebrew
