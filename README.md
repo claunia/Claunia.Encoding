@@ -13,6 +13,7 @@ Supported encodings
 * Commodore PET Standard Code for Information Interchange (PETSCII)
 * MacArabic
 * MacFarsi
+* MacHebrew
 * Sinclair ZX80 character set
 * Sinclair ZX81 character set
 * Sinclair ZX Spectrum character set
