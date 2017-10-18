@@ -29,16 +29,16 @@ using System;
 namespace Claunia.Encoding
 {
     /// <summary>
-    /// Represents an Mac Cyrillic character encoding of Unicode characters.
+    /// Represents an Mac Ukrainian character encoding of Unicode characters.
     /// </summary>
-    public class MacCyrillic : Encoding
+    public class MacUkrainian : Encoding
     {
-        const string _bodyname = "x-mac-cyrillic";
-        const int _codepage = 10007;
-        const string _encodingname = "Cyrillic (Mac)";
-        const string _headername = "x-mac-cyrillic";
-        const string _webname = "x-mac-cyrillic";
-        const int _windowsCodepage = 10007;
+        const string _bodyname = "x-mac-ukrainian";
+        const int _codepage = 10017;
+        const string _encodingname = "Ukrainian (Mac)";
+        const string _headername = "x-mac-ukrainian";
+        const string _webname = "x-mac-ukrainian";
+        const int _windowsCodepage = 10017;
 
         const bool browserDisplay = false;
         const bool browserSave = false;
@@ -468,9 +468,9 @@ namespace Claunia.Encoding
         }
 
         /// <summary>
-        /// The Macintosh Cyrillic to Unicode character map.
+        /// The Macintosh Ukrainian to Unicode character map.
         /// </summary>
-        static readonly char[] MacCyrillicTable = {
+        static readonly char[] MacUkrainianTable = {
             // 0x00
             '\u0000','\u0001','\u0002','\u0003','\u0004','\u0005','\u0006','\u0007',
             // 0x08
@@ -512,11 +512,11 @@ namespace Claunia.Encoding
             // 0x98
             '\u0428','\u0429','\u042A','\u042B','\u042C','\u042D','\u042E','\u042F',
             // 0xA0
-            '\u2020','\u00B0','\u00A2','\u00A3','\u00A7','\u2022','\u00B6','\u0406',
+            '\u2020','\u00B0','\u0490','\u00A3','\u00A7','\u2022','\u00B6','\u0406',
             // 0xA8
             '\u00AE','\u00A9','\u2122','\u0402','\u0452','\u2260','\u0403','\u0453',
             // 0xB0
-            '\u221E','\u00B1','\u2264','\u2265','\u0456','\u00B5','\u2202','\u0408',
+            '\u221E','\u00B1','\u2264','\u2265','\u0456','\u00B5','\u0491','\u0408',
             // 0xB8
             '\u0404','\u0454','\u0407','\u0457','\u0409','\u0459','\u040A','\u045A',
             // 0xC0
@@ -538,19 +538,19 @@ namespace Claunia.Encoding
         };
 
         /// <summary>
-        /// Converts a Mac Cyrillic character to an Unicode character
+        /// Converts a Mac Ukrainian character to an Unicode character
         /// </summary>
         /// <returns>Unicode character.</returns>
-        /// <param name="character">Mac Cyrillic character.</param>
+        /// <param name="character">Mac Ukrainian character.</param>
         static char GetChar(byte character)
         {
-            return MacCyrillicTable[character];
+            return MacUkrainianTable[character];
         }
 
         /// <summary>
-        /// Converts a Unicode character to an Mac Cyrillic character
+        /// Converts a Unicode character to an Mac Ukrainian character
         /// </summary>
-        /// <returns>Mac Cyrillic character.</returns>
+        /// <returns>Mac Ukrainian character.</returns>
         /// <param name="character">Unicode character.</param>
         static byte GetByte(char character)
         {
