@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Claunia.Encoding</PackageId>
-    <PackageVersion>1.2.1</PackageVersion>
+    <PackageVersion>1.2.2</PackageVersion>
     <Authors>Natalia Portillo</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Owners>Natalia Portillo</Owners>
@@ -22,8 +22,8 @@
     <Title>Claunia.Encoding</Title>
     <Description>Library to provide codepage conversion to and from archaic and old computer systems and Unicode.</Description>
     <PackageLicenseUrl>https://raw.githubusercontent.com/claunia/Claunia.Encoding/master/LICENSE.MIT</PackageLicenseUrl>
-    <ReleaseVersion>1.2.1</ReleaseVersion>
-    <PackageReleaseNotes>Added MacArabic.</PackageReleaseNotes>
+    <ReleaseVersion>1.2.2</ReleaseVersion>
+    <PackageReleaseNotes>Added MacFarsi.</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +57,7 @@
     <Compile Include="ZXSpectrum.cs" />
     <Compile Include="EncodingInfo.cs" />
     <Compile Include="MacArabic.cs" />
+    <Compile Include="MacFarsi.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\LICENSE.MIT">
