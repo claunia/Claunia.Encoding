@@ -29,6 +29,6 @@ Global
 		$2.TabsToSpaces = True
 		$0.CSharpFormattingPolicy = $3
 		$3.scope = text/x-csharp
-		version = 1.2.8.1
+		version = 1.2.9
 	EndGlobalSection
 EndGlobal

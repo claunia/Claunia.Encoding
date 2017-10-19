@@ -18,6 +18,7 @@ Supported encodings
 * MacFarsi
 * MacGreek
 * MacHebrew
+* MacRoman
 * MacTurkish
 * MacUkrainian
 * Sinclair ZX80 character set
