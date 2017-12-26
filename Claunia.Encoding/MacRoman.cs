@@ -469,7 +469,7 @@ namespace Claunia.Encoding
 
         /// <summary>
         /// The Mac to Unicode character map.
-        /// MacRoman is a superset of MacRoman.
+        /// MacRoman is a superset of LisaRoman.
         /// </summary>
         static readonly char[] MacRomanTable = {
             // 0x00
