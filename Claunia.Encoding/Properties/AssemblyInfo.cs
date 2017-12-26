@@ -36,7 +36,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("Claunia.com")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("© Claunia.com")]
+[assembly: AssemblyCopyright ("© Natalia Portillo")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 
