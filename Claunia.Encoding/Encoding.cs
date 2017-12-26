@@ -26,128 +26,125 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace Claunia.Encoding
 {
     /// <summary>
-    /// This class contains static instances of the supported encodings.
+    ///     This class contains static instances of the supported encodings.
     /// </summary>
     public abstract class Encoding : System.Text.Encoding
     {
         /// <summary>
-        /// Static instance for the LisaRoman encoding
+        ///     Static instance for the LisaRoman encoding
         /// </summary>
         public static System.Text.Encoding LisaEncoding = new LisaRoman();
         /// <summary>
-        /// Static instance for the ATASCII encoding
+        ///     Static instance for the ATASCII encoding
         /// </summary>
         public static System.Text.Encoding AtariEncoding = new ATASCII();
         /// <summary>
-        /// Static instance for the Atari ST encoding
+        ///     Static instance for the Atari ST encoding
         /// </summary>
         public static System.Text.Encoding AtariSTEncoding = new AtariST();
         /// <summary>
-        /// Static instance for the PETSCII encoding
+        ///     Static instance for the PETSCII encoding
         /// </summary>
         public static System.Text.Encoding PETEncoding = new PETSCII();
 
         /// <summary>
-        /// Returns an array that contains all encodings.
-        /// </summary>
-        /// <returns>An array that contains all encodings.</returns>
-        public static EncodingInfo[] GetEncodings()
-        {
-            List<EncodingInfo> encodings = new List<EncodingInfo>();
-
-            foreach(Type type in Assembly.GetExecutingAssembly().GetTypes()) {
-                if(type.IsSubclassOf(typeof(Encoding))) {
-                    Encoding encoding = (Encoding)type.GetConstructor(new Type[] {}).Invoke(new object[] { });
-                    encodings.Add(new EncodingInfo(encoding.CodePage, encoding.BodyName, encoding.EncodingName, false, type));
-                }
-            }
-
-            return encodings.ToArray();
-        }
-
-        /// <summary>
-        /// Returns the encoding associated with the specified code page name.
-        /// </summary>
-        /// <returns>The encoding associated with the specified code page.</returns>
-        /// <param name="name">The code page name of the preferred encoding. Any value returned by the WebName property is valid. Possible values are listed in the Name column of the table that appears in the Encoding class topic.</param>
-        public static System.Text.Encoding GetEncoding(string name)
-        {
-            foreach(Type type in Assembly.GetExecutingAssembly().GetTypes()) {
-                if(type.IsSubclassOf(typeof(Encoding))) {
-                    Encoding encoding = (Encoding)type.GetConstructor(new Type[] { }).Invoke(new object[] { });
-                    if(encoding.BodyName == name.ToLowerInvariant())
-                        return encoding;
-                }
-            }
-
-            return System.Text.Encoding.GetEncoding(name);
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether the current encoding can be used by browser clients for displaying content.
+        ///     Gets a value indicating whether the current encoding can be used by browser clients for displaying content.
         /// </summary>
         public abstract bool IsBrowserDisplay { get; }
 
         /// <summary>
-        /// Gets a value indicating whether the current encoding can be used by browser clients for saving content.
+        ///     Gets a value indicating whether the current encoding can be used by browser clients for saving content.
         /// </summary>
-        public abstract bool IsBrowserSave{ get; }
+        public abstract bool IsBrowserSave { get; }
 
         /// <summary>
-        /// Gets a value indicating whether the current encoding can be used by mail and news clients for displaying content.
+        ///     Gets a value indicating whether the current encoding can be used by mail and news clients for displaying content.
         /// </summary>
-        public abstract bool IsMailNewsDisplay{ get; }
+        public abstract bool IsMailNewsDisplay { get; }
 
         /// <summary>
-        /// Gets a value indicating whether the current encoding can be used by mail and news clients for saving content.
+        ///     Gets a value indicating whether the current encoding can be used by mail and news clients for saving content.
         /// </summary>
-        public abstract bool IsMailNewsSave{ get; }
+        public abstract bool IsMailNewsSave { get; }
 
         /// <summary>
-        /// Gets a value indicating whether the current encoding is read-only.
+        ///     Gets a value indicating whether the current encoding is read-only.
         /// </summary>
         /// <value>The is single byte.</value>
-        public abstract bool IsReadOnly{ get; }
+        public abstract bool IsReadOnly { get; }
 
         /// <summary>
-        /// Gets a value indicating whether the current encoding uses single-byte code points.
+        ///     Gets a value indicating whether the current encoding uses single-byte code points.
         /// </summary>
-        public abstract bool IsSingleByte{ get; }
+        public abstract bool IsSingleByte { get; }
 
         /// <summary>
-        /// Gets the code page identifier of the current Encoding.
+        ///     Gets the code page identifier of the current Encoding.
         /// </summary>
-        public abstract int CodePage{ get; }
+        public abstract int CodePage { get; }
 
         /// <summary>
-        /// Gets a name for the current encoding that can be used with mail agent body tags
+        ///     Gets a name for the current encoding that can be used with mail agent body tags
         /// </summary>
-        public abstract string BodyName{ get; }
+        public abstract string BodyName { get; }
 
         /// <summary>
-        /// Gets a name for the current encoding that can be used with mail agent header tags
+        ///     Gets a name for the current encoding that can be used with mail agent header tags
         /// </summary>
-        public abstract string HeaderName{ get; }
+        public abstract string HeaderName { get; }
 
         /// <summary>
-        /// Ggets the name registered with the Internet Assigned Numbers Authority (IANA) for the current encoding.
+        ///     Ggets the name registered with the Internet Assigned Numbers Authority (IANA) for the current encoding.
         /// </summary>
-        public abstract override string WebName{ get; }
+        public abstract override string WebName { get; }
 
         /// <summary>
-        /// Gets the human-readable description of the current encoding.
+        ///     Gets the human-readable description of the current encoding.
         /// </summary>
-        public abstract string EncodingName{ get; }
+        public abstract string EncodingName { get; }
 
         /// <summary>
-        /// Gets the Windows operating system code page that most closely corresponds to the current encoding.
+        ///     Gets the Windows operating system code page that most closely corresponds to the current encoding.
         /// </summary>
-        public abstract int WindowsCodePage{ get; }
+        public abstract int WindowsCodePage { get; }
+
+        /// <summary>
+        ///     Returns an array that contains all encodings.
+        /// </summary>
+        /// <returns>An array that contains all encodings.</returns>
+        public static IEnumerable<EncodingInfo> GetEncodings()
+        {
+            return (from type in Assembly.GetExecutingAssembly().GetTypes()
+                    where type.IsSubclassOf(typeof(Encoding))
+                    let encoding = (Encoding)type.GetConstructor(new Type[] { }).Invoke(new object[] { })
+                    select new EncodingInfo(encoding.CodePage, encoding.BodyName, encoding.EncodingName, false, type))
+                .ToArray();
+        }
+
+        /// <summary>
+        ///     Returns the encoding associated with the specified code page name.
+        /// </summary>
+        /// <returns>The encoding associated with the specified code page.</returns>
+        /// <param name="name">
+        ///     The code page name of the preferred encoding. Any value returned by the WebName property is valid.
+        ///     Possible values are listed in the Name column of the table that appears in the Encoding class topic.
+        /// </param>
+        public static System.Text.Encoding GetEncoding(string name)
+        {
+            foreach(Type type in Assembly.GetExecutingAssembly().GetTypes())
+                if(type.IsSubclassOf(typeof(Encoding)))
+                {
+                    Encoding encoding = (Encoding)type.GetConstructor(new Type[] { }).Invoke(new object[] { });
+                    if(encoding.BodyName == name.ToLowerInvariant()) return encoding;
+                }
+
+            return System.Text.Encoding.GetEncoding(name);
+        }
     }
 }
-
