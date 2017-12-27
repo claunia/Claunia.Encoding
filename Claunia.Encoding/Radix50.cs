@@ -29,14 +29,14 @@ using System;
 namespace Claunia.Encoding
 {
     /// <summary>
-    ///     Represents an Apple II character encoding of Unicode characters.
+    ///     Represents an Radix-50 (PDP-11) character encoding of Unicode characters.
     /// </summary>
-    public class Apple2 : Encoding
+    public class Radix50 : Encoding
     {
-        const string _bodyname = "apple2";
+        const string _bodyname = "radix50";
         const int _codepage = 0;
-        const string _encodingname = "Western European (Apple II)";
-        const string _headername = "apple2";
+        const string _encodingname = "Western European (Radix-50)";
+        const string _headername = "radix50";
         const string _webname = "";
         const int _windowsCodepage = 0;
 
@@ -45,76 +45,28 @@ namespace Claunia.Encoding
         const bool mailNewsDisplay = false;
         const bool mailNewsSave = false;
         const bool readOnly = false;
-        const bool singleByte = true;
+        const bool singleByte = false;
 
         /// <summary>
-        ///     The Apple II to Unicode character map.
+        ///     The Radix-50 to Unicode character map, when bits are shifted right
         /// </summary>
-        static readonly char[] Apple2Table =
+        static readonly char[] Radix50Table =
         {
             // 0x00
-            '\u0040', '\u0041', '\u0042', '\u0043', '\u0044', '\u0045', '\u0046', '\u0047',
+            '\u0020', '\u0041', '\u0042', '\u0043', '\u0044', '\u0045', '\u0046', '\u0047',
             // 0x08
             '\u0048', '\u0049', '\u004A', '\u004B', '\u004C', '\u004D', '\u004E', '\u004F',
             // 0x10
             '\u0050', '\u0051', '\u0052', '\u0053', '\u0054', '\u0055', '\u0056', '\u0057',
             // 0x18
-            '\u0058', '\u0059', '\u005A', '\u005B', '\u005C', '\u005D', '\u005E', '\u005F',
+            '\u0058', '\u0059', '\u005A', '\u0024', '\u002E', '\u0025', '\u0030', '\u0031',
             // 0x20
-            '\u0020', '\u0021', '\u0022', '\u0023', '\u0024', '\u0025', '\u0026', '\u0027',
-            // 0x28
-            '\u0028', '\u0029', '\u002A', '\u002B', '\u002C', '\u002D', '\u002E', '\u002F',
-            // 0x30
-            '\u0030', '\u0031', '\u0032', '\u0033', '\u0034', '\u0035', '\u0036', '\u0037',
-            // 0x38
-            '\u0038', '\u0039', '\u003A', '\u003B', '\u003C', '\u003D', '\u003E', '\u003F',
-            // 0x40
-            '\u0040', '\u0041', '\u0042', '\u0043', '\u0044', '\u0045', '\u0046', '\u0047',
-            // 0x48
-            '\u0048', '\u0049', '\u004A', '\u004B', '\u004C', '\u004D', '\u004E', '\u004F',
-            // 0x50
-            '\u0050', '\u0051', '\u0052', '\u0053', '\u0054', '\u0055', '\u0056', '\u0057',
-            // 0x58
-            '\u0058', '\u0059', '\u005A', '\u005B', '\u005C', '\u005D', '\u005E', '\u005F',
-            // 0x60
-            '\u0020', '\u0021', '\u0022', '\u0023', '\u0024', '\u0025', '\u0026', '\u0027',
-            // 0x68
-            '\u0028', '\u0029', '\u002A', '\u002B', '\u002C', '\u002D', '\u002E', '\u002F',
-            // 0x70
-            '\u0030', '\u0031', '\u0032', '\u0033', '\u0034', '\u0035', '\u0036', '\u0037',
-            // 0x78
-            '\u0038', '\u0039', '\u003A', '\u003B', '\u003C', '\u003D', '\u003E', '\u003F',
-            // 0x80
+            '\u0032', '\u0033', '\u0034', '\u0035', '\u0036', '\u0037', '\u0038', '\u0039',
+            // 0x28 (unused but legal)
             '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0x88
+            // 0x30 (unused but legal)
             '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0x90
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0x98
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xA0
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xA8
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xB0
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xB8
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xC0
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xC8
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xD0
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xD8
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xE0
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xE8
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xF0
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
-            // 0xF8
+            // 0x38 (unused but legal)
             '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000'
         };
 
@@ -188,7 +140,7 @@ namespace Claunia.Encoding
         {
             if(s == null) throw new ArgumentNullException(nameof(s));
 
-            return s.Length;
+            return s.Length * 6 % 8 > 0 ? s.Length * 6 / 8 + 1 : s.Length * 6 / 8;
         }
 
         /// <summary>
@@ -206,7 +158,7 @@ namespace Claunia.Encoding
 
             if(count < 0 || index + count > chars.Length) throw new ArgumentOutOfRangeException(nameof(index));
 
-            return count;
+            return count * 6 % 8 > 0 ? count * 6 / 8 + 1 : count * 6 / 8;
         }
 
         /// <summary>
@@ -218,7 +170,7 @@ namespace Claunia.Encoding
         {
             if(chars == null) throw new ArgumentNullException(nameof(chars));
 
-            return chars.Length;
+            return chars.Length * 6 % 8 > 0 ? chars.Length * 6 / 8 + 1 : chars.Length * 6 / 8;
         }
 
         /// <summary>
@@ -300,9 +252,40 @@ namespace Claunia.Encoding
 
             if(count + index > chars.Length) throw new ArgumentOutOfRangeException(nameof(count));
 
-            byte[] bytes = new byte[count];
+            byte[] bytes = new byte[count * 6 % 8 > 0 ? count * 6 / 8 + 1 : count * 6 / 8];
+            int outPos = 0;
 
-            for(int i = 0; i < count; i++) bytes[i] = GetByte(chars[index + i]);
+            for(int i = 0; i < count; i++)
+            {
+                byte thisByte = GetByte(chars[index + i]);
+
+                switch(i % 4)
+                {
+                    case 0:
+                        if(outPos >= bytes.Length) break;
+
+                        bytes[outPos] = (byte)(thisByte << 2);
+                        break;
+                    case 1:
+                        if(outPos + 1 >= bytes.Length) break;
+
+                        bytes[outPos] += (byte)((thisByte & 0x30) >> 4);
+                        bytes[outPos + 1] = (byte)((thisByte & 0xF) << 4);
+                        break;
+                    case 2:
+                        if(outPos + 2 >= bytes.Length) break;
+
+                        bytes[outPos + 1] += (byte)((thisByte & 0x3C) >> 2);
+                        bytes[outPos + 2] = (byte)((thisByte & 0x3) << 6);
+                        break;
+                    case 3:
+                        if(outPos + 2 >= bytes.Length) break;
+
+                        bytes[outPos + 2] += (byte)(thisByte & 0x3F);
+                        outPos += 3;
+                        break;
+                }
+            }
 
             return bytes;
         }
@@ -344,7 +327,7 @@ namespace Claunia.Encoding
 
             if(count + index > bytes.Length) throw new ArgumentOutOfRangeException(nameof(count));
 
-            return count;
+            return count * 8 / 6;
         }
 
         /// <summary>
@@ -410,9 +393,34 @@ namespace Claunia.Encoding
 
             if(count + index > bytes.Length) throw new ArgumentOutOfRangeException(nameof(count));
 
-            char[] chars = new char[count];
+            char[] chars = new char[count * 8 / 6];
 
-            for(int i = 0; i < count; i++) chars[i] = GetChar(bytes[index + i]);
+            // aaaaaabb bbbbcccc ccdddddd
+
+            int outPos = 0;
+            for(int i = 0; i < count; i++)
+            {
+                byte rd50;
+                switch(i % 3)
+                {
+                    case 0:
+                        rd50 = (byte)((bytes[index + i] & 0xFC) >> 2);
+                        chars[outPos] = GetChar(rd50);
+                        outPos++;
+                        break;
+                    case 1:
+                        rd50 = (byte)(((bytes[index + i - 1] & 0x03) << 4) + ((bytes[index + i] & 0xF0) >> 4));
+                        chars[outPos] = GetChar(rd50);
+                        outPos++;
+                        break;
+                    case 2:
+                        rd50 = (byte)(((bytes[index + i - 1] & 0x0F) << 2) + ((bytes[index + i] & 0xC0) >> 6));
+                        chars[outPos] = GetChar(rd50);
+                        chars[outPos + 1] = GetChar((byte)(bytes[index + i] & 0x3F));
+                        outPos += 2;
+                        break;
+                }
+            }
 
             return chars;
         }
@@ -426,7 +434,7 @@ namespace Claunia.Encoding
         {
             if(charCount < 0) throw new ArgumentOutOfRangeException(nameof(charCount));
 
-            return charCount;
+            return charCount * 6 % 8 > 0 ? charCount * 6 / 8 + 1 : charCount * 6 / 8;
         }
 
         /// <summary>
@@ -438,7 +446,7 @@ namespace Claunia.Encoding
         {
             if(byteCount < 0) throw new ArgumentOutOfRangeException(nameof(byteCount));
 
-            return byteCount;
+            return byteCount * 8 / 6;
         }
 
         /// <summary>
@@ -479,7 +487,7 @@ namespace Claunia.Encoding
         /// <param name="character">Apple II character.</param>
         static char GetChar(byte character)
         {
-            return Apple2Table[character];
+            return Radix50Table[character & 0x3F];
         }
 
         /// <summary>
@@ -491,73 +499,49 @@ namespace Claunia.Encoding
         {
             switch(character)
             {
-                case '\u0020': return 0x20;
-                case '\u0021': return 0x21;
-                case '\u0022': return 0x22;
-                case '\u0023': return 0x23;
-                case '\u0024': return 0x24;
-                case '\u0025': return 0x25;
-                case '\u0026': return 0x26;
-                case '\u0027': return 0x27;
-                case '\u0028': return 0x28;
-                case '\u0029': return 0x29;
-                case '\u002A': return 0x2A;
-                case '\u002B': return 0x2B;
-                case '\u002C': return 0x2C;
-                case '\u002D': return 0x2D;
-                case '\u002E': return 0x2E;
-                case '\u002F': return 0x2F;
-                case '\u0030': return 0x30;
-                case '\u0031': return 0x31;
-                case '\u0032': return 0x32;
-                case '\u0033': return 0x33;
-                case '\u0034': return 0x34;
-                case '\u0035': return 0x35;
-                case '\u0036': return 0x36;
-                case '\u0037': return 0x37;
-                case '\u0038': return 0x38;
-                case '\u0039': return 0x39;
-                case '\u003A': return 0x3A;
-                case '\u003B': return 0x3B;
-                case '\u003C': return 0x3C;
-                case '\u003D': return 0x3D;
-                case '\u003E': return 0x3E;
-                case '\u003F': return 0x3F;
-                case '\u0040': return 0x40;
-                case '\u0041': return 0x41;
-                case '\u0042': return 0x42;
-                case '\u0043': return 0x43;
-                case '\u0044': return 0x44;
-                case '\u0045': return 0x45;
-                case '\u0046': return 0x46;
-                case '\u0047': return 0x47;
-                case '\u0048': return 0x48;
-                case '\u0049': return 0x49;
-                case '\u004A': return 0x4A;
-                case '\u004B': return 0x4B;
-                case '\u004C': return 0x4C;
-                case '\u004D': return 0x4D;
-                case '\u004E': return 0x4E;
-                case '\u004F': return 0x4F;
-                case '\u0050': return 0x50;
-                case '\u0051': return 0x51;
-                case '\u0052': return 0x52;
-                case '\u0053': return 0x53;
-                case '\u0054': return 0x54;
-                case '\u0055': return 0x55;
-                case '\u0056': return 0x56;
-                case '\u0057': return 0x57;
-                case '\u0058': return 0x58;
-                case '\u0059': return 0x59;
-                case '\u005A': return 0x5A;
-                case '\u005B': return 0x5B;
-                case '\u005C': return 0x5C;
-                case '\u005D': return 0x5D;
-                case '\u005E': return 0x5E;
-                case '\u005F': return 0x5F;
+                case '\u0020': return 0x00;
+                case '\u0041': return 0x01;
+                case '\u0042': return 0x02;
+                case '\u0043': return 0x03;
+                case '\u0044': return 0x04;
+                case '\u0045': return 0x05;
+                case '\u0046': return 0x06;
+                case '\u0047': return 0x07;
+                case '\u0048': return 0x08;
+                case '\u0049': return 0x09;
+                case '\u004A': return 0x0A;
+                case '\u004B': return 0x0B;
+                case '\u004C': return 0x0C;
+                case '\u004D': return 0x0D;
+                case '\u004E': return 0x0E;
+                case '\u004F': return 0x0F;
+                case '\u0050': return 0x10;
+                case '\u0051': return 0x11;
+                case '\u0052': return 0x12;
+                case '\u0053': return 0x13;
+                case '\u0054': return 0x14;
+                case '\u0055': return 0x15;
+                case '\u0056': return 0x16;
+                case '\u0057': return 0x17;
+                case '\u0058': return 0x18;
+                case '\u0059': return 0x19;
+                case '\u005A': return 0x1A;
+                case '\u0024': return 0x1B;
+                case '\u002E': return 0x1C;
+                case '\u0025': return 0x1D;
+                case '\u0030': return 0x1E;
+                case '\u0031': return 0x1F;
+                case '\u0032': return 0x20;
+                case '\u0033': return 0x21;
+                case '\u0034': return 0x22;
+                case '\u0035': return 0x23;
+                case '\u0036': return 0x24;
+                case '\u0037': return 0x25;
+                case '\u0038': return 0x26;
+                case '\u0039': return 0x27;
                 default:
-                    // Fallback to '?'
-                    return 0x3F;
+                    // Fallback to '.'
+                    return 0x1C;
             }
         }
     }

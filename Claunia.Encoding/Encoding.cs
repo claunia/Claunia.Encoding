@@ -52,6 +52,10 @@ namespace Claunia.Encoding
         ///     Static instance for the PETSCII encoding
         /// </summary>
         public static System.Text.Encoding PETEncoding = new PETSCII();
+        /// <summary>
+        ///     Static instance for the DEC Radix-50 encoding
+        /// </summary>
+        public static System.Text.Encoding Radix50Encoding = new Radix50();
 
         /// <summary>
         ///     Gets a value indicating whether the current encoding can be used by browser clients for displaying content.

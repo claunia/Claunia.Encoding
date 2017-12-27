@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,7 @@
     <RootNamespace>Claunia.Encoding.Tests</RootNamespace>
     <AssemblyName>Claunia.Encoding.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>1.3</ReleaseVersion>
+    <ReleaseVersion>1.4</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +38,7 @@
     <Compile Include="ATASCII.cs" />
     <Compile Include="AtariST.cs" />
     <Compile Include="GetEncs.cs" />
+    <Compile Include="Radix50.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Claunia.Encoding\Claunia.Encoding.csproj">
