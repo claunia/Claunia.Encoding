@@ -13,6 +13,7 @@ Supported encodings
 * Atari ST character set
 * Commodore PET Standard Code for Information Interchange (PETSCII)
 * DEC Radix-50
+* GEM Character Set
 * MacArabic
 * MacCentralEuropean
 * MacCroatian

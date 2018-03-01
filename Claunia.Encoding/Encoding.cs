@@ -56,6 +56,10 @@ namespace Claunia.Encoding
         ///     Static instance for the DEC Radix-50 encoding
         /// </summary>
         public static System.Text.Encoding Radix50Encoding = new Radix50();
+        /// <summary>
+        ///     Static instance for the GEM encoding
+        /// </summary>
+        public static System.Text.Encoding GemEncoding = new Gem();
 
         /// <summary>
         ///     Gets a value indicating whether the current encoding can be used by browser clients for displaying content.
