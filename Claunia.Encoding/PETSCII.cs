@@ -34,19 +34,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class PETSCII : Encoding
     {
-        const string _bodyname = "petscii";
-        const int _codepage = 0;
-        const string _encodingname = "Commodore PET Standard Code for Information Interchange";
-        const string _headername = "petscii";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "petscii";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Commodore PET Standard Code for Information Interchange";
+        const string _headername      = "petscii";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = false;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = false;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The PETSCII to Unicode character map, unshifted (default) variant.
@@ -494,7 +494,8 @@ namespace Claunia.Encoding
 
             for(int i = 0; i < 256; i++)
                 // TODO: convert this to a gigantic switch statement too?
-                if(PETSCIITable[i] == character) return (byte)i;
+                if(PETSCIITable[i] == character)
+                    return (byte)i;
 
             // Fallback to '?'
             return 0x3F;

@@ -23,42 +23,36 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+
 using System;
 using NUnit.Framework;
 
 namespace Claunia.Encoding.Tests
 {
-	[TestFixture]
-	public class GetEncs
+    [TestFixture]
+    public class GetEncs
     {
-		[Test]
-		// Well basically this is taken from MSDN's documentation :p
-		public void GetAllEncs()
+        [Test]
+        // Well basically this is taken from MSDN's documentation :p
+        public void GetAllEncs()
         {
-			// Print the header.
-			Console.Write("CodePage identifier and name     ");
-			Console.Write("BrDisp   BrSave   ");
-			Console.Write("MNDisp   MNSave   ");
-			Console.WriteLine("1-Byte   ReadOnly ");
+            // Print the header.
+            Console.Write("CodePage identifier and name     ");
+            Console.Write("BrDisp   BrSave   ");
+            Console.Write("MNDisp   MNSave   ");
+            Console.WriteLine("1-Byte   ReadOnly ");
 
-			// For every encoding, get the property values.
-			foreach(EncodingInfo ei in Encoding.GetEncodings())
+            // For every encoding, get the property values.
+            foreach(EncodingInfo ei in Encoding.GetEncodings())
             {
-				Encoding e = ei.GetEncoding();
+                Encoding e = ei.GetEncoding();
 
-				Console.Write("{0,-6} {1,-25} ", ei.CodePage, ei.Name);
-				Console.Write("{0,-8} {1,-8} ", e.IsBrowserDisplay, e.IsBrowserSave);
-				Console.Write("{0,-8} {1,-8} ", e.IsMailNewsDisplay, e.IsMailNewsSave);
-				Console.WriteLine("{0,-8} {1,-8} ", e.IsSingleByte, e.IsReadOnly);
+                Console.Write("{0,-6} {1,-25} ", ei.CodePage,         ei.Name);
+                Console.Write("{0,-8} {1,-8} ",  e.IsBrowserDisplay,  e.IsBrowserSave);
+                Console.Write("{0,-8} {1,-8} ",  e.IsMailNewsDisplay, e.IsMailNewsSave);
+                Console.WriteLine("{0,-8} {1,-8} ", e.IsSingleByte, e.IsReadOnly);
             }
         }
-		
-        [Test]
-		// Well basically this is taken from MSDN's documentation :p
-		public void GetInternalEncoding()
-		{
-			System.Text.Encoding e = Encoding.GetEncoding("lisa");
-		}
 
         [Test]
         // Well basically this is taken from MSDN's documentation :p
@@ -66,5 +60,12 @@ namespace Claunia.Encoding.Tests
         {
             System.Text.Encoding e = Encoding.GetEncoding("shift_jis");
         }
-	}
+
+        [Test]
+        // Well basically this is taken from MSDN's documentation :p
+        public void GetInternalEncoding()
+        {
+            System.Text.Encoding e = Encoding.GetEncoding("lisa");
+        }
+    }
 }

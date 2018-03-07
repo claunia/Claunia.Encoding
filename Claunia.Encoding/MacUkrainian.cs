@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacUkrainian : Encoding
     {
-        const string _bodyname = "x-mac-ukrainian";
-        const int _codepage = 10017;
-        const string _encodingname = "Ukrainian (Mac)";
-        const string _headername = "x-mac-ukrainian";
-        const string _webname = "x-mac-ukrainian";
-        const int _windowsCodepage = 10017;
+        const string _bodyname        = "x-mac-ukrainian";
+        const int    _codepage        = 10017;
+        const string _encodingname    = "Ukrainian (Mac)";
+        const string _headername      = "x-mac-ukrainian";
+        const string _webname         = "x-mac-ukrainian";
+        const int    _windowsCodepage = 10017;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Macintosh Ukrainian to Unicode character map.

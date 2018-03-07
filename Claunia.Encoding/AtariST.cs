@@ -34,19 +34,19 @@ namespace Claunia.Encoding
     // TODO: 0x09 => U+1F552, 0x0A => U+1F514
     public class AtariST : Encoding
     {
-        const string _bodyname = "atarist";
-        const int _codepage = 0;
-        const string _encodingname = "Western European (Atari ST)";
-        const string _headername = "atarist";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "atarist";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Western European (Atari ST)";
+        const string _headername      = "atarist";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = false;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = false;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Atari ST to Unicode character map.

@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class Gem : Encoding
     {
-        const string _bodyname = "gem";
-        const int _codepage = 0;
-        const string _encodingname = "Western European (GEM)";
-        const string _headername = "gem";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "gem";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Western European (GEM)";
+        const string _headername      = "gem";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = false;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = false;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The GEM to Unicode character map.

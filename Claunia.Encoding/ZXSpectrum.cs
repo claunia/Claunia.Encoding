@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class ZXSpectrum : Encoding
     {
-        const string _bodyname = "spectrum";
-        const int _codepage = 0;
-        const string _encodingname = "Sinclair ZX Spectrum character set";
-        const string _headername = "spectrum";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "spectrum";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Sinclair ZX Spectrum character set";
+        const string _headername      = "spectrum";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = false;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = false;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The ZX Spectrum to Unicode character map.

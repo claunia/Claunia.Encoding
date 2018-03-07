@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacRomanian : Encoding
     {
-        const string _bodyname = "x-mac-romanian";
-        const int _codepage = 10010;
-        const string _encodingname = "Romanianian (Mac)";
-        const string _headername = "x-mac-romanian";
-        const string _webname = "x-mac-romanian";
-        const int _windowsCodepage = 10010;
+        const string _bodyname        = "x-mac-romanian";
+        const int    _codepage        = 10010;
+        const string _encodingname    = "Romanianian (Mac)";
+        const string _headername      = "x-mac-romanian";
+        const string _webname         = "x-mac-romanian";
+        const int    _windowsCodepage = 10010;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Mac to Unicode character map.

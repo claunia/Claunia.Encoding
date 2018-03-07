@@ -31,9 +31,9 @@ namespace Claunia.Encoding.Tests
     [TestFixture]
     public class Radix50
     {
-        const string Punctuations = " .$%";
+        const    string Punctuations      = " .$%";
         readonly byte[] PunctuationsBytes = {0b00000001, 0b11000110, 0b11011101};
-        const string Digits = "0123456789";
+        const    string Digits            = "0123456789";
         readonly byte[] DigitsBytes =
             {0b01111001, 0b11111000, 0b00100001, 0b10001010, 0b00111001, 0b00100101, 0b10011010, 0b01110000};
         const string UpperLatin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -43,7 +43,7 @@ namespace Claunia.Encoding.Tests
             0b00110100, 0b11100011, 0b11010000, 0b01000101, 0b00100100, 0b11010100, 0b01010101, 0b01100101, 0b11011000,
             0b01100101, 0b10100000
         };
-        const string Sentence = "THIS IS A TEST$";
+        const string Sentence       = "THIS IS A TEST$";
         const string SentencePadded = "THIS IS A TEST$ "; // It gets space padded when decoding is not multiple
         readonly byte[] SentenceBytes =
         {

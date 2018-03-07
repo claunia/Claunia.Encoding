@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class ZX80 : Encoding
     {
-        const string _bodyname = "zx80";
-        const int _codepage = 0;
-        const string _encodingname = "Sinclair ZX80 character set";
-        const string _headername = "zx80";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "zx80";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Sinclair ZX80 character set";
+        const string _headername      = "zx80";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = false;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = false;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The ZX80 to Unicode character map.

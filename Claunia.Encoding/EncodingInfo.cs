@@ -14,14 +14,14 @@ namespace Claunia.Encoding
         bool isSystem;
         Type thisType;
 
-        internal EncodingInfo(int codePage, string name, string displayName, bool system = true,
+        internal EncodingInfo(int  codePage, string name, string displayName, bool system = true,
                               Type internalType = null)
         {
-            CodePage = codePage;
-            Name = name;
+            CodePage    = codePage;
+            Name        = name;
             DisplayName = displayName;
-            isSystem = system;
-            thisType = internalType;
+            isSystem    = system;
+            thisType    = internalType;
         }
 
         /// <summary>

@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacHebrew : Encoding
     {
-        const string _bodyname = "x-mac-hebrew";
-        const int _codepage = 10005;
-        const string _encodingname = "Hebrew (Mac)";
-        const string _headername = "x-mac-hebrew";
-        const string _webname = "x-mac-hebrew";
-        const int _windowsCodepage = 10005;
+        const string _bodyname        = "x-mac-hebrew";
+        const int    _codepage        = 10005;
+        const string _encodingname    = "Hebrew (Mac)";
+        const string _headername      = "x-mac-hebrew";
+        const string _webname         = "x-mac-hebrew";
+        const int    _windowsCodepage = 10005;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Macintosh Hebrew to Unicode character map.

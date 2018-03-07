@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacArabic : Encoding
     {
-        const string _bodyname = "x-mac-arabic";
-        const int _codepage = 10004;
-        const string _encodingname = "Arabic (Mac)";
-        const string _headername = "x-mac-arabic";
-        const string _webname = "x-mac-arabic";
-        const int _windowsCodepage = 10004;
+        const string _bodyname        = "x-mac-arabic";
+        const int    _codepage        = 10004;
+        const string _encodingname    = "Arabic (Mac)";
+        const string _headername      = "x-mac-arabic";
+        const string _webname         = "x-mac-arabic";
+        const int    _windowsCodepage = 10004;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Macintosh Arabic to Unicode character map.

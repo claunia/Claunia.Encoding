@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class ATASCII : Encoding
     {
-        const string _bodyname = "atascii";
-        const int _codepage = 0;
-        const string _encodingname = "Atari Standard Code for Information Interchange";
-        const string _headername = "atascii";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "atascii";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Atari Standard Code for Information Interchange";
+        const string _headername      = "atascii";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = false;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = false;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The ATASCII to Unicode character map.

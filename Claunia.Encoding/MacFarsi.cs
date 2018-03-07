@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacFarsi : Encoding
     {
-        const string _bodyname = "x-mac-farsi";
-        const int _codepage = 10014;
-        const string _encodingname = "Farsi (Mac)";
-        const string _headername = "x-mac-farsi";
-        const string _webname = "x-mac-farsi";
-        const int _windowsCodepage = 10014;
+        const string _bodyname        = "x-mac-farsi";
+        const int    _codepage        = 10014;
+        const string _encodingname    = "Farsi (Mac)";
+        const string _headername      = "x-mac-farsi";
+        const string _webname         = "x-mac-farsi";
+        const int    _windowsCodepage = 10014;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Macintosh Farsi to Unicode character map.

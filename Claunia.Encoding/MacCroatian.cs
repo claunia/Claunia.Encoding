@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacCroatian : Encoding
     {
-        const string _bodyname = "x-mac-croatian";
-        const int _codepage = 10082;
-        const string _encodingname = "Croatian (Mac)";
-        const string _headername = "x-mac-croatian";
-        const string _webname = "x-mac-croatian";
-        const int _windowsCodepage = 10082;
+        const string _bodyname        = "x-mac-croatian";
+        const int    _codepage        = 10082;
+        const string _encodingname    = "Croatian (Mac)";
+        const string _headername      = "x-mac-croatian";
+        const string _webname         = "x-mac-croatian";
+        const int    _windowsCodepage = 10082;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Macintosh Croatian to Unicode character map.

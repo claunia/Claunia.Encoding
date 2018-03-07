@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class Apple2e : Encoding
     {
-        const string _bodyname = "apple2e";
-        const int _codepage = 0;
-        const string _encodingname = "Western European (Apple IIe)";
-        const string _headername = "apple2e";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "apple2e";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Western European (Apple IIe)";
+        const string _headername      = "apple2e";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Apple IIe to Unicode character map.

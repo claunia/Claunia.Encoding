@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class Radix50 : Encoding
     {
-        const string _bodyname = "radix50";
-        const int _codepage = 0;
-        const string _encodingname = "Western European (Radix-50)";
-        const string _headername = "radix50";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "radix50";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Western European (Radix-50)";
+        const string _headername      = "radix50";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = false;
-        const bool singleByte = false;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = false;
+        const bool singleByte      = false;
 
         /// <summary>
         ///     The Radix-50 to Unicode character map, when bits are shifted right
@@ -252,8 +252,8 @@ namespace Claunia.Encoding
 
             if(count + index > chars.Length) throw new ArgumentOutOfRangeException(nameof(count));
 
-            byte[] bytes = new byte[count * 6 % 8 > 0 ? count * 6 / 8 + 1 : count * 6 / 8];
-            int outPos = 0;
+            byte[] bytes  = new byte[count * 6 % 8 > 0 ? count * 6 / 8 + 1 : count * 6 / 8];
+            int    outPos = 0;
 
             for(int i = 0; i < count; i++)
             {
@@ -269,20 +269,20 @@ namespace Claunia.Encoding
                     case 1:
                         if(outPos + 1 >= bytes.Length) break;
 
-                        bytes[outPos] += (byte)((thisByte & 0x30) >> 4);
-                        bytes[outPos + 1] = (byte)((thisByte & 0xF) << 4);
+                        bytes[outPos]     += (byte)((thisByte & 0x30) >> 4);
+                        bytes[outPos + 1] =  (byte)((thisByte & 0xF)  << 4);
                         break;
                     case 2:
                         if(outPos + 2 >= bytes.Length) break;
 
                         bytes[outPos + 1] += (byte)((thisByte & 0x3C) >> 2);
-                        bytes[outPos + 2] = (byte)((thisByte & 0x3) << 6);
+                        bytes[outPos + 2] =  (byte)((thisByte & 0x3)  << 6);
                         break;
                     case 3:
                         if(outPos + 2 >= bytes.Length) break;
 
                         bytes[outPos + 2] += (byte)(thisByte & 0x3F);
-                        outPos += 3;
+                        outPos            += 3;
                         break;
                 }
             }
@@ -404,20 +404,21 @@ namespace Claunia.Encoding
                 switch(i % 3)
                 {
                     case 0:
-                        rd50 = (byte)((bytes[index + i] & 0xFC) >> 2);
+                        rd50          = (byte)((bytes[index + i] & 0xFC) >> 2);
                         chars[outPos] = GetChar(rd50);
                         outPos++;
                         break;
                     case 1:
-                        rd50 = (byte)(((bytes[index + i - 1] & 0x03) << 4) + ((bytes[index + i] & 0xF0) >> 4));
+                        rd50          = (byte)(((bytes[index + i - 1] & 0x03) << 4) + ((bytes[index + i] & 0xF0) >> 4));
                         chars[outPos] = GetChar(rd50);
                         outPos++;
                         break;
                     case 2:
-                        rd50 = (byte)(((bytes[index + i - 1] & 0x0F) << 2) + ((bytes[index + i] & 0xC0) >> 6));
-                        chars[outPos] = GetChar(rd50);
-                        chars[outPos + 1] = GetChar((byte)(bytes[index + i] & 0x3F));
-                        outPos += 2;
+                        rd50 =
+                            (byte)(((bytes[index + i - 1] & 0x0F) << 2) + ((bytes[index + i] & 0xC0) >> 6));
+                        chars[outPos]     =  GetChar(rd50);
+                        chars[outPos + 1] =  GetChar((byte)(bytes[index + i] & 0x3F));
+                        outPos            += 2;
                         break;
                 }
             }

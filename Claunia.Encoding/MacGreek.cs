@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacGreek : Encoding
     {
-        const string _bodyname = "x-mac-greek";
-        const int _codepage = 10006;
-        const string _encodingname = "Greek (Mac)";
-        const string _headername = "x-mac-greek";
-        const string _webname = "x-mac-greek";
-        const int _windowsCodepage = 10006;
+        const string _bodyname        = "x-mac-greek";
+        const int    _codepage        = 10006;
+        const string _encodingname    = "Greek (Mac)";
+        const string _headername      = "x-mac-greek";
+        const string _webname         = "x-mac-greek";
+        const int    _windowsCodepage = 10006;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Macintosh Greek to Unicode character map.

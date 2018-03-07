@@ -132,7 +132,7 @@ namespace Claunia.Encoding
                     where type.IsSubclassOf(typeof(Encoding))
                     let encoding = (Encoding)type.GetConstructor(new Type[] { }).Invoke(new object[] { })
                     select new EncodingInfo(encoding.CodePage, encoding.BodyName, encoding.EncodingName, false, type))
-                .ToArray();
+               .ToArray();
         }
 
         /// <summary>

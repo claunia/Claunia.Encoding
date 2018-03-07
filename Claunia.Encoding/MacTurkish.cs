@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacTurkish : Encoding
     {
-        const string _bodyname = "x-mac-turkish";
-        const int _codepage = 10081;
-        const string _encodingname = "Turkish (Mac)";
-        const string _headername = "x-mac-turkish";
-        const string _webname = "x-mac-turkish";
-        const int _windowsCodepage = 10081;
+        const string _bodyname        = "x-mac-turkish";
+        const int    _codepage        = 10081;
+        const string _encodingname    = "Turkish (Mac)";
+        const string _headername      = "x-mac-turkish";
+        const string _webname         = "x-mac-turkish";
+        const int    _windowsCodepage = 10081;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Macintosh Turkish to Unicode character map.

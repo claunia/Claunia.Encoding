@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class MacRoman : Encoding
     {
-        const string _bodyname = "macintosh";
-        const int _codepage = 10000;
-        const string _encodingname = "Western European (Mac)";
-        const string _headername = "macintosh";
-        const string _webname = "macintosh";
-        const int _windowsCodepage = 10000;
+        const string _bodyname        = "macintosh";
+        const int    _codepage        = 10000;
+        const string _encodingname    = "Western European (Mac)";
+        const string _headername      = "macintosh";
+        const string _webname         = "macintosh";
+        const int    _windowsCodepage = 10000;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Mac to Unicode character map.

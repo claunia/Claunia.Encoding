@@ -68,12 +68,10 @@ namespace Claunia.Encoding
         public const string Estonian = "Põdur Zagrebi tšellomängija-följetonist Ciqo külmetas kehvas garaažis.";
         /// <summary>A pangram that contains all (or most) Finnish characters.</summary>
         public const string Finnish =
-                "Fahrenheit ja Celsius yrjösivät Åsan backgammon-peliin, Volkswagenissa, daiquirin ja ZX81:n yhteisvaikutuksesta."
-            ;
+            "Fahrenheit ja Celsius yrjösivät Åsan backgammon-peliin, Volkswagenissa, daiquirin ja ZX81:n yhteisvaikutuksesta.";
         /// <summary>A pangram that contains all (or most) French characters.</summary>
         public const string French =
-                "Le cœur déçu mais l'âme plutôt naïve, Louÿs rêva de crapaüter en canoë au delà des îles, près du mälströn où brûlent les novæ."
-            ;
+            "Le cœur déçu mais l'âme plutôt naïve, Louÿs rêva de crapaüter en canoë au delà des îles, près du mälströn où brûlent les novæ.";
         /// <summary>A pangram that contains all (or most) Galician characters.</summary>
         public const string Galician =
             "Necesitamos unha tipografía chuliña de cor kiwi, que lle zorregue unha labazada visual á xente.";
@@ -81,12 +79,10 @@ namespace Claunia.Encoding
         public const string German = "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.";
         /// <summary>A pangram that contains all (or most) Greek characters.</summary>
         public const string Greek =
-                "Ταχίστη αλώπηξ βαφής ψημένη γη, δρασκελίζει υπέρ νωθρού κυνός Takhístè alôpèx vaphês psèménè gè, draskelízei ypér nòthroý kynós."
-            ;
+            "Ταχίστη αλώπηξ βαφής ψημένη γη, δρασκελίζει υπέρ νωθρού κυνός Takhístè alôpèx vaphês psèménè gè, draskelízei ypér nòthroý kynós.";
         /// <summary>A pangram that contains all (or most) Hebrew characters.</summary>
         public const string Hebrew =
-                "לכן חכו לי נאם יהוה ליום קומי לעד, כי משפטי לאסף גוים לקבצי ממלכות, לשפך עליהם זעמי כל חרון אפי, כי באש קנאתי תאכל כל הארץ"
-            ;
+            "לכן חכו לי נאם יהוה ליום קומי לעד, כי משפטי לאסף גוים לקבצי ממלכות, לשפך עליהם זעמי כל חרון אפי, כי באש קנאתי תאכל כל הארץ";
         /// <summary>A pangram that contains all (or most) Hungarian characters.</summary>
         public const string Hungarian = "Jó foxim és don Quijote húszwattos lámpánál ülve egy pár bűvös cipőt készít.";
         /// <summary>A pangram that contains all (or most) Icelandic characters.</summary>
@@ -111,8 +107,7 @@ namespace Claunia.Encoding
         public const string Polish = "Jeżu klątw, spłódź Finom część gry hańb!";
         /// <summary>A pangram that contains all (or most) Portuguese characters.</summary>
         public const string Portuguese =
-                "À noite, vovô Kowalsky vê o ímã cair no pé do pingüim queixoso e vovó põe açúcar no chá de tâmaras do jabuti feliz."
-            ;
+            "À noite, vovô Kowalsky vê o ímã cair no pé do pingüim queixoso e vovó põe açúcar no chá de tâmaras do jabuti feliz.";
         /// <summary>A pangram that contains all (or most) Romanian characters.</summary>
         public const string Romanian = "Înjurând pițigăiat, zoofobul comandă vexat whisky și tequila.";
         /// <summary>A pangram that contains all (or most) Russian characters.</summary>
@@ -129,8 +124,7 @@ namespace Claunia.Encoding
         public const string Slovenian = "Besni dirkač iz formule žuga cehu poštarjev.";
         /// <summary>A pangram that contains all (or most) Spanish characters.</summary>
         public const string Spanish =
-                "El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja."
-            ;
+            "El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja.";
         /// <summary>A pangram that contains all (or most) Swedish characters.</summary>
         public const string Swedish = "Flygande bäckasiner söka hwila på mjuka tuvor.";
         /// <summary>A pangram that contains all (or most) Turkish characters.</summary>

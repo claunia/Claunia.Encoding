@@ -33,19 +33,19 @@ namespace Claunia.Encoding
     /// </summary>
     public class Apple2c : Encoding
     {
-        const string _bodyname = "apple2c";
-        const int _codepage = 0;
-        const string _encodingname = "Western European (Apple IIc)";
-        const string _headername = "apple2c";
-        const string _webname = "";
-        const int _windowsCodepage = 0;
+        const string _bodyname        = "apple2c";
+        const int    _codepage        = 0;
+        const string _encodingname    = "Western European (Apple IIc)";
+        const string _headername      = "apple2c";
+        const string _webname         = "";
+        const int    _windowsCodepage = 0;
 
-        const bool browserDisplay = false;
-        const bool browserSave = false;
+        const bool browserDisplay  = false;
+        const bool browserSave     = false;
         const bool mailNewsDisplay = false;
-        const bool mailNewsSave = false;
-        const bool readOnly = true;
-        const bool singleByte = true;
+        const bool mailNewsSave    = false;
+        const bool readOnly        = true;
+        const bool singleByte      = true;
 
         /// <summary>
         ///     The Apple IIc to Unicode character map.
