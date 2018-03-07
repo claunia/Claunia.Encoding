@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Claunia.Encoding</PackageId>
-    <PackageVersion>1.5</PackageVersion>
+    <PackageVersion>1.6</PackageVersion>
     <Authors>Natalia Portillo</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Owners>Natalia Portillo</Owners>
@@ -22,8 +22,8 @@
     <Title>Claunia.Encoding</Title>
     <Description>Library to provide codepage conversion to and from archaic and old computer systems and Unicode.</Description>
     <PackageLicenseUrl>https://raw.githubusercontent.com/claunia/Claunia.Encoding/master/LICENSE.MIT</PackageLicenseUrl>
-    <ReleaseVersion>1.5</ReleaseVersion>
-    <PackageReleaseNotes>Added GEM character set.</PackageReleaseNotes>
+    <ReleaseVersion>1.6</ReleaseVersion>
+    <PackageReleaseNotes>Added GEOS character set.</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,6 +50,7 @@
     <Compile Include="Apple2e.cs" />
     <Compile Include="Apple2gs.cs" />
     <Compile Include="Gem.cs" />
+    <Compile Include="Geos.cs" />
     <Compile Include="PETSCII.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LisaRoman.cs" />

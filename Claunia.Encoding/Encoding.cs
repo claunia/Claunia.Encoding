@@ -60,6 +60,10 @@ namespace Claunia.Encoding
         ///     Static instance for the GEM encoding
         /// </summary>
         public static System.Text.Encoding GemEncoding = new Gem();
+        /// <summary>
+        ///     Static instance for the GEM encoding
+        /// </summary>
+        public static System.Text.Encoding GeosEncoding = new Geos();
 
         /// <summary>
         ///     Gets a value indicating whether the current encoding can be used by browser clients for displaying content.

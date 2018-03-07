@@ -14,6 +14,7 @@ Supported encodings
 * Commodore PET Standard Code for Information Interchange (PETSCII)
 * DEC Radix-50
 * GEM Character Set
+* GEOS Character Set
 * MacArabic
 * MacCentralEuropean
 * MacCroatian
