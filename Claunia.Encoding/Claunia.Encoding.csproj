@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Claunia.Encoding</PackageId>
-    <PackageVersion>1.6</PackageVersion>
+    <PackageVersion>1.6.1</PackageVersion>
     <Authors>Natalia Portillo</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Owners>Natalia Portillo</Owners>
