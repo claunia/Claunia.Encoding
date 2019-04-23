@@ -11,8 +11,8 @@ namespace Claunia.Encoding
     /// </summary>
     public sealed class EncodingInfo
     {
-        bool isSystem;
-        Type thisType;
+        bool          isSystem;
+        readonly Type thisType;
 
         internal EncodingInfo(int  codePage, string name, string displayName, bool system = true,
                               Type internalType = null)
@@ -49,10 +49,7 @@ namespace Claunia.Encoding
         ///     A <see cref="T:Claunia.Encoding.Encoding" /> object that corresponds to the current
         ///     <see cref="T:Claunia.Encoding.EncodingInfo" /> object.
         /// </returns>
-        public Encoding GetEncoding()
-        {
-            return (Encoding)thisType.GetConstructor(new Type[] { }).Invoke(new object[] { });
-        }
+        public Encoding GetEncoding() => (Encoding)thisType.GetConstructor(new Type[] { }).Invoke(new object[] { });
 
         /// <summary>
         ///     Gets a value indicating whether the specified object is equal to the current EncodingInfo object.
@@ -62,18 +59,12 @@ namespace Claunia.Encoding
         ///     <c>true</c> if value is a <see cref="T:Claunia.Encoding.EncodingInfo" /> and is equal to the current
         ///     <see cref="T:Claunia.Encoding.EncodingInfo" />; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object value)
-        {
-            return value is EncodingInfo that && CodePage == that.CodePage;
-        }
+        public override bool Equals(object value) => value is EncodingInfo that && CodePage == that.CodePage;
 
         /// <summary>
         ///     Returns the hash code for the current EncodingInfo object.
         /// </summary>
         /// <returns>A 32-bit signed integer hash code.</returns>
-        public override int GetHashCode()
-        {
-            return CodePage;
-        }
+        public override int GetHashCode() => CodePage;
     }
 }

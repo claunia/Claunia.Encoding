@@ -230,10 +230,8 @@ namespace Claunia.Encoding
         /// <param name="charCount">The number of characters to encode.</param>
         /// <param name="bytes">The byte array to contain the resulting sequence of bytes.</param>
         /// <param name="byteIndex">The index at which to start writing the resulting sequence of bytes.</param>
-        public override int GetBytes(string s, int charIndex, int charCount, byte[] bytes, int byteIndex)
-        {
-            return GetBytes(s.ToCharArray(), charIndex, charCount, bytes, byteIndex);
-        }
+        public override int GetBytes(string s, int charIndex, int charCount, byte[] bytes, int byteIndex) =>
+            GetBytes(s.ToCharArray(), charIndex, charCount, bytes, byteIndex);
 
         /// <summary>
         ///     Encodes all the characters in the specified string into a sequence of bytes.
@@ -312,20 +310,14 @@ namespace Claunia.Encoding
         /// </summary>
         /// <returns>A byte array containing the results of encoding the specified set of characters.</returns>
         /// <param name="chars">The character array containing the characters to encode.</param>
-        public override byte[] GetBytes(char[] chars)
-        {
-            return GetBytes(chars, 0, chars.Length);
-        }
+        public override byte[] GetBytes(char[] chars) => GetBytes(chars, 0, chars.Length);
 
         /// <summary>
         ///     Calculates the number of characters produced by decoding all the bytes in the specified byte array.
         /// </summary>
         /// <returns>The number of characters produced by decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
-        public override int GetCharCount(byte[] bytes)
-        {
-            return GetCharCount(bytes, 0, bytes.Length);
-        }
+        public override int GetCharCount(byte[] bytes) => GetCharCount(bytes, 0, bytes.Length);
 
         /// <summary>
         ///     Calculates the number of characters produced by decoding a sequence of bytes from the specified byte array.
@@ -388,10 +380,7 @@ namespace Claunia.Encoding
         /// </summary>
         /// <returns>A character array containing the results of decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
-        public override char[] GetChars(byte[] bytes)
-        {
-            return GetChars(bytes, 0, bytes.Length);
-        }
+        public override char[] GetChars(byte[] bytes) => GetChars(bytes, 0, bytes.Length);
 
         /// <summary>
         ///     Decodes a sequence of bytes from the specified byte array into a set of characters.
@@ -445,20 +434,14 @@ namespace Claunia.Encoding
         ///     Returns a sequence of bytes that specifies the encoding used.
         /// </summary>
         /// <returns>A byte array of length zero, as a preamble is not required.</returns>
-        public override byte[] GetPreamble()
-        {
-            return new byte[0];
-        }
+        public override byte[] GetPreamble() => new byte[0];
 
         /// <summary>
         ///     Decodes all the bytes in the specified byte array into a string.
         /// </summary>
         /// <returns>A string that contains the results of decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
-        public override string GetString(byte[] bytes)
-        {
-            return GetString(bytes, 0, bytes.Length);
-        }
+        public override string GetString(byte[] bytes) => GetString(bytes, 0, bytes.Length);
 
         /// <summary>
         ///     Decodes a sequence of bytes from the specified byte array into a string.
@@ -467,20 +450,15 @@ namespace Claunia.Encoding
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         /// <param name="index">The index of the first byte to decode.</param>
         /// <param name="count">The number of bytes to decode.</param>
-        public override string GetString(byte[] bytes, int index, int count)
-        {
-            return new string(GetChars(bytes, index, count));
-        }
+        public override string GetString(byte[] bytes, int index, int count) =>
+            new string(GetChars(bytes, index, count));
 
         /// <summary>
         ///     Converts a ZX81 character to an Unicode character
         /// </summary>
         /// <returns>Unicode character.</returns>
         /// <param name="character">ZX81 character.</param>
-        static char GetChar(byte character)
-        {
-            return ZX81Table[character];
-        }
+        static char GetChar(byte character) => ZX81Table[character];
 
         /// <summary>
         ///     Converts a Unicode character to an ZX81 character

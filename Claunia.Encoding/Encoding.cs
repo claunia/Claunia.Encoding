@@ -130,14 +130,12 @@ namespace Claunia.Encoding
         ///     Returns an array that contains all encodings.
         /// </summary>
         /// <returns>An array that contains all encodings.</returns>
-        public new static IEnumerable<EncodingInfo> GetEncodings()
-        {
-            return (from type in Assembly.GetExecutingAssembly().GetTypes()
-                    where type.IsSubclassOf(typeof(Encoding))
-                    let encoding = (Encoding)type.GetConstructor(new Type[] { }).Invoke(new object[] { })
-                    select new EncodingInfo(encoding.CodePage, encoding.BodyName, encoding.EncodingName, false, type))
-               .ToArray();
-        }
+        public new static IEnumerable<EncodingInfo> GetEncodings() =>
+            (from type in Assembly.GetExecutingAssembly().GetTypes()
+             where type.IsSubclassOf(typeof(Encoding))
+             let encoding = (Encoding)type.GetConstructor(new Type[] { }).Invoke(new object[] { })
+             select new EncodingInfo(encoding.CodePage, encoding.BodyName, encoding.EncodingName, false, type))
+           .ToArray();
 
         /// <summary>
         ///     Returns the encoding associated with the specified code page name.
