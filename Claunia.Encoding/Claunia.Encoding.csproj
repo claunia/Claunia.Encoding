@@ -16,10 +16,10 @@
     <Title>Claunia.Encoding</Title>
     <Description>Library to provide codepage conversion to and from archaic and old computer systems and Unicode.</Description>
     <PackageLicenseUrl>https://raw.githubusercontent.com/claunia/Claunia.Encoding/master/LICENSE.MIT</PackageLicenseUrl>
-    <ReleaseVersion>1.6.1</ReleaseVersion>
-    <PackageReleaseNotes>Support .NET Core</PackageReleaseNotes>
+    <ReleaseVersion>1.7</ReleaseVersion>
+    <PackageReleaseNotes>Support .NET Core and .NET Framework 4.0.</PackageReleaseNotes>
     <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
-    <VersionPrefix>1.6.1</VersionPrefix>
+    <VersionPrefix>1.7</VersionPrefix>
     <Company>Claunia.com</Company>
     <Copyright>© 2016-2019 Natalia Portillo</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -45,34 +45,6 @@
   <PropertyGroup Condition="$(TargetFramework.StartsWith('netcoreapp')) Or $(TargetFramework.StartsWith('netstandard'))">
     <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
-    <DefineConstants>$(DefineConstants);NATIVE_SPAN</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
-    <Reference Include="System" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-  </ItemGroup>
-
-  <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard1.')) Or $(TargetFramework.StartsWith('netcoreapp1.'))">
-    <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
-    <PackageReference Include="System.Linq" Version="4.3.0" />
-    <PackageReference Include="System.Globalization" Version="4.3.0" />
-    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.0" />
-    <PackageReference Include="System.Threading" Version="4.3.0" />
-    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
-    <PackageReference Include="System.Reflection" Version="4.3.0" />
-    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
-    <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
-    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Numerics" Version="4.3.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="..\LICENSE.MIT">
