@@ -4,7 +4,7 @@
 // Author:
 //       Natalia Portillo <claunia@claunia.com>
 //
-// Copyright © 2016-2018 Natalia Portillo
+// Copyright © 2016-2019 Natalia Portillo
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal

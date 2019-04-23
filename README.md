@@ -3,7 +3,7 @@
 
 Library to provide codepage conversion to and from archaic and old computer systems and Unicode.
 
-Copyright © 2016-2018 Natalia Portillo <claunia@claunia.com>
+Copyright © 2016-2019 Natalia Portillo <claunia@claunia.com>
 
 Supported encodings
 ==============================
