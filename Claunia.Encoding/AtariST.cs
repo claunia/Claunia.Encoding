@@ -456,7 +456,7 @@ namespace Claunia.Encoding
         /// </summary>
         /// <returns>A string that contains the results of decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
-        public string GetString(byte[] bytes)
+        public override string GetString(byte[] bytes)
         {
             return GetString(bytes, 0, bytes.Length);
         }

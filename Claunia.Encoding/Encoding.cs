@@ -68,48 +68,48 @@ namespace Claunia.Encoding
         /// <summary>
         ///     Gets a value indicating whether the current encoding can be used by browser clients for displaying content.
         /// </summary>
-        public abstract bool IsBrowserDisplay { get; }
+        public abstract override bool IsBrowserDisplay { get; }
 
         /// <summary>
         ///     Gets a value indicating whether the current encoding can be used by browser clients for saving content.
         /// </summary>
-        public abstract bool IsBrowserSave { get; }
+        public abstract override bool IsBrowserSave { get; }
 
         /// <summary>
         ///     Gets a value indicating whether the current encoding can be used by mail and news clients for displaying content.
         /// </summary>
-        public abstract bool IsMailNewsDisplay { get; }
+        public abstract override bool IsMailNewsDisplay { get; }
 
         /// <summary>
         ///     Gets a value indicating whether the current encoding can be used by mail and news clients for saving content.
         /// </summary>
-        public abstract bool IsMailNewsSave { get; }
+        public abstract override bool IsMailNewsSave { get; }
 
         /// <summary>
         ///     Gets a value indicating whether the current encoding is read-only.
         /// </summary>
         /// <value>The is single byte.</value>
-        public abstract bool IsReadOnly { get; }
+        public new abstract bool IsReadOnly { get; }
 
         /// <summary>
         ///     Gets a value indicating whether the current encoding uses single-byte code points.
         /// </summary>
-        public abstract bool IsSingleByte { get; }
+        public abstract override bool IsSingleByte { get; }
 
         /// <summary>
         ///     Gets the code page identifier of the current Encoding.
         /// </summary>
-        public abstract int CodePage { get; }
+        public abstract override int CodePage { get; }
 
         /// <summary>
         ///     Gets a name for the current encoding that can be used with mail agent body tags
         /// </summary>
-        public abstract string BodyName { get; }
+        public abstract override string BodyName { get; }
 
         /// <summary>
         ///     Gets a name for the current encoding that can be used with mail agent header tags
         /// </summary>
-        public abstract string HeaderName { get; }
+        public abstract override string HeaderName { get; }
 
         /// <summary>
         ///     Ggets the name registered with the Internet Assigned Numbers Authority (IANA) for the current encoding.
@@ -119,18 +119,18 @@ namespace Claunia.Encoding
         /// <summary>
         ///     Gets the human-readable description of the current encoding.
         /// </summary>
-        public abstract string EncodingName { get; }
+        public abstract override string EncodingName { get; }
 
         /// <summary>
         ///     Gets the Windows operating system code page that most closely corresponds to the current encoding.
         /// </summary>
-        public abstract int WindowsCodePage { get; }
+        public abstract override int WindowsCodePage { get; }
 
         /// <summary>
         ///     Returns an array that contains all encodings.
         /// </summary>
         /// <returns>An array that contains all encodings.</returns>
-        public static IEnumerable<EncodingInfo> GetEncodings()
+        public new static IEnumerable<EncodingInfo> GetEncodings()
         {
             return (from type in Assembly.GetExecutingAssembly().GetTypes()
                     where type.IsSubclassOf(typeof(Encoding))
@@ -147,7 +147,7 @@ namespace Claunia.Encoding
         ///     The code page name of the preferred encoding. Any value returned by the WebName property is valid.
         ///     Possible values are listed in the Name column of the table that appears in the Encoding class topic.
         /// </param>
-        public static System.Text.Encoding GetEncoding(string name)
+        public new static System.Text.Encoding GetEncoding(string name)
         {
             foreach(Type type in Assembly.GetExecutingAssembly().GetTypes())
                 if(type.IsSubclassOf(typeof(Encoding)))
