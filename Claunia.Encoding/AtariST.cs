@@ -24,12 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Text;
+
 namespace Claunia.Encoding
 {
     /// <summary>Represents an Atari ST character encoding of Unicode characters.</summary>
-
-    // TODO: 0x09 => U+1F552, 0x0A => U+1F514
-    public class AtariSt : SingleByteEncoding
+    public class AtariSt : SingleByteEncodingWithRunes
     {
         public override string BodyName        => "atarist";
         public override int    CodePage        => 0;
@@ -46,352 +46,394 @@ namespace Claunia.Encoding
         public override bool IsSingleByte      => true;
 
         /// <summary>The Atari ST to Unicode character map.</summary>
-        protected override char[] CharTable => new[]
+        protected override Rune[] CharTable => new[]
         {
             // 0x00
-            '\u0000', '\u21E7', '\u21E9', '\u21E8', '\u21E6', '\u274E', '\uFFFD', '\uFFFD',
+            new Rune(0x0000), new Rune(0x21E7), new Rune(0x21E9), new Rune(0x21E8), new Rune(0x21E6), new Rune(0x1FBBD),
+            new Rune(0x1FBBE), new Rune(0x1FBBF),
 
             // 0x08
-            '\u2713', '\uFFFD', '\uFFFD', '\u266A', '\u000C', '\u000D', '\uFFFD', '\uFFFD',
+            new Rune(0x2713), new Rune(0x1F552), new Rune(0x1F514), new Rune(0x266A), new Rune(0x000C),
+            new Rune(0x000D), new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0x10
-            '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0x1FBF0), new Rune(0x1FBF1), new Rune(0x1FBF2), new Rune(0x1FBF3), new Rune(0x1FBF4),
+            new Rune(0x1FBF5), new Rune(0x1FBF6), new Rune(0x1FBF7),
 
             // 0x18
-            '\uFFFD', '\uFFFD', '\u0259', '\u001B', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0x1FBF8), new Rune(0x1FBF9), new Rune(0x0259), new Rune(0x001B), new Rune(0xFFFD),
+            new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0x20
-            '\u0020', '\u0021', '\u0022', '\u0023', '\u0024', '\u0025', '\u0026', '\u0027',
+            new Rune(0x0020), new Rune(0x0021), new Rune(0x0022), new Rune(0x0023), new Rune(0x0024), new Rune(0x0025),
+            new Rune(0x0026), new Rune(0x0027),
 
             // 0x28
-            '\u0028', '\u0029', '\u002A', '\u002B', '\u002C', '\u002D', '\u002E', '\u002F',
+            new Rune(0x0028), new Rune(0x0029), new Rune(0x002A), new Rune(0x002B), new Rune(0x002C), new Rune(0x002D),
+            new Rune(0x002E), new Rune(0x002F),
 
             // 0x30
-            '\u0030', '\u0031', '\u0032', '\u0033', '\u0034', '\u0035', '\u0036', '\u0037',
+            new Rune(0x0030), new Rune(0x0031), new Rune(0x0032), new Rune(0x0033), new Rune(0x0034), new Rune(0x0035),
+            new Rune(0x0036), new Rune(0x0037),
 
             // 0x38
-            '\u0038', '\u0039', '\u003A', '\u003B', '\u003C', '\u003D', '\u003E', '\u003F',
+            new Rune(0x0038), new Rune(0x0039), new Rune(0x003A), new Rune(0x003B), new Rune(0x003C), new Rune(0x003D),
+            new Rune(0x003E), new Rune(0x003F),
 
             // 0x40
-            '\u0040', '\u0041', '\u0042', '\u0043', '\u0044', '\u0045', '\u0046', '\u0047',
+            new Rune(0x0040), new Rune(0x0041), new Rune(0x0042), new Rune(0x0043), new Rune(0x0044), new Rune(0x0045),
+            new Rune(0x0046), new Rune(0x0047),
 
             // 0x48
-            '\u0048', '\u0049', '\u004A', '\u004B', '\u004C', '\u004D', '\u004E', '\u004F',
+            new Rune(0x0048), new Rune(0x0049), new Rune(0x004A), new Rune(0x004B), new Rune(0x004C), new Rune(0x004D),
+            new Rune(0x004E), new Rune(0x004F),
 
             // 0x50
-            '\u0050', '\u0051', '\u0052', '\u0053', '\u0054', '\u0055', '\u0056', '\u0057',
+            new Rune(0x0050), new Rune(0x0051), new Rune(0x0052), new Rune(0x0053), new Rune(0x0054), new Rune(0x0055),
+            new Rune(0x0056), new Rune(0x0057),
 
             // 0x58
-            '\u0058', '\u0059', '\u005A', '\u005B', '\u005C', '\u005D', '\u005E', '\u005F',
+            new Rune(0x0058), new Rune(0x0059), new Rune(0x005A), new Rune(0x005B), new Rune(0x005C), new Rune(0x005D),
+            new Rune(0x005E), new Rune(0x005F),
 
             // 0x60
-            '\u0060', '\u0061', '\u0062', '\u0063', '\u0064', '\u0065', '\u0066', '\u0067',
+            new Rune(0x0060), new Rune(0x0061), new Rune(0x0062), new Rune(0x0063), new Rune(0x0064), new Rune(0x0065),
+            new Rune(0x0066), new Rune(0x0067),
 
             // 0x68
-            '\u0068', '\u0069', '\u006A', '\u006B', '\u006C', '\u006D', '\u006E', '\u006F',
+            new Rune(0x0068), new Rune(0x0069), new Rune(0x006A), new Rune(0x006B), new Rune(0x006C), new Rune(0x006D),
+            new Rune(0x006E), new Rune(0x006F),
 
             // 0x70
-            '\u0070', '\u0071', '\u0072', '\u0073', '\u0074', '\u0075', '\u0076', '\u0077',
+            new Rune(0x0070), new Rune(0x0071), new Rune(0x0072), new Rune(0x0073), new Rune(0x0074), new Rune(0x0075),
+            new Rune(0x0076), new Rune(0x0077),
 
             // 0x78
-            '\u0078', '\u0079', '\u007A', '\u007B', '\u007C', '\u007D', '\u007E', '\u2302',
+            new Rune(0x0078), new Rune(0x0079), new Rune(0x007A), new Rune(0x007B), new Rune(0x007C), new Rune(0x007D),
+            new Rune(0x007E), new Rune(0x2302),
 
             // 0x80
-            '\u00C7', '\u00FC', '\u00E9', '\u00E2', '\u00E4', '\u00E0', '\u00E5', '\u00E7',
+            new Rune(0x00C7), new Rune(0x00FC), new Rune(0x00E9), new Rune(0x00E2), new Rune(0x00E4), new Rune(0x00E0),
+            new Rune(0x00E5), new Rune(0x00E7),
 
             // 0x88
-            '\u00EA', '\u00EB', '\u00E8', '\u00EF', '\u00EE', '\u00EC', '\u00C4', '\u00C5',
+            new Rune(0x00EA), new Rune(0x00EB), new Rune(0x00E8), new Rune(0x00EF), new Rune(0x00EE), new Rune(0x00EC),
+            new Rune(0x00C4), new Rune(0x00C5),
 
             // 0x90
-            '\u00C9', '\u00E6', '\u00C6', '\u00F4', '\u00F6', '\u00F2', '\u00FB', '\u00F9',
+            new Rune(0x00C9), new Rune(0x00E6), new Rune(0x00C6), new Rune(0x00F4), new Rune(0x00F6), new Rune(0x00F2),
+            new Rune(0x00FB), new Rune(0x00F9),
 
             // 0x98
-            '\u00FF', '\u00D6', '\u00DC', '\u00A2', '\u00A3', '\u00A5', '\u00DF', '\u0192',
+            new Rune(0x00FF), new Rune(0x00D6), new Rune(0x00DC), new Rune(0x00A2), new Rune(0x00A3), new Rune(0x00A5),
+            new Rune(0x00DF), new Rune(0x0192),
 
             // 0xA0
-            '\u00E1', '\u00ED', '\u00F3', '\u00FA', '\u00F1', '\u00D1', '\u00AA', '\u00BA',
+            new Rune(0x00E1), new Rune(0x00ED), new Rune(0x00F3), new Rune(0x00FA), new Rune(0x00F1), new Rune(0x00D1),
+            new Rune(0x00AA), new Rune(0x00BA),
 
             // 0xA8
-            '\u00BF', '\u2310', '\u00AC', '\u00BD', '\u00BC', '\u00A1', '\u00AB', '\u00BB',
+            new Rune(0x00BF), new Rune(0x2310), new Rune(0x00AC), new Rune(0x00BD), new Rune(0x00BC), new Rune(0x00A1),
+            new Rune(0x00AB), new Rune(0x00BB),
 
             // 0xB0
-            '\u00E3', '\u00F5', '\u00D8', '\u00F8', '\u0153', '\u0152', '\u00C0', '\u00C3',
+            new Rune(0x00E3), new Rune(0x00F5), new Rune(0x00D8), new Rune(0x00F8), new Rune(0x0153), new Rune(0x0152),
+            new Rune(0x00C0), new Rune(0x00C3),
 
             // 0xB8
-            '\u00D5', '\u00A8', '\u00B4', '\u2020', '\u00B6', '\u00A9', '\u00AE', '\u2122',
+            new Rune(0x00D5), new Rune(0x00A8), new Rune(0x00B4), new Rune(0x2020), new Rune(0x00B6), new Rune(0x00A9),
+            new Rune(0x00AE), new Rune(0x2122),
 
             // 0xC0
-            '\u0133', '\u0132', '\u05D0', '\u05D1', '\u05D2', '\u05D3', '\u05D4', '\u05D5',
+            new Rune(0x0133), new Rune(0x0132), new Rune(0x05D0), new Rune(0x05D1), new Rune(0x05D2), new Rune(0x05D3),
+            new Rune(0x05D4), new Rune(0x05D5),
 
             // 0xC8
-            '\u05D6', '\u05D7', '\u05D8', '\u05D9', '\u05DB', '\u05DC', '\u05DE', '\u05E0',
+            new Rune(0x05D6), new Rune(0x05D7), new Rune(0x05D8), new Rune(0x05D9), new Rune(0x05DB), new Rune(0x05DC),
+            new Rune(0x05DE), new Rune(0x05E0),
 
             // 0xD0
-            '\u05E1', '\u05E2', '\u05E4', '\u05E6', '\u05E7', '\u05E8', '\u05E9', '\u05EA',
+            new Rune(0x05E1), new Rune(0x05E2), new Rune(0x05E4), new Rune(0x05E6), new Rune(0x05E7), new Rune(0x05E8),
+            new Rune(0x05E9), new Rune(0x05EA),
 
             // 0xD8
-            '\u05DF', '\u05DA', '\u05DD', '\u05E3', '\u05E5', '\u00A7', '\u2227', '\u221E',
+            new Rune(0x05DF), new Rune(0x05DA), new Rune(0x05DD), new Rune(0x05E3), new Rune(0x05E5), new Rune(0x00A7),
+            new Rune(0x2227), new Rune(0x221E),
 
             // 0xE0
-            '\u03B1', '\u03B2', '\u0393', '\u03C0', '\u03A3', '\u03C3', '\u00B5', '\u03C4',
+            new Rune(0x03B1), new Rune(0x03B2), new Rune(0x0393), new Rune(0x03C0), new Rune(0x03A3), new Rune(0x03C3),
+            new Rune(0x00B5), new Rune(0x03C4),
 
             // 0xE8
-            '\u03A6', '\u0398', '\u03A9', '\u03B4', '\u222E', '\u03D5', '\u2208', '\u2229',
+            new Rune(0x03A6), new Rune(0x0398), new Rune(0x03A9), new Rune(0x03B4), new Rune(0x222E), new Rune(0x03D5),
+            new Rune(0x2208), new Rune(0x2229),
 
             // 0xF0
-            '\u2261', '\u00B1', '\u2265', '\u2264', '\u2320', '\u2321', '\u00F7', '\u2248',
+            new Rune(0x2261), new Rune(0x00B1), new Rune(0x2265), new Rune(0x2264), new Rune(0x2320), new Rune(0x2321),
+            new Rune(0x00F7), new Rune(0x2248),
 
             // 0xF8
-            '\u00B0', '\u2219', '\u00B7', '\u221A', '\u207F', '\u00B2', '\u00B3', '\u00AF'
+            new Rune(0x00B0), new Rune(0x2219), new Rune(0x00B7), new Rune(0x221A), new Rune(0x207F), new Rune(0x00B2),
+            new Rune(0x00B3), new Rune(0x00AF)
         };
 
         /// <summary>Converts a Unicode character to an Atari ST character</summary>
         /// <returns>Atari ST character.</returns>
         /// <param name="character">Unicode character.</param>
-        private protected override byte GetByte(char character)
+        private protected override byte GetByte(Rune character) => character.Value switch
         {
-            switch(character)
-            {
-                case '\u0000': return 0x00;
-                case '\u21E7': return 0x01;
-                case '\u21E9': return 0x02;
-                case '\u21E8': return 0x03;
-                case '\u21E6': return 0x04;
-                case '\u274E': return 0x05;
-                case '\u2713': return 0x08;
-                case '\u266A': return 0x0B;
-                case '\u000C': return 0x0C;
-                case '\u000D': return 0x0D;
-                case '\u0259': return 0x1A;
-                case '\u001B': return 0x1B;
-                case '\u0020': return 0x20;
-                case '\u0021': return 0x21;
-                case '\u0022': return 0x22;
-                case '\u0023': return 0x23;
-                case '\u0024': return 0x24;
-                case '\u0025': return 0x25;
-                case '\u0026': return 0x26;
-                case '\u0027': return 0x27;
-                case '\u0028': return 0x28;
-                case '\u0029': return 0x29;
-                case '\u002A': return 0x2A;
-                case '\u002B': return 0x2B;
-                case '\u002C': return 0x2C;
-                case '\u002D': return 0x2D;
-                case '\u002E': return 0x2E;
-                case '\u002F': return 0x2F;
-                case '\u0030': return 0x30;
-                case '\u0031': return 0x31;
-                case '\u0032': return 0x32;
-                case '\u0033': return 0x33;
-                case '\u0034': return 0x34;
-                case '\u0035': return 0x35;
-                case '\u0036': return 0x36;
-                case '\u0037': return 0x37;
-                case '\u0038': return 0x38;
-                case '\u0039': return 0x39;
-                case '\u003A': return 0x3A;
-                case '\u003B': return 0x3B;
-                case '\u003C': return 0x3C;
-                case '\u003D': return 0x3D;
-                case '\u003E': return 0x3E;
-                case '\u003F': return 0x3F;
-                case '\u0040': return 0x40;
-                case '\u0041': return 0x41;
-                case '\u0042': return 0x42;
-                case '\u0043': return 0x43;
-                case '\u0044': return 0x44;
-                case '\u0045': return 0x45;
-                case '\u0046': return 0x46;
-                case '\u0047': return 0x47;
-                case '\u0048': return 0x48;
-                case '\u0049': return 0x49;
-                case '\u004A': return 0x4A;
-                case '\u004B': return 0x4B;
-                case '\u004C': return 0x4C;
-                case '\u004D': return 0x4D;
-                case '\u004E': return 0x4E;
-                case '\u004F': return 0x4F;
-                case '\u0050': return 0x50;
-                case '\u0051': return 0x51;
-                case '\u0052': return 0x52;
-                case '\u0053': return 0x53;
-                case '\u0054': return 0x54;
-                case '\u0055': return 0x55;
-                case '\u0056': return 0x56;
-                case '\u0057': return 0x57;
-                case '\u0058': return 0x58;
-                case '\u0059': return 0x59;
-                case '\u005A': return 0x5A;
-                case '\u005B': return 0x5B;
-                case '\u005C': return 0x5C;
-                case '\u005D': return 0x5D;
-                case '\u005E': return 0x5E;
-                case '\u005F': return 0x5F;
-                case '\u0060': return 0x60;
-                case '\u0061': return 0x61;
-                case '\u0062': return 0x62;
-                case '\u0063': return 0x63;
-                case '\u0064': return 0x64;
-                case '\u0065': return 0x65;
-                case '\u0066': return 0x66;
-                case '\u0067': return 0x67;
-                case '\u0068': return 0x68;
-                case '\u0069': return 0x69;
-                case '\u006A': return 0x6A;
-                case '\u006B': return 0x6B;
-                case '\u006C': return 0x6C;
-                case '\u006D': return 0x6D;
-                case '\u006E': return 0x6E;
-                case '\u006F': return 0x6F;
-                case '\u0070': return 0x70;
-                case '\u0071': return 0x71;
-                case '\u0072': return 0x72;
-                case '\u0073': return 0x73;
-                case '\u0074': return 0x74;
-                case '\u0075': return 0x75;
-                case '\u0076': return 0x76;
-                case '\u0077': return 0x77;
-                case '\u0078': return 0x78;
-                case '\u0079': return 0x79;
-                case '\u007A': return 0x7A;
-                case '\u007B': return 0x7B;
-                case '\u007C': return 0x7C;
-                case '\u007D': return 0x7D;
-                case '\u007E': return 0x7E;
-                case '\u2302': return 0x7F;
-                case '\u00C7': return 0x80;
-                case '\u00FC': return 0x81;
-                case '\u00E9': return 0x82;
-                case '\u00E2': return 0x83;
-                case '\u00E4': return 0x84;
-                case '\u00E0': return 0x85;
-                case '\u00E5': return 0x86;
-                case '\u00E7': return 0x87;
-                case '\u00EA': return 0x88;
-                case '\u00EB': return 0x89;
-                case '\u00E8': return 0x8A;
-                case '\u00EF': return 0x8B;
-                case '\u00EE': return 0x8C;
-                case '\u00EC': return 0x8D;
-                case '\u00C4': return 0x8E;
-                case '\u00C5': return 0x8F;
-                case '\u00C9': return 0x90;
-                case '\u00E6': return 0x91;
-                case '\u00C6': return 0x92;
-                case '\u00F4': return 0x93;
-                case '\u00F6': return 0x94;
-                case '\u00F2': return 0x95;
-                case '\u00FB': return 0x96;
-                case '\u00F9': return 0x97;
-                case '\u00FF': return 0x98;
-                case '\u00D6': return 0x99;
-                case '\u00DC': return 0x9A;
-                case '\u00A2': return 0x9B;
-                case '\u00A3': return 0x9C;
-                case '\u00A5': return 0x9D;
-                case '\u00DF': return 0x9E;
-                case '\u0192': return 0x9F;
-                case '\u00E1': return 0xA0;
-                case '\u00ED': return 0xA1;
-                case '\u00F3': return 0xA2;
-                case '\u00FA': return 0xA3;
-                case '\u00F1': return 0xA4;
-                case '\u00D1': return 0xA5;
-                case '\u00AA': return 0xA6;
-                case '\u00BA': return 0xA7;
-                case '\u00BF': return 0xA8;
-                case '\u2310': return 0xA9;
-                case '\u00AC': return 0xAA;
-                case '\u00BD': return 0xAB;
-                case '\u00BC': return 0xAC;
-                case '\u00A1': return 0xAD;
-                case '\u00AB': return 0xAE;
-                case '\u00BB': return 0xAF;
-                case '\u00E3': return 0xB0;
-                case '\u00F5': return 0xB1;
-                case '\u00D8': return 0xB2;
-                case '\u00F8': return 0xB3;
-                case '\u0153': return 0xB4;
-                case '\u0152': return 0xB5;
-                case '\u00C0': return 0xB6;
-                case '\u00C3': return 0xB7;
-                case '\u00D5': return 0xB8;
-                case '\u00A8': return 0xB9;
-                case '\u00B4': return 0xBA;
-                case '\u2020': return 0xBB;
-                case '\u00B6': return 0xBC;
-                case '\u00A9': return 0xBD;
-                case '\u00AE': return 0xBE;
-                case '\u2122': return 0xBF;
-                case '\u0133': return 0xC0;
-                case '\u0132': return 0xC1;
-                case '\u05D0': return 0xC2;
-                case '\u05D1': return 0xC3;
-                case '\u05D2': return 0xC4;
-                case '\u05D3': return 0xC5;
-                case '\u05D4': return 0xC6;
-                case '\u05D5': return 0xC7;
-                case '\u05D6': return 0xC8;
-                case '\u05D7': return 0xC9;
-                case '\u05D8': return 0xCA;
-                case '\u05D9': return 0xCB;
-                case '\u05DB': return 0xCC;
-                case '\u05DC': return 0xCD;
-                case '\u05DE': return 0xCE;
-                case '\u05E0': return 0xCF;
-                case '\u05E1': return 0xD0;
-                case '\u05E2': return 0xD1;
-                case '\u05E4': return 0xD2;
-                case '\u05E6': return 0xD3;
-                case '\u05E7': return 0xD4;
-                case '\u05E8': return 0xD5;
-                case '\u05E9': return 0xD6;
-                case '\u05EA': return 0xD7;
-                case '\u05DF': return 0xD8;
-                case '\u05DA': return 0xD9;
-                case '\u05DD': return 0xDA;
-                case '\u05E3': return 0xDB;
-                case '\u05E5': return 0xDC;
-                case '\u00A7': return 0xDD;
-                case '\u2227': return 0xDE;
-                case '\u221E': return 0xDF;
-                case '\u03B1': return 0xE0;
-                case '\u03B2': return 0xE1;
-                case '\u0393': return 0xE2;
-                case '\u03C0': return 0xE3;
-                case '\u03A3': return 0xE4;
-                case '\u03C3': return 0xE5;
-                case '\u00B5': return 0xE6;
-                case '\u03C4': return 0xE7;
-                case '\u03A6': return 0xE8;
-                case '\u0398': return 0xE9;
-                case '\u03A9': return 0xEA;
-                case '\u03B4': return 0xEB;
-                case '\u222E': return 0xEC;
-                case '\u03D5': return 0xED;
-                case '\u2208': return 0xEE;
-                case '\u2229': return 0xEF;
-                case '\u2261': return 0xF0;
-                case '\u00B1': return 0xF1;
-                case '\u2265': return 0xF2;
-                case '\u2264': return 0xF3;
-                case '\u2320': return 0xF4;
-                case '\u2321': return 0xF5;
-                case '\u00F7': return 0xF6;
-                case '\u2248': return 0xF7;
-                case '\u00B0': return 0xF8;
-                case '\u2219': return 0xF9;
-                case '\u00B7': return 0xFA;
-                case '\u221A': return 0xFB;
-                case '\u207F': return 0xFC;
-                case '\u00B2': return 0xFD;
-                case '\u00B3': return 0xFE;
-                case '\u00AF': return 0xFF;
-                default:
-                    // Fallback to '?'
-                    return 0x3F;
-            }
-        }
+            0x0000  => 0x00,
+            0x21E7  => 0x01,
+            0x21E9  => 0x02,
+            0x21E8  => 0x03,
+            0x21E6  => 0x04,
+            0x274E  => 0x05,
+            0x1FBBD => 0x05,
+            0x1FBBE => 0x06,
+            0x1FBBF => 0x07,
+            0x2713  => 0x08,
+            0x1F552 => 0x09,
+            0x1F514 => 0x0A,
+            0x266A  => 0x0B,
+            0x000C  => 0x0C,
+            0x000D  => 0x0D,
+            0x1FBF0 => 0x10,
+            0x1FBF1 => 0x11,
+            0x1FBF2 => 0x12,
+            0x1FBF3 => 0x13,
+            0x1FBF4 => 0x14,
+            0x1FBF5 => 0x15,
+            0x1FBF6 => 0x16,
+            0x1FBF7 => 0x17,
+            0x1FBF8 => 0x18,
+            0x1FBF9 => 0x19,
+            0x0259  => 0x1A,
+            0x001B  => 0x1B,
+            0x0020  => 0x20,
+            0x0021  => 0x21,
+            0x0022  => 0x22,
+            0x0023  => 0x23,
+            0x0024  => 0x24,
+            0x0025  => 0x25,
+            0x0026  => 0x26,
+            0x0027  => 0x27,
+            0x0028  => 0x28,
+            0x0029  => 0x29,
+            0x002A  => 0x2A,
+            0x002B  => 0x2B,
+            0x002C  => 0x2C,
+            0x002D  => 0x2D,
+            0x002E  => 0x2E,
+            0x002F  => 0x2F,
+            0x0030  => 0x30,
+            0x0031  => 0x31,
+            0x0032  => 0x32,
+            0x0033  => 0x33,
+            0x0034  => 0x34,
+            0x0035  => 0x35,
+            0x0036  => 0x36,
+            0x0037  => 0x37,
+            0x0038  => 0x38,
+            0x0039  => 0x39,
+            0x003A  => 0x3A,
+            0x003B  => 0x3B,
+            0x003C  => 0x3C,
+            0x003D  => 0x3D,
+            0x003E  => 0x3E,
+            0x003F  => 0x3F,
+            0x0040  => 0x40,
+            0x0041  => 0x41,
+            0x0042  => 0x42,
+            0x0043  => 0x43,
+            0x0044  => 0x44,
+            0x0045  => 0x45,
+            0x0046  => 0x46,
+            0x0047  => 0x47,
+            0x0048  => 0x48,
+            0x0049  => 0x49,
+            0x004A  => 0x4A,
+            0x004B  => 0x4B,
+            0x004C  => 0x4C,
+            0x004D  => 0x4D,
+            0x004E  => 0x4E,
+            0x004F  => 0x4F,
+            0x0050  => 0x50,
+            0x0051  => 0x51,
+            0x0052  => 0x52,
+            0x0053  => 0x53,
+            0x0054  => 0x54,
+            0x0055  => 0x55,
+            0x0056  => 0x56,
+            0x0057  => 0x57,
+            0x0058  => 0x58,
+            0x0059  => 0x59,
+            0x005A  => 0x5A,
+            0x005B  => 0x5B,
+            0x005C  => 0x5C,
+            0x005D  => 0x5D,
+            0x005E  => 0x5E,
+            0x005F  => 0x5F,
+            0x0060  => 0x60,
+            0x0061  => 0x61,
+            0x0062  => 0x62,
+            0x0063  => 0x63,
+            0x0064  => 0x64,
+            0x0065  => 0x65,
+            0x0066  => 0x66,
+            0x0067  => 0x67,
+            0x0068  => 0x68,
+            0x0069  => 0x69,
+            0x006A  => 0x6A,
+            0x006B  => 0x6B,
+            0x006C  => 0x6C,
+            0x006D  => 0x6D,
+            0x006E  => 0x6E,
+            0x006F  => 0x6F,
+            0x0070  => 0x70,
+            0x0071  => 0x71,
+            0x0072  => 0x72,
+            0x0073  => 0x73,
+            0x0074  => 0x74,
+            0x0075  => 0x75,
+            0x0076  => 0x76,
+            0x0077  => 0x77,
+            0x0078  => 0x78,
+            0x0079  => 0x79,
+            0x007A  => 0x7A,
+            0x007B  => 0x7B,
+            0x007C  => 0x7C,
+            0x007D  => 0x7D,
+            0x007E  => 0x7E,
+            0x2302  => 0x7F,
+            0x00C7  => 0x80,
+            0x00FC  => 0x81,
+            0x00E9  => 0x82,
+            0x00E2  => 0x83,
+            0x00E4  => 0x84,
+            0x00E0  => 0x85,
+            0x00E5  => 0x86,
+            0x00E7  => 0x87,
+            0x00EA  => 0x88,
+            0x00EB  => 0x89,
+            0x00E8  => 0x8A,
+            0x00EF  => 0x8B,
+            0x00EE  => 0x8C,
+            0x00EC  => 0x8D,
+            0x00C4  => 0x8E,
+            0x00C5  => 0x8F,
+            0x00C9  => 0x90,
+            0x00E6  => 0x91,
+            0x00C6  => 0x92,
+            0x00F4  => 0x93,
+            0x00F6  => 0x94,
+            0x00F2  => 0x95,
+            0x00FB  => 0x96,
+            0x00F9  => 0x97,
+            0x00FF  => 0x98,
+            0x00D6  => 0x99,
+            0x00DC  => 0x9A,
+            0x00A2  => 0x9B,
+            0x00A3  => 0x9C,
+            0x00A5  => 0x9D,
+            0x00DF  => 0x9E,
+            0x0192  => 0x9F,
+            0x00E1  => 0xA0,
+            0x00ED  => 0xA1,
+            0x00F3  => 0xA2,
+            0x00FA  => 0xA3,
+            0x00F1  => 0xA4,
+            0x00D1  => 0xA5,
+            0x00AA  => 0xA6,
+            0x00BA  => 0xA7,
+            0x00BF  => 0xA8,
+            0x2310  => 0xA9,
+            0x00AC  => 0xAA,
+            0x00BD  => 0xAB,
+            0x00BC  => 0xAC,
+            0x00A1  => 0xAD,
+            0x00AB  => 0xAE,
+            0x00BB  => 0xAF,
+            0x00E3  => 0xB0,
+            0x00F5  => 0xB1,
+            0x00D8  => 0xB2,
+            0x00F8  => 0xB3,
+            0x0153  => 0xB4,
+            0x0152  => 0xB5,
+            0x00C0  => 0xB6,
+            0x00C3  => 0xB7,
+            0x00D5  => 0xB8,
+            0x00A8  => 0xB9,
+            0x00B4  => 0xBA,
+            0x2020  => 0xBB,
+            0x00B6  => 0xBC,
+            0x00A9  => 0xBD,
+            0x00AE  => 0xBE,
+            0x2122  => 0xBF,
+            0x0133  => 0xC0,
+            0x0132  => 0xC1,
+            0x05D0  => 0xC2,
+            0x05D1  => 0xC3,
+            0x05D2  => 0xC4,
+            0x05D3  => 0xC5,
+            0x05D4  => 0xC6,
+            0x05D5  => 0xC7,
+            0x05D6  => 0xC8,
+            0x05D7  => 0xC9,
+            0x05D8  => 0xCA,
+            0x05D9  => 0xCB,
+            0x05DB  => 0xCC,
+            0x05DC  => 0xCD,
+            0x05DE  => 0xCE,
+            0x05E0  => 0xCF,
+            0x05E1  => 0xD0,
+            0x05E2  => 0xD1,
+            0x05E4  => 0xD2,
+            0x05E6  => 0xD3,
+            0x05E7  => 0xD4,
+            0x05E8  => 0xD5,
+            0x05E9  => 0xD6,
+            0x05EA  => 0xD7,
+            0x05DF  => 0xD8,
+            0x05DA  => 0xD9,
+            0x05DD  => 0xDA,
+            0x05E3  => 0xDB,
+            0x05E5  => 0xDC,
+            0x00A7  => 0xDD,
+            0x2227  => 0xDE,
+            0x221E  => 0xDF,
+            0x03B1  => 0xE0,
+            0x03B2  => 0xE1,
+            0x0393  => 0xE2,
+            0x03C0  => 0xE3,
+            0x03A3  => 0xE4,
+            0x03C3  => 0xE5,
+            0x00B5  => 0xE6,
+            0x03C4  => 0xE7,
+            0x03A6  => 0xE8,
+            0x0398  => 0xE9,
+            0x03A9  => 0xEA,
+            0x03B4  => 0xEB,
+            0x222E  => 0xEC,
+            0x03D5  => 0xED,
+            0x2208  => 0xEE,
+            0x2229  => 0xEF,
+            0x2261  => 0xF0,
+            0x00B1  => 0xF1,
+            0x2265  => 0xF2,
+            0x2264  => 0xF3,
+            0x2320  => 0xF4,
+            0x2321  => 0xF5,
+            0x00F7  => 0xF6,
+            0x2248  => 0xF7,
+            0x00B0  => 0xF8,
+            0x2219  => 0xF9,
+            0x00B7  => 0xFA,
+            0x221A  => 0xFB,
+            0x207F  => 0xFC,
+            0x00B2  => 0xFD,
+            0x00B3  => 0xFE,
+            0x00AF  => 0xFF,
+            _       => 0x3F
+        };
     }
 }
