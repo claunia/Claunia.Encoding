@@ -58,7 +58,7 @@ namespace Claunia.Encoding.Tests
         // Well basically this is taken from MSDN's documentation :p
         public void GetExternalEncoding()
         {
-            System.Text.Encoding e = Encoding.GetEncoding("shift_jis");
+            System.Text.Encoding e = Encoding.GetEncoding("iso8859-1");
         }
 
         [Test]
