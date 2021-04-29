@@ -1,13 +1,17 @@
 using System;
+using System.Globalization;
+using System.Linq;
+using System.Text;
 
 namespace Claunia.Encoding
 {
     /// <summary>
-    /// Implements a class that converts to/from a single byte codepage and UTF-16 representable strings
+    /// Implements a class that converts to/from a single byte codepage and strings that contains elements that need
+    /// surrogates in UTF-16, using runes.
     /// </summary>
-    public abstract class SingleByteEncoding : Encoding
+    public abstract class SingleByteEncodingWithRunes : Encoding
     {
-        protected abstract char[] CharTable { get; }
+        protected abstract Rune[] CharTable { get; }
 
         /// <summary>Gets a value indicating whether the current encoding can be used by browser clients for displaying content.</summary>
         public abstract override bool IsBrowserDisplay { get; }
@@ -57,7 +61,7 @@ namespace Claunia.Encoding
             if(s == null)
                 throw new ArgumentNullException(nameof(s));
 
-            return s.Length;
+            return new StringInfo(s).LengthInTextElements;
         }
 
         /// <summary>Calculates the number of bytes produced by encoding a set of characters from the specified character array.</summary>
@@ -78,7 +82,7 @@ namespace Claunia.Encoding
                index + count > chars.Length)
                 throw new ArgumentOutOfRangeException(nameof(index));
 
-            return count;
+            return new StringInfo(new string(chars, index, count)).LengthInTextElements;
         }
 
         /// <summary>Calculates the number of bytes produced by encoding all the characters in the specified character array.</summary>
@@ -89,7 +93,7 @@ namespace Claunia.Encoding
             if(chars == null)
                 throw new ArgumentNullException(nameof(chars));
 
-            return chars.Length;
+            return new StringInfo(new string(chars)).LengthInTextElements;
         }
 
         /// <summary>Encodes a set of characters from the specified <see cref="string" /> into the specified byte array.</summary>
@@ -110,7 +114,7 @@ namespace Claunia.Encoding
             if(s == null)
                 throw new ArgumentNullException(nameof(s));
 
-            return GetBytes(s.ToCharArray(), 0, s.Length);
+            return GetBytes(s.ToCharArray(), 0, new StringInfo(s).LengthInTextElements);
         }
 
         /// <summary>Encodes a set of characters from the specified character array into the specified byte array.</summary>
@@ -173,13 +177,33 @@ namespace Claunia.Encoding
             if(count < 0)
                 throw new ArgumentOutOfRangeException(nameof(count));
 
-            if(count + index > chars.Length)
+            string s = new(chars);
+
+            if(count + index > new StringInfo(s).LengthInTextElements)
                 throw new ArgumentOutOfRangeException(nameof(count));
 
             byte[] bytes = new byte[count];
 
+            StringRuneEnumerator runes = s.EnumerateRunes();
+            runes.MoveNext();
+
+            for(int i = 0; i < index; i++)
+            {
+                if(!runes.MoveNext())
+                    throw new ArgumentOutOfRangeException(nameof(index));
+            }
+
+            bool finished = false;
+
             for(int i = 0; i < count; i++)
-                bytes[i] = GetByte(chars[index + i]);
+            {
+                if(finished)
+                    throw new ArgumentOutOfRangeException(nameof(count));
+
+                bytes[i] = GetByte(runes.Current);
+
+                finished = !runes.MoveNext();
+            }
 
             return bytes;
         }
@@ -270,27 +294,8 @@ namespace Claunia.Encoding
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         /// <param name="index">The index of the first byte to decode.</param>
         /// <param name="count">The number of bytes to decode.</param>
-        public override char[] GetChars(byte[] bytes, int index, int count)
-        {
-            if(bytes == null)
-                throw new ArgumentNullException(nameof(bytes));
-
-            if(index < 0)
-                throw new ArgumentOutOfRangeException(nameof(index));
-
-            if(count < 0)
-                throw new ArgumentOutOfRangeException(nameof(count));
-
-            if(count + index > bytes.Length)
-                throw new ArgumentOutOfRangeException(nameof(count));
-
-            char[] chars = new char[count];
-
-            for(int i = 0; i < count; i++)
-                chars[i] = GetChar(bytes[index + i]);
-
-            return chars;
-        }
+        public override char[] GetChars(byte[] bytes, int index, int count) =>
+            GetString(bytes, index, count).ToCharArray();
 
         /// <summary>Calculates the maximum number of bytes produced by encoding the specified number of characters.</summary>
         /// <returns>The maximum number of bytes produced by encoding the specified number of characters.</returns>
@@ -328,13 +333,40 @@ namespace Claunia.Encoding
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         /// <param name="index">The index of the first byte to decode.</param>
         /// <param name="count">The number of bytes to decode.</param>
-        public override string GetString(byte[] bytes, int index, int count) => new(GetChars(bytes, index, count));
+        public override string GetString(byte[] bytes, int index, int count)
+        {
+            if(bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
+            if(index < 0)
+                throw new ArgumentOutOfRangeException(nameof(index));
+
+            if(count < 0)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
+            if(count + index > bytes.Length)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
+            Rune[] runes = new Rune[count];
+
+            for(int i = 0; i < count; i++)
+                runes[i] = GetChar(bytes[index + i]);
+
+            char[] chars = new char[runes.Select(r => r.Utf16SequenceLength).Sum()];
+
+            int outPos = 0;
+
+            foreach(var r in runes)
+                outPos += r.EncodeToUtf16(new Span<char>(chars, outPos, chars.Length - outPos));
+
+            return new string(chars);
+        }
 
         /// <summary>Converts a codepage character to an Unicode character</summary>
         /// <returns>Unicode character.</returns>
         /// <param name="character">Codepage character.</param>
-        char GetChar(byte character) => CharTable[character];
+        Rune GetChar(byte character) => CharTable[character];
 
-        private protected abstract byte GetByte(char character);
+        private protected abstract byte GetByte(Rune character);
     }
 }
