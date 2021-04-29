@@ -21,8 +21,7 @@
     <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
     <VersionPrefix>1.7</VersionPrefix>
     <Company>Claunia.com</Company>
-    <Copyright>© 2016-2019 Natalia Portillo</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>© 2016-2021 Natalia Portillo</Copyright>
     <PackageProjectUrl>https://www.github.com/claunia/Claunia.Encoding</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en-US</NeutralLanguage>
