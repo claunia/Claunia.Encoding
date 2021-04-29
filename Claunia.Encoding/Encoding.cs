@@ -92,11 +92,12 @@ namespace Claunia.Encoding
         /// <summary>Returns an array that contains all encodings.</summary>
         /// <returns>An array that contains all encodings.</returns>
         public new static IEnumerable<EncodingInfo> GetEncodings() =>
-            (from type in Assembly.GetExecutingAssembly().GetTypes() where type.IsSubclassOf(typeof(Encoding))
-             let encoding = (Encoding)type.GetConstructor(new Type[]
-                                                              {}).Invoke(new object[]
-                                                                             {}) select new
-                 EncodingInfo(encoding.CodePage, encoding.BodyName, encoding.EncodingName, false, type)).ToArray();
+            from type in Assembly.GetExecutingAssembly().GetTypes()
+            where type.IsSubclassOf(typeof(Encoding)) && !type.IsAbstract let encoding = (Encoding)type.
+                GetConstructor(new Type[]
+                                   {})?.Invoke(new object[]
+                                                   {}) where encoding is {}
+            select new EncodingInfo(encoding.CodePage, encoding.BodyName, encoding.EncodingName, false, type);
 
         /// <summary>Returns the encoding associated with the specified code page name.</summary>
         /// <returns>The encoding associated with the specified code page.</returns>
@@ -107,13 +108,14 @@ namespace Claunia.Encoding
         public new static System.Text.Encoding GetEncoding(string name)
         {
             foreach(Type type in Assembly.GetExecutingAssembly().GetTypes())
-                if(type.IsSubclassOf(typeof(Encoding)))
+                if(type.IsSubclassOf(typeof(Encoding)) &&
+                   !type.IsAbstract)
                 {
                     var encoding = (Encoding)type.GetConstructor(new Type[]
-                                                                     {}).Invoke(new object[]
-                                                                                    {});
+                                                                     {})?.Invoke(new object[]
+                        {});
 
-                    if(encoding.BodyName == name.ToLowerInvariant())
+                    if(encoding?.BodyName == name.ToLowerInvariant())
                         return encoding;
                 }
 
