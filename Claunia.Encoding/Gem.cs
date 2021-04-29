@@ -28,203 +28,207 @@ using System;
 
 namespace Claunia.Encoding
 {
-    /// <summary>
-    ///     Represents a GEM character encoding of Unicode characters.
-    /// </summary>
+    /// <summary>Represents a GEM character encoding of Unicode characters.</summary>
     public class Gem : Encoding
     {
-        const string _bodyname        = "gem";
-        const int    _codepage        = 0;
-        const string _encodingname    = "Western European (GEM)";
-        const string _headername      = "gem";
-        const string _webname         = "";
-        const int    _windowsCodepage = 0;
+        const string BODY_NAME        = "gem";
+        const int    CODEPAGE         = 0;
+        const string ENCODING_NAME    = "Western European (GEM)";
+        const string HEADER_NAME      = "gem";
+        const string WEB_NAME         = "";
+        const int    WINDOWS_CODEPAGE = 0;
 
-        const bool browserDisplay  = false;
-        const bool browserSave     = false;
-        const bool mailNewsDisplay = false;
-        const bool mailNewsSave    = false;
-        const bool readOnly        = false;
-        const bool singleByte      = true;
+        const bool BROWSER_DISPLAY   = false;
+        const bool BROWSER_SAVE      = false;
+        const bool MAIL_NEWS_DISPLAY = false;
+        const bool MAIL_NEWS_SAVE    = false;
+        const bool READ_ONLY         = false;
+        const bool SINGLE_BYTE       = true;
 
-        /// <summary>
-        ///     The GEM to Unicode character map.
-        ///     Pending: 0x09 => 0x0001F552, 0x0A => 0x0001F514
-        /// </summary>
-        static readonly char[] GemTable =
+        /// <summary>The GEM to Unicode character map. Pending: 0x09 => 0x0001F552, 0x0A => 0x0001F514</summary>
+        static readonly char[] _gemTable =
         {
             // 0x00
             '\u0000', '\u21E7', '\u21E9', '\u21E8', '\u21E6', '\u25FC', '\uFFFD', '\u25C6',
+
             // 0x08
             '\u2713', '\uFFFD', '\uFFFD', '\u266A', '\u25B4', '\u25BE', '\u25B8', '\u25C2',
+
             // 0x10
             '\u25BA', '\u25C4', '\u29D3', '\u2582', '\u00B6', '\u00A7', '\u2195', '\u21A8',
+
             // 0x18
             '\u2191', '\u2193', '\u2192', '\u2190', '\u221F', '\u2194', '\u25B2', '\u25BC',
+
             // 0x20
             '\u0020', '\u0021', '\u0022', '\u0023', '\u0024', '\u0025', '\u0026', '\u0027',
+
             // 0x28
             '\u0028', '\u0029', '\u002A', '\u002B', '\u002C', '\u002D', '\u002E', '\u002F',
+
             // 0x30
             '\u0030', '\u0031', '\u0032', '\u0033', '\u0034', '\u0035', '\u0036', '\u0037',
+
             // 0x38
             '\u0038', '\u0039', '\u003A', '\u003B', '\u003C', '\u003D', '\u003E', '\u003F',
+
             // 0x40
             '\u0040', '\u0041', '\u0042', '\u0043', '\u0044', '\u0045', '\u0046', '\u0047',
+
             // 0x48
             '\u0048', '\u0049', '\u004A', '\u004B', '\u004C', '\u004D', '\u004E', '\u004F',
+
             // 0x50
             '\u0050', '\u0051', '\u0052', '\u0053', '\u0054', '\u0055', '\u0056', '\u0057',
+
             // 0x58
             '\u0058', '\u0059', '\u005A', '\u005B', '\u005C', '\u005D', '\u005E', '\u005F',
+
             // 0x60
             '\u0060', '\u0061', '\u0062', '\u0063', '\u0064', '\u0065', '\u0066', '\u0067',
+
             // 0x68
             '\u0068', '\u0069', '\u006A', '\u006B', '\u006C', '\u006D', '\u006E', '\u006F',
+
             // 0x70
             '\u0070', '\u0071', '\u0072', '\u0073', '\u0074', '\u0075', '\u0076', '\u0077',
+
             // 0x78
             '\u0078', '\u0079', '\u007A', '\u007B', '\u007C', '\u007D', '\u007E', '\u2302',
+
             // 0x80
             '\u00C7', '\u00FC', '\u00E9', '\u00E2', '\u00E4', '\u00E0', '\u00E5', '\u00E7',
+
             // 0x88
             '\u00EA', '\u00EB', '\u00E8', '\u00EF', '\u00EE', '\u00EC', '\u00C4', '\u00C5',
+
             // 0x90
             '\u00C9', '\u00E6', '\u00C6', '\u00F4', '\u00F6', '\u00F2', '\u00FB', '\u00F9',
+
             // 0x98
             '\u00FF', '\u00D6', '\u00DC', '\u00FB', '\u00A3', '\u00D8', '\u00A4', '\u0192',
+
             // 0xA0
             '\u00E1', '\u00ED', '\u00F3', '\u00FA', '\u00F1', '\u00D1', '\u00AA', '\u00BA',
+
             // 0xA8
             '\u00BF', '\u201C', '\u201D', '\u2039', '\u203A', '\u00A1', '\u00AB', '\u00BB',
+
             // 0xB0
             '\u00E3', '\u00F5', '\u00A5', '\u00A2', '\u0153', '\u0152', '\u00C0', '\u00C3',
+
             // 0xB8
             '\u00D5', '\u00A7', '\u2021', '\u2020', '\u00B6', '\u00A9', '\u00AE', '\u2122',
+
             // 0xC0
             '\u201E', '\u2026', '\u2030', '\u2022', '\u2013', '\u2014', '\u2070', '\u00C1',
+
             // 0xC8
             '\u00C2', '\u00C8', '\u00CA', '\u00CB', '\u00CC', '\u00CD', '\u00CE', '\u00CF',
+
             // 0xD0
             '\u00D2', '\u00D3', '\u00D4', '\u0160', '\u0161', '\u00D9', '\u00DA', '\u00DB',
+
             // 0xD8
             '\u0178', '\u00DF', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+
             // 0xE0
             '\u03B1', '\u03B2', '\u0393', '\u03C0', '\u03A3', '\u03C3', '\u00B5', '\u03C4',
+
             // 0xE8
             '\u03A6', '\u0398', '\u03A9', '\u03B4', '\u222E', '\u0278', '\u2208', '\u2229',
+
             // 0xF0
             '\u2261', '\u00B1', '\u2265', '\u2264', '\u2320', '\u2321', '\u00F7', '\u2248',
+
             // 0xF8
             '\u00B0', '\u2219', '\u00B7', '\u221A', '\u207F', '\u00B2', '\u25A0', '\u2205'
         };
 
-        /// <summary>
-        ///     Gets a value indicating whether the current encoding can be used by browser clients for displaying content.
-        /// </summary>
-        public override bool IsBrowserDisplay => browserDisplay;
+        /// <summary>Gets a value indicating whether the current encoding can be used by browser clients for displaying content.</summary>
+        public override bool IsBrowserDisplay => BROWSER_DISPLAY;
+
+        /// <summary>Gets a value indicating whether the current encoding can be used by browser clients for saving content.</summary>
+        public override bool IsBrowserSave => BROWSER_SAVE;
 
         /// <summary>
-        ///     Gets a value indicating whether the current encoding can be used by browser clients for saving content.
+        ///     Gets a value indicating whether the current encoding can be used by mail and news clients for displaying
+        ///     content.
         /// </summary>
-        public override bool IsBrowserSave => browserSave;
+        public override bool IsMailNewsDisplay => MAIL_NEWS_DISPLAY;
 
-        /// <summary>
-        ///     Gets a value indicating whether the current encoding can be used by mail and news clients for displaying content.
-        /// </summary>
-        public override bool IsMailNewsDisplay => mailNewsDisplay;
+        /// <summary>Gets a value indicating whether the current encoding can be used by mail and news clients for saving content.</summary>
+        public override bool IsMailNewsSave => MAIL_NEWS_SAVE;
 
-        /// <summary>
-        ///     Gets a value indicating whether the current encoding can be used by mail and news clients for saving content.
-        /// </summary>
-        public override bool IsMailNewsSave => mailNewsSave;
-
-        /// <summary>
-        ///     Gets a value indicating whether the current encoding is read-only.
-        /// </summary>
+        /// <summary>Gets a value indicating whether the current encoding is read-only.</summary>
         /// <value>The is single byte.</value>
-        public override bool IsReadOnly => readOnly;
+        public override bool IsReadOnly => READ_ONLY;
 
-        /// <summary>
-        ///     Gets a value indicating whether the current encoding uses single-byte code points.
-        /// </summary>
-        public override bool IsSingleByte => singleByte;
+        /// <summary>Gets a value indicating whether the current encoding uses single-byte code points.</summary>
+        public override bool IsSingleByte => SINGLE_BYTE;
 
-        /// <summary>
-        ///     Gets the code page identifier of the current Encoding.
-        /// </summary>
-        public override int CodePage => _codepage;
+        /// <summary>Gets the code page identifier of the current Encoding.</summary>
+        public override int CodePage => CODEPAGE;
 
-        /// <summary>
-        ///     Gets a name for the current encoding that can be used with mail agent body tags
-        /// </summary>
-        public override string BodyName => _bodyname;
+        /// <summary>Gets a name for the current encoding that can be used with mail agent body tags</summary>
+        public override string BodyName => BODY_NAME;
 
-        /// <summary>
-        ///     Gets a name for the current encoding that can be used with mail agent header tags
-        /// </summary>
-        public override string HeaderName => _headername;
+        /// <summary>Gets a name for the current encoding that can be used with mail agent header tags</summary>
+        public override string HeaderName => HEADER_NAME;
 
-        /// <summary>
-        ///     Ggets the name registered with the Internet Assigned Numbers Authority (IANA) for the current encoding.
-        /// </summary>
-        public override string WebName => _webname;
+        /// <summary>Gets the name registered with the Internet Assigned Numbers Authority (IANA) for the current encoding.</summary>
+        public override string WebName => WEB_NAME;
 
-        /// <summary>
-        ///     Gets the human-readable description of the current encoding.
-        /// </summary>
-        public override string EncodingName => _encodingname;
+        /// <summary>Gets the human-readable description of the current encoding.</summary>
+        public override string EncodingName => ENCODING_NAME;
 
-        /// <summary>
-        ///     Gets the Windows operating system code page that most closely corresponds to the current encoding.
-        /// </summary>
-        public override int WindowsCodePage => _windowsCodepage;
+        /// <summary>Gets the Windows operating system code page that most closely corresponds to the current encoding.</summary>
+        public override int WindowsCodePage => WINDOWS_CODEPAGE;
 
-        /// <summary>
-        ///     Calculates the number of bytes produced by encoding the characters in the specified <see cref="string" />.
-        /// </summary>
+        /// <summary>Calculates the number of bytes produced by encoding the characters in the specified <see cref="string" />.</summary>
         /// <returns>The number of bytes produced by encoding the specified characters.</returns>
         /// <param name="s">The <see cref="string" /> containing the set of characters to encode.</param>
         public override int GetByteCount(string s)
         {
-            if(s == null) throw new ArgumentNullException(nameof(s));
+            if(s == null)
+                throw new ArgumentNullException(nameof(s));
 
             return s.Length;
         }
 
-        /// <summary>
-        ///     Calculates the number of bytes produced by encoding a set of characters from the specified character array.
-        /// </summary>
+        /// <summary>Calculates the number of bytes produced by encoding a set of characters from the specified character array.</summary>
         /// <returns>The number of bytes produced by encoding the specified characters.</returns>
         /// <param name="chars">The character array containing the set of characters to encode.</param>
         /// <param name="index">The index of the first character to encode.</param>
         /// <param name="count">The number of characters to encode.</param>
         public override int GetByteCount(char[] chars, int index, int count)
         {
-            if(chars == null) throw new ArgumentNullException(nameof(chars));
+            if(chars == null)
+                throw new ArgumentNullException(nameof(chars));
 
-            if(index < 0 || index >= chars.Length) throw new ArgumentOutOfRangeException(nameof(index));
+            if(index < 0 ||
+               index >= chars.Length)
+                throw new ArgumentOutOfRangeException(nameof(index));
 
-            if(count < 0 || index + count > chars.Length) throw new ArgumentOutOfRangeException(nameof(index));
+            if(count         < 0 ||
+               index + count > chars.Length)
+                throw new ArgumentOutOfRangeException(nameof(index));
 
             return count;
         }
 
-        /// <summary>
-        ///     Calculates the number of bytes produced by encoding all the characters in the specified character array.
-        /// </summary>
+        /// <summary>Calculates the number of bytes produced by encoding all the characters in the specified character array.</summary>
         /// <returns>The number of bytes produced by encoding all the characters in the specified character array.</returns>
         /// <param name="chars">The character array containing the characters to encode.</param>
         public override int GetByteCount(char[] chars)
         {
-            if(chars == null) throw new ArgumentNullException(nameof(chars));
+            if(chars == null)
+                throw new ArgumentNullException(nameof(chars));
 
             return chars.Length;
         }
 
-        /// <summary>
-        ///     Encodes a set of characters from the specified <see cref="string" /> into the specified byte array.
-        /// </summary>
+        /// <summary>Encodes a set of characters from the specified <see cref="string" /> into the specified byte array.</summary>
         /// <returns>The actual number of bytes written into bytes.</returns>
         /// <param name="s">The <see cref="string" /> containing the set of characters to encode.</param>
         /// <param name="charIndex">The index of the first character to encode.</param>
@@ -234,21 +238,18 @@ namespace Claunia.Encoding
         public override int GetBytes(string s, int charIndex, int charCount, byte[] bytes, int byteIndex) =>
             GetBytes(s.ToCharArray(), charIndex, charCount, bytes, byteIndex);
 
-        /// <summary>
-        ///     Encodes all the characters in the specified string into a sequence of bytes.
-        /// </summary>
+        /// <summary>Encodes all the characters in the specified string into a sequence of bytes.</summary>
         /// <returns>A byte array containing the results of encoding the specified set of characters.</returns>
         /// <param name="s">The string containing the characters to encode.</param>
         public override byte[] GetBytes(string s)
         {
-            if(s == null) throw new ArgumentNullException(nameof(s));
+            if(s == null)
+                throw new ArgumentNullException(nameof(s));
 
             return GetBytes(s.ToCharArray(), 0, s.Length);
         }
 
-        /// <summary>
-        ///     Encodes a set of characters from the specified character array into the specified byte array.
-        /// </summary>
+        /// <summary>Encodes a set of characters from the specified character array into the specified byte array.</summary>
         /// <returns>The actual number of bytes written into bytes.</returns>
         /// <param name="chars">The character array containing the set of characters to encode.</param>
         /// <param name="charIndex">The index of the first character to encode.</param>
@@ -257,92 +258,101 @@ namespace Claunia.Encoding
         /// <param name="byteIndex">The index at which to start writing the resulting sequence of bytes.</param>
         public override int GetBytes(char[] chars, int charIndex, int charCount, byte[] bytes, int byteIndex)
         {
-            if(chars == null) throw new ArgumentNullException(nameof(chars));
+            if(chars == null)
+                throw new ArgumentNullException(nameof(chars));
 
-            if(bytes == null) throw new ArgumentNullException(nameof(bytes));
+            if(bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
 
-            if(charIndex < 0) throw new ArgumentOutOfRangeException(nameof(charIndex));
+            if(charIndex < 0)
+                throw new ArgumentOutOfRangeException(nameof(charIndex));
 
-            if(charCount < 0) throw new ArgumentOutOfRangeException(nameof(charCount));
+            if(charCount < 0)
+                throw new ArgumentOutOfRangeException(nameof(charCount));
 
-            if(byteIndex < 0) throw new ArgumentOutOfRangeException(nameof(byteIndex));
+            if(byteIndex < 0)
+                throw new ArgumentOutOfRangeException(nameof(byteIndex));
 
-            if(charIndex >= chars.Length) throw new ArgumentOutOfRangeException(nameof(charIndex));
+            if(charIndex >= chars.Length)
+                throw new ArgumentOutOfRangeException(nameof(charIndex));
 
-            if(charCount + charIndex > chars.Length) throw new ArgumentOutOfRangeException(nameof(charCount));
+            if(charCount + charIndex > chars.Length)
+                throw new ArgumentOutOfRangeException(nameof(charCount));
 
-            if(byteIndex >= bytes.Length) throw new ArgumentOutOfRangeException(nameof(byteIndex));
+            if(byteIndex >= bytes.Length)
+                throw new ArgumentOutOfRangeException(nameof(byteIndex));
 
-            if(byteIndex + charCount > bytes.Length) throw new ArgumentException(nameof(bytes));
+            if(byteIndex + charCount > bytes.Length)
+                throw new ArgumentException(nameof(bytes));
 
             byte[] temp = GetBytes(chars, charIndex, charCount);
 
-            for(int i = 0; i < temp.Length; i++) bytes[i + byteIndex] = temp[i];
+            for(int i = 0; i < temp.Length; i++)
+                bytes[i + byteIndex] = temp[i];
 
             return charCount;
         }
 
-        /// <summary>
-        ///     Encodes a set of characters from the specified character array into a sequence of bytes.
-        /// </summary>
+        /// <summary>Encodes a set of characters from the specified character array into a sequence of bytes.</summary>
         /// <returns>A byte array containing the results of encoding the specified set of characters.</returns>
         /// <param name="chars">The character array containing the set of characters to encode.</param>
         /// <param name="index">The index of the first character to encode.</param>
         /// <param name="count">The number of characters to encode.</param>
         public override byte[] GetBytes(char[] chars, int index, int count)
         {
-            if(chars == null) throw new ArgumentNullException(nameof(chars));
+            if(chars == null)
+                throw new ArgumentNullException(nameof(chars));
 
-            if(index < 0) throw new ArgumentOutOfRangeException(nameof(index));
+            if(index < 0)
+                throw new ArgumentOutOfRangeException(nameof(index));
 
-            if(count < 0) throw new ArgumentOutOfRangeException(nameof(count));
+            if(count < 0)
+                throw new ArgumentOutOfRangeException(nameof(count));
 
-            if(count + index > chars.Length) throw new ArgumentOutOfRangeException(nameof(count));
+            if(count + index > chars.Length)
+                throw new ArgumentOutOfRangeException(nameof(count));
 
             byte[] bytes = new byte[count];
 
-            for(int i = 0; i < count; i++) bytes[i] = GetByte(chars[index + i]);
+            for(int i = 0; i < count; i++)
+                bytes[i] = GetByte(chars[index + i]);
 
             return bytes;
         }
 
-        /// <summary>
-        ///     Encodes all the characters in the specified character array into a sequence of bytes.
-        /// </summary>
+        /// <summary>Encodes all the characters in the specified character array into a sequence of bytes.</summary>
         /// <returns>A byte array containing the results of encoding the specified set of characters.</returns>
         /// <param name="chars">The character array containing the characters to encode.</param>
         public override byte[] GetBytes(char[] chars) => GetBytes(chars, 0, chars.Length);
 
-        /// <summary>
-        ///     Calculates the number of characters produced by decoding all the bytes in the specified byte array.
-        /// </summary>
+        /// <summary>Calculates the number of characters produced by decoding all the bytes in the specified byte array.</summary>
         /// <returns>The number of characters produced by decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         public override int GetCharCount(byte[] bytes) => GetCharCount(bytes, 0, bytes.Length);
 
-        /// <summary>
-        ///     Calculates the number of characters produced by decoding a sequence of bytes from the specified byte array.
-        /// </summary>
+        /// <summary>Calculates the number of characters produced by decoding a sequence of bytes from the specified byte array.</summary>
         /// <returns>The number of characters produced by decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         /// <param name="index">The index of the first byte to decode.</param>
         /// <param name="count">The number of bytes to decode.</param>
         public override int GetCharCount(byte[] bytes, int index, int count)
         {
-            if(bytes == null) throw new ArgumentNullException(nameof(bytes));
+            if(bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
 
-            if(index < 0) throw new ArgumentOutOfRangeException(nameof(index));
+            if(index < 0)
+                throw new ArgumentOutOfRangeException(nameof(index));
 
-            if(count < 0) throw new ArgumentOutOfRangeException(nameof(count));
+            if(count < 0)
+                throw new ArgumentOutOfRangeException(nameof(count));
 
-            if(count + index > bytes.Length) throw new ArgumentOutOfRangeException(nameof(count));
+            if(count + index > bytes.Length)
+                throw new ArgumentOutOfRangeException(nameof(count));
 
             return count;
         }
 
-        /// <summary>
-        ///     Decodes a sequence of bytes from the specified byte array into the specified character array.
-        /// </summary>
+        /// <summary>Decodes a sequence of bytes from the specified byte array into the specified character array.</summary>
         /// <returns>The actual number of characters written into chars.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         /// <param name="byteIndex">The index of the first byte to decode.</param>
@@ -351,119 +361,117 @@ namespace Claunia.Encoding
         /// <param name="charIndex">The index at which to start writing the resulting set of characters.</param>
         public override int GetChars(byte[] bytes, int byteIndex, int byteCount, char[] chars, int charIndex)
         {
-            if(bytes == null) throw new ArgumentNullException(nameof(bytes));
+            if(bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
 
-            if(chars == null) throw new ArgumentNullException(nameof(chars));
+            if(chars == null)
+                throw new ArgumentNullException(nameof(chars));
 
-            if(byteIndex < 0) throw new ArgumentOutOfRangeException(nameof(byteIndex));
+            if(byteIndex < 0)
+                throw new ArgumentOutOfRangeException(nameof(byteIndex));
 
-            if(byteCount < 0) throw new ArgumentOutOfRangeException(nameof(byteCount));
+            if(byteCount < 0)
+                throw new ArgumentOutOfRangeException(nameof(byteCount));
 
-            if(charIndex < 0) throw new ArgumentOutOfRangeException(nameof(charIndex));
+            if(charIndex < 0)
+                throw new ArgumentOutOfRangeException(nameof(charIndex));
 
-            if(byteIndex >= bytes.Length) throw new ArgumentOutOfRangeException(nameof(byteIndex));
+            if(byteIndex >= bytes.Length)
+                throw new ArgumentOutOfRangeException(nameof(byteIndex));
 
-            if(byteCount + byteIndex > bytes.Length) throw new ArgumentOutOfRangeException(nameof(byteCount));
+            if(byteCount + byteIndex > bytes.Length)
+                throw new ArgumentOutOfRangeException(nameof(byteCount));
 
-            if(charIndex >= chars.Length) throw new ArgumentOutOfRangeException(nameof(charIndex));
+            if(charIndex >= chars.Length)
+                throw new ArgumentOutOfRangeException(nameof(charIndex));
 
-            if(charIndex + byteCount > chars.Length) throw new ArgumentException(nameof(chars));
+            if(charIndex + byteCount > chars.Length)
+                throw new ArgumentException(nameof(chars));
 
             char[] temp = GetChars(bytes, byteIndex, byteCount);
 
-            for(int i = 0; i < temp.Length; i++) chars[i + charIndex] = temp[i];
+            for(int i = 0; i < temp.Length; i++)
+                chars[i + charIndex] = temp[i];
 
             return byteCount;
         }
 
-        /// <summary>
-        ///     Decodes all the bytes in the specified byte array into a set of characters.
-        /// </summary>
+        /// <summary>Decodes all the bytes in the specified byte array into a set of characters.</summary>
         /// <returns>A character array containing the results of decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         public override char[] GetChars(byte[] bytes) => GetChars(bytes, 0, bytes.Length);
 
-        /// <summary>
-        ///     Decodes a sequence of bytes from the specified byte array into a set of characters.
-        /// </summary>
+        /// <summary>Decodes a sequence of bytes from the specified byte array into a set of characters.</summary>
         /// <returns>The chars.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         /// <param name="index">The index of the first byte to decode.</param>
         /// <param name="count">The number of bytes to decode.</param>
         public override char[] GetChars(byte[] bytes, int index, int count)
         {
-            if(bytes == null) throw new ArgumentNullException(nameof(bytes));
+            if(bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
 
-            if(index < 0) throw new ArgumentOutOfRangeException(nameof(index));
+            if(index < 0)
+                throw new ArgumentOutOfRangeException(nameof(index));
 
-            if(count < 0) throw new ArgumentOutOfRangeException(nameof(count));
+            if(count < 0)
+                throw new ArgumentOutOfRangeException(nameof(count));
 
-            if(count + index > bytes.Length) throw new ArgumentOutOfRangeException(nameof(count));
+            if(count + index > bytes.Length)
+                throw new ArgumentOutOfRangeException(nameof(count));
 
             char[] chars = new char[count];
 
-            for(int i = 0; i < count; i++) chars[i] = GetChar(bytes[index + i]);
+            for(int i = 0; i < count; i++)
+                chars[i] = GetChar(bytes[index + i]);
 
             return chars;
         }
 
-        /// <summary>
-        ///     Calculates the maximum number of bytes produced by encoding the specified number of characters.
-        /// </summary>
+        /// <summary>Calculates the maximum number of bytes produced by encoding the specified number of characters.</summary>
         /// <returns>The maximum number of bytes produced by encoding the specified number of characters.</returns>
         /// <param name="charCount">The number of characters to encode.</param>
         public override int GetMaxByteCount(int charCount)
         {
-            if(charCount < 0) throw new ArgumentOutOfRangeException(nameof(charCount));
+            if(charCount < 0)
+                throw new ArgumentOutOfRangeException(nameof(charCount));
 
             return charCount;
         }
 
-        /// <summary>
-        ///     Calculates the maximum number of characters produced by decoding the specified number of bytes.
-        /// </summary>
+        /// <summary>Calculates the maximum number of characters produced by decoding the specified number of bytes.</summary>
         /// <returns>The maximum number of characters produced by decoding the specified number of bytes.</returns>
         /// <param name="byteCount">The number of bytes to decode.</param>
         public override int GetMaxCharCount(int byteCount)
         {
-            if(byteCount < 0) throw new ArgumentOutOfRangeException(nameof(byteCount));
+            if(byteCount < 0)
+                throw new ArgumentOutOfRangeException(nameof(byteCount));
 
             return byteCount;
         }
 
-        /// <summary>
-        ///     Returns a sequence of bytes that specifies the encoding used.
-        /// </summary>
+        /// <summary>Returns a sequence of bytes that specifies the encoding used.</summary>
         /// <returns>A byte array of length zero, as a preamble is not required.</returns>
         public override byte[] GetPreamble() => new byte[0];
 
-        /// <summary>
-        ///     Decodes all the bytes in the specified byte array into a string.
-        /// </summary>
+        /// <summary>Decodes all the bytes in the specified byte array into a string.</summary>
         /// <returns>A string that contains the results of decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         public override string GetString(byte[] bytes) => GetString(bytes, 0, bytes.Length);
 
-        /// <summary>
-        ///     Decodes a sequence of bytes from the specified byte array into a string.
-        /// </summary>
+        /// <summary>Decodes a sequence of bytes from the specified byte array into a string.</summary>
         /// <returns>A string that contains the results of decoding the specified sequence of bytes.</returns>
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         /// <param name="index">The index of the first byte to decode.</param>
         /// <param name="count">The number of bytes to decode.</param>
-        public override string GetString(byte[] bytes, int index, int count) =>
-            new string(GetChars(bytes, index, count));
+        public override string GetString(byte[] bytes, int index, int count) => new(GetChars(bytes, index, count));
 
-        /// <summary>
-        ///     Converts a GEM character to an Unicode character
-        /// </summary>
+        /// <summary>Converts a GEM character to an Unicode character</summary>
         /// <returns>Unicode character.</returns>
         /// <param name="character">GEM character.</param>
-        static char GetChar(byte character) => GemTable[character];
+        static char GetChar(byte character) => _gemTable[character];
 
-        /// <summary>
-        ///     Converts a Unicode character to an GEM character
-        /// </summary>
+        /// <summary>Converts a Unicode character to an GEM character</summary>
         /// <returns>GEM character.</returns>
         /// <param name="character">Unicode character.</param>
         static byte GetByte(char character)

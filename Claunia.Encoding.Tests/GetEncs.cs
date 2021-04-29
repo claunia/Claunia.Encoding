@@ -33,6 +33,7 @@ namespace Claunia.Encoding.Tests
     public class GetEncs
     {
         [Test]
+
         // Well basically this is taken from MSDN's documentation :p
         public void GetAllEncs()
         {
@@ -47,14 +48,15 @@ namespace Claunia.Encoding.Tests
             {
                 Encoding e = ei.GetEncoding();
 
-                Console.Write("{0,-6} {1,-25} ", ei.CodePage,         ei.Name);
-                Console.Write("{0,-8} {1,-8} ",  e.IsBrowserDisplay,  e.IsBrowserSave);
-                Console.Write("{0,-8} {1,-8} ",  e.IsMailNewsDisplay, e.IsMailNewsSave);
+                Console.Write("{0,-6} {1,-25} ", ei.CodePage, ei.Name);
+                Console.Write("{0,-8} {1,-8} ", e.IsBrowserDisplay, e.IsBrowserSave);
+                Console.Write("{0,-8} {1,-8} ", e.IsMailNewsDisplay, e.IsMailNewsSave);
                 Console.WriteLine("{0,-8} {1,-8} ", e.IsSingleByte, e.IsReadOnly);
             }
         }
 
         [Test]
+
         // Well basically this is taken from MSDN's documentation :p
         public void GetExternalEncoding()
         {
@@ -62,6 +64,7 @@ namespace Claunia.Encoding.Tests
         }
 
         [Test]
+
         // Well basically this is taken from MSDN's documentation :p
         public void GetInternalEncoding()
         {

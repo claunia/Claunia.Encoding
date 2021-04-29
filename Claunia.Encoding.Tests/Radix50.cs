@@ -31,26 +31,29 @@ namespace Claunia.Encoding.Tests
     [TestFixture]
     public class Radix50
     {
-        const    string Punctuations      = " .$%";
-        readonly byte[] PunctuationsBytes = {0b00000001, 0b11000110, 0b11011101};
-        const    string Digits            = "0123456789";
-        readonly byte[] DigitsBytes =
+        const string PUNCTUATIONS = " .$%";
+        readonly byte[] _punctuationsBytes =
+        {
+            0b00000001, 0b11000110, 0b11011101
+        };
+        const string DIGITS = "0123456789";
+        readonly byte[] _digitsBytes =
         {
             0b01111001, 0b11111000, 0b00100001, 0b10001010, 0b00111001, 0b00100101, 0b10011010, 0b01110000
         };
-        const string UpperLatin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        readonly byte[] UpperLatinBytes =
+        const string UPPER_LATIN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        readonly byte[] _upperLatinBytes =
         {
-            0b00000100, 0b00100000, 0b11000100, 0b00010100, 0b01100001, 0b11001000, 0b00100100, 0b10100010,
-            0b11001100, 0b00110100, 0b11100011, 0b11010000, 0b01000101, 0b00100100, 0b11010100, 0b01010101,
-            0b01100101, 0b11011000, 0b01100101, 0b10100000
+            0b00000100, 0b00100000, 0b11000100, 0b00010100, 0b01100001, 0b11001000, 0b00100100, 0b10100010, 0b11001100,
+            0b00110100, 0b11100011, 0b11010000, 0b01000101, 0b00100100, 0b11010100, 0b01010101, 0b01100101, 0b11011000,
+            0b01100101, 0b10100000
         };
-        const string Sentence       = "THIS IS A TEST$";
-        const string SentencePadded = "THIS IS A TEST$ "; // It gets space padded when decoding is not multiple
-        readonly byte[] SentenceBytes =
+        const string SENTENCE        = "THIS IS A TEST$";
+        const string SENTENCE_PADDED = "THIS IS A TEST$ "; // It gets space padded when decoding is not multiple
+        readonly byte[] _sentenceBytes =
         {
-            0b01010000, 0b10000010, 0b01010011, 0b00000000, 0b10010100, 0b11000000, 0b00000100, 0b00000101,
-            0b00000101, 0b01001101, 0b01000110, 0b11000000
+            0b01010000, 0b10000010, 0b01010011, 0b00000000, 0b10010100, 0b11000000, 0b00000100, 0b00000101, 0b00000101,
+            0b01001101, 0b01000110, 0b11000000
         };
 
         [Test]
@@ -58,14 +61,14 @@ namespace Claunia.Encoding.Tests
         {
             string testString;
 
-            testString = Encoding.Radix50Encoding.GetString(PunctuationsBytes);
-            Assert.AreEqual(Punctuations, testString);
-            testString = Encoding.Radix50Encoding.GetString(DigitsBytes);
-            Assert.AreEqual(Digits, testString);
-            testString = Encoding.Radix50Encoding.GetString(UpperLatinBytes);
-            Assert.AreEqual(UpperLatin, testString);
-            testString = Encoding.Radix50Encoding.GetString(SentenceBytes);
-            Assert.AreEqual(SentencePadded, testString);
+            testString = Encoding.Radix50Encoding.GetString(_punctuationsBytes);
+            Assert.AreEqual(PUNCTUATIONS, testString);
+            testString = Encoding.Radix50Encoding.GetString(_digitsBytes);
+            Assert.AreEqual(DIGITS, testString);
+            testString = Encoding.Radix50Encoding.GetString(_upperLatinBytes);
+            Assert.AreEqual(UPPER_LATIN, testString);
+            testString = Encoding.Radix50Encoding.GetString(_sentenceBytes);
+            Assert.AreEqual(SENTENCE_PADDED, testString);
         }
 
         [Test]
@@ -73,14 +76,14 @@ namespace Claunia.Encoding.Tests
         {
             byte[] byteArray;
 
-            byteArray = Encoding.Radix50Encoding.GetBytes(Punctuations);
-            Assert.AreEqual(PunctuationsBytes, byteArray);
-            byteArray = Encoding.Radix50Encoding.GetBytes(Digits);
-            Assert.AreEqual(DigitsBytes, byteArray);
-            byteArray = Encoding.Radix50Encoding.GetBytes(UpperLatin);
-            Assert.AreEqual(UpperLatinBytes, byteArray);
-            byteArray = Encoding.Radix50Encoding.GetBytes(Sentence);
-            Assert.AreEqual(SentenceBytes, byteArray);
+            byteArray = Encoding.Radix50Encoding.GetBytes(PUNCTUATIONS);
+            Assert.AreEqual(_punctuationsBytes, byteArray);
+            byteArray = Encoding.Radix50Encoding.GetBytes(DIGITS);
+            Assert.AreEqual(_digitsBytes, byteArray);
+            byteArray = Encoding.Radix50Encoding.GetBytes(UPPER_LATIN);
+            Assert.AreEqual(_upperLatinBytes, byteArray);
+            byteArray = Encoding.Radix50Encoding.GetBytes(SENTENCE);
+            Assert.AreEqual(_sentenceBytes, byteArray);
         }
     }
 }

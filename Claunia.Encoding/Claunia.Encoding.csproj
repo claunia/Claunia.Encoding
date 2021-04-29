@@ -8,7 +8,7 @@
     <AssemblyName>Claunia.Encoding</AssemblyName>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Claunia.Encoding</PackageId>
-    <PackageVersion>1.8</PackageVersion>
+    <PackageVersion>1.9</PackageVersion>
     <Authors>Natalia Portillo</Authors>
     <Owners>Natalia Portillo</Owners>
     <PackageProjectUrl>https://github.com/claunia/Claunia.Encoding</PackageProjectUrl>
