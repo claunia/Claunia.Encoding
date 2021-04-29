@@ -8,18 +8,18 @@
     <AssemblyName>Claunia.Encoding</AssemblyName>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Claunia.Encoding</PackageId>
-    <PackageVersion>1.7</PackageVersion>
+    <PackageVersion>1.8</PackageVersion>
     <Authors>Natalia Portillo</Authors>
     <Owners>Natalia Portillo</Owners>
     <PackageProjectUrl>https://github.com/claunia/Claunia.Encoding</PackageProjectUrl>
     <Summary>Library to provide codepage conversion to and from archaic and old computer systems and Unicode.</Summary>
     <Title>Claunia.Encoding</Title>
     <Description>Library to provide codepage conversion to and from archaic and old computer systems and Unicode.</Description>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/claunia/Claunia.Encoding/master/LICENSE.MIT</PackageLicenseUrl>
-    <ReleaseVersion>1.7</ReleaseVersion>
-    <PackageReleaseNotes>Support .NET Core and .NET Framework 4.0.</PackageReleaseNotes>
-    <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
-    <VersionPrefix>1.7</VersionPrefix>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <ReleaseVersion>1.8</ReleaseVersion>
+    <PackageReleaseNotes>Support .NET Core 3.1 and .NET 5.0.</PackageReleaseNotes>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+    <VersionPrefix>1.8</VersionPrefix>
     <Company>Claunia.com</Company>
     <Copyright>© 2016-2021 Natalia Portillo</Copyright>
     <PackageProjectUrl>https://www.github.com/claunia/Claunia.Encoding</PackageProjectUrl>
