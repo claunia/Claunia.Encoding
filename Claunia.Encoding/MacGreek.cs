@@ -53,7 +53,7 @@ namespace Claunia.Encoding
             '\u0008', '\u0009', '\u000A', '\u000B', '\u000C', '\u000D', '\u000E', '\u000F',
 
             // 0x10
-            '\u0010', '\u0011', '\u0012', '\u0013', '\u0014', '\u0015', '\u0016', '\u0017',
+            '\u0010', '\u2318', '\u2713', '\u25C6', '\uF8FF', '\u0015', '\u0016', '\u0017',
 
             // 0x18
             '\u0018', '\u0019', '\u001A', '\u001B', '\u001C', '\u001D', '\u001E', '\u001F',
@@ -146,270 +146,268 @@ namespace Claunia.Encoding
         /// <summary>Converts a Unicode character to an Mac Greek character</summary>
         /// <returns>Mac Greek character.</returns>
         /// <param name="character">Unicode character.</param>
-        private protected override byte GetByte(char character)
+        private protected override byte GetByte(char character) => character switch
         {
-            switch(character)
-            {
-                case '\u0000': return 0x00;
-                case '\u0001': return 0x01;
-                case '\u0002': return 0x02;
-                case '\u0003': return 0x03;
-                case '\u0004': return 0x04;
-                case '\u0005': return 0x05;
-                case '\u0006': return 0x06;
-                case '\u0007': return 0x07;
-                case '\u0008': return 0x08;
-                case '\u0009': return 0x09;
-                case '\u000A': return 0x0A;
-                case '\u000B': return 0x0B;
-                case '\u000C': return 0x0C;
-                case '\u000D': return 0x0D;
-                case '\u000E': return 0x0E;
-                case '\u000F': return 0x0F;
-                case '\u0010': return 0x10;
-                case '\u0011': return 0x11;
-                case '\u0012': return 0x12;
-                case '\u0013': return 0x13;
-                case '\u0014': return 0x14;
-                case '\u0015': return 0x15;
-                case '\u0016': return 0x16;
-                case '\u0017': return 0x17;
-                case '\u0018': return 0x18;
-                case '\u0019': return 0x19;
-                case '\u001A': return 0x1A;
-                case '\u001B': return 0x1B;
-                case '\u001C': return 0x1C;
-                case '\u001D': return 0x1D;
-                case '\u001E': return 0x1E;
-                case '\u001F': return 0x1F;
-                case '\u0020': return 0x20;
-                case '\u0021': return 0x21;
-                case '\u0022': return 0x22;
-                case '\u0023': return 0x23;
-                case '\u0024': return 0x24;
-                case '\u0025': return 0x25;
-                case '\u0026': return 0x26;
-                case '\u0027': return 0x27;
-                case '\u0028': return 0x28;
-                case '\u0029': return 0x29;
-                case '\u002A': return 0x2A;
-                case '\u002B': return 0x2B;
-                case '\u002C': return 0x2C;
-                case '\u002D': return 0x2D;
-                case '\u002E': return 0x2E;
-                case '\u002F': return 0x2F;
-                case '\u0030': return 0x30;
-                case '\u0031': return 0x31;
-                case '\u0032': return 0x32;
-                case '\u0033': return 0x33;
-                case '\u0034': return 0x34;
-                case '\u0035': return 0x35;
-                case '\u0036': return 0x36;
-                case '\u0037': return 0x37;
-                case '\u0038': return 0x38;
-                case '\u0039': return 0x39;
-                case '\u003A': return 0x3A;
-                case '\u003B': return 0x3B;
-                case '\u003C': return 0x3C;
-                case '\u003D': return 0x3D;
-                case '\u003E': return 0x3E;
-                case '\u003F': return 0x3F;
-                case '\u0040': return 0x40;
-                case '\u0041': return 0x41;
-                case '\u0042': return 0x42;
-                case '\u0043': return 0x43;
-                case '\u0044': return 0x44;
-                case '\u0045': return 0x45;
-                case '\u0046': return 0x46;
-                case '\u0047': return 0x47;
-                case '\u0048': return 0x48;
-                case '\u0049': return 0x49;
-                case '\u004A': return 0x4A;
-                case '\u004B': return 0x4B;
-                case '\u004C': return 0x4C;
-                case '\u004D': return 0x4D;
-                case '\u004E': return 0x4E;
-                case '\u004F': return 0x4F;
-                case '\u0050': return 0x50;
-                case '\u0051': return 0x51;
-                case '\u0052': return 0x52;
-                case '\u0053': return 0x53;
-                case '\u0054': return 0x54;
-                case '\u0055': return 0x55;
-                case '\u0056': return 0x56;
-                case '\u0057': return 0x57;
-                case '\u0058': return 0x58;
-                case '\u0059': return 0x59;
-                case '\u005A': return 0x5A;
-                case '\u005B': return 0x5B;
-                case '\u005C': return 0x5C;
-                case '\u005D': return 0x5D;
-                case '\u005E': return 0x5E;
-                case '\u005F': return 0x5F;
-                case '\u0060': return 0x60;
-                case '\u0061': return 0x61;
-                case '\u0062': return 0x62;
-                case '\u0063': return 0x63;
-                case '\u0064': return 0x64;
-                case '\u0065': return 0x65;
-                case '\u0066': return 0x66;
-                case '\u0067': return 0x67;
-                case '\u0068': return 0x68;
-                case '\u0069': return 0x69;
-                case '\u006A': return 0x6A;
-                case '\u006B': return 0x6B;
-                case '\u006C': return 0x6C;
-                case '\u006D': return 0x6D;
-                case '\u006E': return 0x6E;
-                case '\u006F': return 0x6F;
-                case '\u0070': return 0x70;
-                case '\u0071': return 0x71;
-                case '\u0072': return 0x72;
-                case '\u0073': return 0x73;
-                case '\u0074': return 0x74;
-                case '\u0075': return 0x75;
-                case '\u0076': return 0x76;
-                case '\u0077': return 0x77;
-                case '\u0078': return 0x78;
-                case '\u0079': return 0x79;
-                case '\u007A': return 0x7A;
-                case '\u007B': return 0x7B;
-                case '\u007C': return 0x7C;
-                case '\u007D': return 0x7D;
-                case '\u007E': return 0x7E;
-                case '\u007F': return 0x7F;
-                case '\u00C4': return 0x80;
-                case '\u00B9': return 0x81;
-                case '\u00B2': return 0x82;
-                case '\u00C9': return 0x83;
-                case '\u00B3': return 0x84;
-                case '\u00D6': return 0x85;
-                case '\u00DC': return 0x86;
-                case '\u0385': return 0x87;
-                case '\u00E0': return 0x88;
-                case '\u00E2': return 0x89;
-                case '\u00E4': return 0x8A;
-                case '\u0384': return 0x8B;
-                case '\u00A8': return 0x8C;
-                case '\u00E7': return 0x8D;
-                case '\u00E9': return 0x8E;
-                case '\u00E8': return 0x8F;
-                case '\u00EA': return 0x90;
-                case '\u00EB': return 0x91;
-                case '\u00A3': return 0x92;
-                case '\u2122': return 0x93;
-                case '\u00EE': return 0x94;
-                case '\u00EF': return 0x95;
-                case '\u2022': return 0x96;
-                case '\u00BD': return 0x97;
-                case '\u2030': return 0x98;
-                case '\u00F4': return 0x99;
-                case '\u00F6': return 0x9A;
-                case '\u00A6': return 0x9B;
-                case '\u20AC': return 0x9C;
-                case '\u00F9': return 0x9D;
-                case '\u00FB': return 0x9E;
-                case '\u00FC': return 0x9F;
-                case '\u2020': return 0xA0;
-                case '\u0393': return 0xA1;
-                case '\u0394': return 0xA2;
-                case '\u0398': return 0xA3;
-                case '\u039B': return 0xA4;
-                case '\u039E': return 0xA5;
-                case '\u03A0': return 0xA6;
-                case '\u00DF': return 0xA7;
-                case '\u00AE': return 0xA8;
-                case '\u00A9': return 0xA9;
-                case '\u03A3': return 0xAA;
-                case '\u03AA': return 0xAB;
-                case '\u00A7': return 0xAC;
-                case '\u2260': return 0xAD;
-                case '\u00B0': return 0xAE;
-                case '\u00B7': return 0xAF;
-                case '\u0391': return 0xB0;
-                case '\u00B1': return 0xB1;
-                case '\u2264': return 0xB2;
-                case '\u2265': return 0xB3;
-                case '\u00A5': return 0xB4;
-                case '\u0392': return 0xB5;
-                case '\u0395': return 0xB6;
-                case '\u0396': return 0xB7;
-                case '\u0397': return 0xB8;
-                case '\u0399': return 0xB9;
-                case '\u039A': return 0xBA;
-                case '\u039C': return 0xBB;
-                case '\u03A6': return 0xBC;
-                case '\u03AB': return 0xBD;
-                case '\u03A8': return 0xBE;
-                case '\u03A9': return 0xBF;
-                case '\u03AC': return 0xC0;
-                case '\u039D': return 0xC1;
-                case '\u00AC': return 0xC2;
-                case '\u039F': return 0xC3;
-                case '\u03A1': return 0xC4;
-                case '\u2248': return 0xC5;
-                case '\u03A4': return 0xC6;
-                case '\u00AB': return 0xC7;
-                case '\u00BB': return 0xC8;
-                case '\u2026': return 0xC9;
-                case '\u00A0': return 0xCA;
-                case '\u03A5': return 0xCB;
-                case '\u03A7': return 0xCC;
-                case '\u0386': return 0xCD;
-                case '\u0388': return 0xCE;
-                case '\u0153': return 0xCF;
-                case '\u2013': return 0xD0;
-                case '\u2015': return 0xD1;
-                case '\u201C': return 0xD2;
-                case '\u201D': return 0xD3;
-                case '\u2018': return 0xD4;
-                case '\u2019': return 0xD5;
-                case '\u00F7': return 0xD6;
-                case '\u0389': return 0xD7;
-                case '\u038A': return 0xD8;
-                case '\u038C': return 0xD9;
-                case '\u038E': return 0xDA;
-                case '\u03AD': return 0xDB;
-                case '\u03AE': return 0xDC;
-                case '\u03AF': return 0xDD;
-                case '\u03CC': return 0xDE;
-                case '\u038F': return 0xDF;
-                case '\u03CD': return 0xE0;
-                case '\u03B1': return 0xE1;
-                case '\u03B2': return 0xE2;
-                case '\u03C8': return 0xE3;
-                case '\u03B4': return 0xE4;
-                case '\u03B5': return 0xE5;
-                case '\u03C6': return 0xE6;
-                case '\u03B3': return 0xE7;
-                case '\u03B7': return 0xE8;
-                case '\u03B9': return 0xE9;
-                case '\u03BE': return 0xEA;
-                case '\u03BA': return 0xEB;
-                case '\u03BB': return 0xEC;
-                case '\u03BC': return 0xED;
-                case '\u03BD': return 0xEE;
-                case '\u03BF': return 0xEF;
-                case '\u03C0': return 0xF0;
-                case '\u03CE': return 0xF1;
-                case '\u03C1': return 0xF2;
-                case '\u03C3': return 0xF3;
-                case '\u03C4': return 0xF4;
-                case '\u03B8': return 0xF5;
-                case '\u03C9': return 0xF6;
-                case '\u03C2': return 0xF7;
-                case '\u03C7': return 0xF8;
-                case '\u03C5': return 0xF9;
-                case '\u03B6': return 0xFA;
-                case '\u03CA': return 0xFB;
-                case '\u03CB': return 0xFC;
-                case '\u0390': return 0xFD;
-                case '\u03B0': return 0xFE;
-                case '\u00AD': return 0xFF;
-                default:
-                    // Fallback to '?'
-                    return 0x3F;
-            }
-        }
+            '\u0000' => 0x00,
+            '\u0001' => 0x01,
+            '\u0002' => 0x02,
+            '\u0003' => 0x03,
+            '\u0004' => 0x04,
+            '\u0005' => 0x05,
+            '\u0006' => 0x06,
+            '\u0007' => 0x07,
+            '\u0008' => 0x08,
+            '\u0009' => 0x09,
+            '\u000A' => 0x0A,
+            '\u000B' => 0x0B,
+            '\u000C' => 0x0C,
+            '\u000D' => 0x0D,
+            '\u000E' => 0x0E,
+            '\u000F' => 0x0F,
+            '\u0010' => 0x10,
+            '\u2318' => 0x11,
+            '\u0012' => 0x12,
+            '\u2713' => 0x12,
+            '\u0013' => 0x13,
+            '\u25C6' => 0x13,
+            '\u0014' => 0x14,
+            '\uF8FF' => 0x14,
+            '\u0015' => 0x15,
+            '\u0016' => 0x16,
+            '\u0017' => 0x17,
+            '\u0018' => 0x18,
+            '\u0019' => 0x19,
+            '\u001A' => 0x1A,
+            '\u001B' => 0x1B,
+            '\u001C' => 0x1C,
+            '\u001D' => 0x1D,
+            '\u001E' => 0x1E,
+            '\u001F' => 0x1F,
+            '\u0020' => 0x20,
+            '\u0021' => 0x21,
+            '\u0022' => 0x22,
+            '\u0023' => 0x23,
+            '\u0024' => 0x24,
+            '\u0025' => 0x25,
+            '\u0026' => 0x26,
+            '\u0027' => 0x27,
+            '\u0028' => 0x28,
+            '\u0029' => 0x29,
+            '\u002A' => 0x2A,
+            '\u002B' => 0x2B,
+            '\u002C' => 0x2C,
+            '\u002D' => 0x2D,
+            '\u002E' => 0x2E,
+            '\u002F' => 0x2F,
+            '\u0030' => 0x30,
+            '\u0031' => 0x31,
+            '\u0032' => 0x32,
+            '\u0033' => 0x33,
+            '\u0034' => 0x34,
+            '\u0035' => 0x35,
+            '\u0036' => 0x36,
+            '\u0037' => 0x37,
+            '\u0038' => 0x38,
+            '\u0039' => 0x39,
+            '\u003A' => 0x3A,
+            '\u003B' => 0x3B,
+            '\u003C' => 0x3C,
+            '\u003D' => 0x3D,
+            '\u003E' => 0x3E,
+            '\u003F' => 0x3F,
+            '\u0040' => 0x40,
+            '\u0041' => 0x41,
+            '\u0042' => 0x42,
+            '\u0043' => 0x43,
+            '\u0044' => 0x44,
+            '\u0045' => 0x45,
+            '\u0046' => 0x46,
+            '\u0047' => 0x47,
+            '\u0048' => 0x48,
+            '\u0049' => 0x49,
+            '\u004A' => 0x4A,
+            '\u004B' => 0x4B,
+            '\u004C' => 0x4C,
+            '\u004D' => 0x4D,
+            '\u004E' => 0x4E,
+            '\u004F' => 0x4F,
+            '\u0050' => 0x50,
+            '\u0051' => 0x51,
+            '\u0052' => 0x52,
+            '\u0053' => 0x53,
+            '\u0054' => 0x54,
+            '\u0055' => 0x55,
+            '\u0056' => 0x56,
+            '\u0057' => 0x57,
+            '\u0058' => 0x58,
+            '\u0059' => 0x59,
+            '\u005A' => 0x5A,
+            '\u005B' => 0x5B,
+            '\u005C' => 0x5C,
+            '\u005D' => 0x5D,
+            '\u005E' => 0x5E,
+            '\u005F' => 0x5F,
+            '\u0060' => 0x60,
+            '\u0061' => 0x61,
+            '\u0062' => 0x62,
+            '\u0063' => 0x63,
+            '\u0064' => 0x64,
+            '\u0065' => 0x65,
+            '\u0066' => 0x66,
+            '\u0067' => 0x67,
+            '\u0068' => 0x68,
+            '\u0069' => 0x69,
+            '\u006A' => 0x6A,
+            '\u006B' => 0x6B,
+            '\u006C' => 0x6C,
+            '\u006D' => 0x6D,
+            '\u006E' => 0x6E,
+            '\u006F' => 0x6F,
+            '\u0070' => 0x70,
+            '\u0071' => 0x71,
+            '\u0072' => 0x72,
+            '\u0073' => 0x73,
+            '\u0074' => 0x74,
+            '\u0075' => 0x75,
+            '\u0076' => 0x76,
+            '\u0077' => 0x77,
+            '\u0078' => 0x78,
+            '\u0079' => 0x79,
+            '\u007A' => 0x7A,
+            '\u007B' => 0x7B,
+            '\u007C' => 0x7C,
+            '\u007D' => 0x7D,
+            '\u007E' => 0x7E,
+            '\u007F' => 0x7F,
+            '\u00C4' => 0x80,
+            '\u00B9' => 0x81,
+            '\u00B2' => 0x82,
+            '\u00C9' => 0x83,
+            '\u00B3' => 0x84,
+            '\u00D6' => 0x85,
+            '\u00DC' => 0x86,
+            '\u0385' => 0x87,
+            '\u00E0' => 0x88,
+            '\u00E2' => 0x89,
+            '\u00E4' => 0x8A,
+            '\u0384' => 0x8B,
+            '\u00A8' => 0x8C,
+            '\u00E7' => 0x8D,
+            '\u00E9' => 0x8E,
+            '\u00E8' => 0x8F,
+            '\u00EA' => 0x90,
+            '\u00EB' => 0x91,
+            '\u00A3' => 0x92,
+            '\u2122' => 0x93,
+            '\u00EE' => 0x94,
+            '\u00EF' => 0x95,
+            '\u2022' => 0x96,
+            '\u00BD' => 0x97,
+            '\u2030' => 0x98,
+            '\u00F4' => 0x99,
+            '\u00F6' => 0x9A,
+            '\u00A6' => 0x9B,
+            '\u20AC' => 0x9C,
+            '\u00F9' => 0x9D,
+            '\u00FB' => 0x9E,
+            '\u00FC' => 0x9F,
+            '\u2020' => 0xA0,
+            '\u0393' => 0xA1,
+            '\u0394' => 0xA2,
+            '\u0398' => 0xA3,
+            '\u039B' => 0xA4,
+            '\u039E' => 0xA5,
+            '\u03A0' => 0xA6,
+            '\u00DF' => 0xA7,
+            '\u00AE' => 0xA8,
+            '\u00A9' => 0xA9,
+            '\u03A3' => 0xAA,
+            '\u03AA' => 0xAB,
+            '\u00A7' => 0xAC,
+            '\u2260' => 0xAD,
+            '\u00B0' => 0xAE,
+            '\u00B7' => 0xAF,
+            '\u0391' => 0xB0,
+            '\u00B1' => 0xB1,
+            '\u2264' => 0xB2,
+            '\u2265' => 0xB3,
+            '\u00A5' => 0xB4,
+            '\u0392' => 0xB5,
+            '\u0395' => 0xB6,
+            '\u0396' => 0xB7,
+            '\u0397' => 0xB8,
+            '\u0399' => 0xB9,
+            '\u039A' => 0xBA,
+            '\u039C' => 0xBB,
+            '\u03A6' => 0xBC,
+            '\u03AB' => 0xBD,
+            '\u03A8' => 0xBE,
+            '\u03A9' => 0xBF,
+            '\u03AC' => 0xC0,
+            '\u039D' => 0xC1,
+            '\u00AC' => 0xC2,
+            '\u039F' => 0xC3,
+            '\u03A1' => 0xC4,
+            '\u2248' => 0xC5,
+            '\u03A4' => 0xC6,
+            '\u00AB' => 0xC7,
+            '\u00BB' => 0xC8,
+            '\u2026' => 0xC9,
+            '\u00A0' => 0xCA,
+            '\u03A5' => 0xCB,
+            '\u03A7' => 0xCC,
+            '\u0386' => 0xCD,
+            '\u0388' => 0xCE,
+            '\u0153' => 0xCF,
+            '\u2013' => 0xD0,
+            '\u2015' => 0xD1,
+            '\u201C' => 0xD2,
+            '\u201D' => 0xD3,
+            '\u2018' => 0xD4,
+            '\u2019' => 0xD5,
+            '\u00F7' => 0xD6,
+            '\u0389' => 0xD7,
+            '\u038A' => 0xD8,
+            '\u038C' => 0xD9,
+            '\u038E' => 0xDA,
+            '\u03AD' => 0xDB,
+            '\u03AE' => 0xDC,
+            '\u03AF' => 0xDD,
+            '\u03CC' => 0xDE,
+            '\u038F' => 0xDF,
+            '\u03CD' => 0xE0,
+            '\u03B1' => 0xE1,
+            '\u03B2' => 0xE2,
+            '\u03C8' => 0xE3,
+            '\u03B4' => 0xE4,
+            '\u03B5' => 0xE5,
+            '\u03C6' => 0xE6,
+            '\u03B3' => 0xE7,
+            '\u03B7' => 0xE8,
+            '\u03B9' => 0xE9,
+            '\u03BE' => 0xEA,
+            '\u03BA' => 0xEB,
+            '\u03BB' => 0xEC,
+            '\u03BC' => 0xED,
+            '\u03BD' => 0xEE,
+            '\u03BF' => 0xEF,
+            '\u03C0' => 0xF0,
+            '\u03CE' => 0xF1,
+            '\u03C1' => 0xF2,
+            '\u03C3' => 0xF3,
+            '\u03C4' => 0xF4,
+            '\u03B8' => 0xF5,
+            '\u03C9' => 0xF6,
+            '\u03C2' => 0xF7,
+            '\u03C7' => 0xF8,
+            '\u03C5' => 0xF9,
+            '\u03B6' => 0xFA,
+            '\u03CA' => 0xFB,
+            '\u03CB' => 0xFC,
+            '\u0390' => 0xFD,
+            '\u03B0' => 0xFE,
+            '\u00AD' => 0xFF,
+            _        => 0x3F
+        };
     }
 }
