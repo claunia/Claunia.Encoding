@@ -24,10 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Text;
+
 namespace Claunia.Encoding
 {
     /// <summary>Represents a ZX80 character encoding of Unicode characters.</summary>
-    public class Zx80 : SingleByteEncoding
+    public class Zx80 : SingleByteEncodingWithRunes
     {
         public override string BodyName        => "zx80";
         public override int    CodePage        => 0;
@@ -44,189 +46,221 @@ namespace Claunia.Encoding
         public override bool IsSingleByte      => true;
 
         /// <summary>The ZX80 to Unicode character map.</summary>
-        protected override char[] CharTable => new[]
+        protected override Rune[] CharTable => new[]
         {
             // 0x00
-            '\u0020', '\u0022', '\u258C', '\u2584', '\u2598', '\u259D', '\u2596', '\u2597',
+            new Rune(0x0020), new Rune(0x0022), new Rune(0x258C), new Rune(0x2584), new Rune(0x2598), new Rune(0x259D),
+            new Rune(0x2596), new Rune(0x2597),
 
             // 0x08
-            '\u259E', '\u2592', '\uFFFD', '\uFFFD', '\u00A3', '\u0024', '\u003A', '\u003F',
+            new Rune(0x259E), new Rune(0x2592), new Rune(0x1FB8F), new Rune(0x1FB8E), new Rune(0x00A3),
+            new Rune(0x0024), new Rune(0x003A), new Rune(0x003F),
 
             // 0x10
-            '\u0028', '\u0029', '\u002D', '\u002B', '\u002A', '\u002F', '\u003D', '\u003E',
+            new Rune(0x0028), new Rune(0x0029), new Rune(0x002D), new Rune(0x002B), new Rune(0x002A), new Rune(0x002F),
+            new Rune(0x003D), new Rune(0x003E),
 
             // 0x18
-            '\u003C', '\u003B', '\u002C', '\u002E', '\u0030', '\u0031', '\u0032', '\u0033',
+            new Rune(0x003C), new Rune(0x003B), new Rune(0x002C), new Rune(0x002E), new Rune(0x0030), new Rune(0x0031),
+            new Rune(0x0032), new Rune(0x0033),
 
             // 0x20
-            '\u0034', '\u0035', '\u0036', '\u0037', '\u0038', '\u0039', '\u0041', '\u0042',
+            new Rune(0x0034), new Rune(0x0035), new Rune(0x0036), new Rune(0x0037), new Rune(0x0038), new Rune(0x0039),
+            new Rune(0x0041), new Rune(0x0042),
 
             // 0x28
-            '\u0043', '\u0044', '\u0045', '\u0046', '\u0047', '\u0048', '\u0049', '\u004A',
+            new Rune(0x0043), new Rune(0x0044), new Rune(0x0045), new Rune(0x0046), new Rune(0x0047), new Rune(0x0048),
+            new Rune(0x0049), new Rune(0x004A),
 
             // 0x30
-            '\u004B', '\u004C', '\u004D', '\u004E', '\u004F', '\u0050', '\u0051', '\u0052',
+            new Rune(0x004B), new Rune(0x004C), new Rune(0x004D), new Rune(0x004E), new Rune(0x004F), new Rune(0x0050),
+            new Rune(0x0051), new Rune(0x0052),
 
             // 0x38
-            '\u0053', '\u0054', '\u0055', '\u0056', '\u0057', '\u0058', '\u0059', '\u005A',
+            new Rune(0x0053), new Rune(0x0054), new Rune(0x0055), new Rune(0x0056), new Rune(0x0057), new Rune(0x0058),
+            new Rune(0x0059), new Rune(0x005A),
 
             // 0x40
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0x48
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0x50
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0x58
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0x60
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0x68
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0x70
-            '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\u000D', '\uFFFD', '\u000A', '\u0008',
+            new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0x000D), new Rune(0xFFFD),
+            new Rune(0x000A), new Rune(0x0008),
 
             // 0x78
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0x80
-            '\u2588', '\uFFFD', '\u2590', '\u2580', '\u2599', '\u259C', '\u259B', '\u259A',
+            new Rune(0x2588), new Rune(0xFFFD), new Rune(0x2590), new Rune(0x2580), new Rune(0x2599), new Rune(0x259C),
+            new Rune(0x259B), new Rune(0x259A),
 
             // 0x88
-            '\u2592', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0x2592), new Rune(0x1FB90), new Rune(0x1FB91), new Rune(0x1FB92), new Rune(0xFFFD),
+            new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0x90
-            '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+            new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0x98
-            '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+            new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0xA0
-            '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+            new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0xA8
-            '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+            new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0xB0
-            '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+            new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0xB8
-            '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD', '\uFFFD',
+            new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+            new Rune(0xFFFD), new Rune(0xFFFD),
 
             // 0xC0
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0xC8
-            '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000', '\u0000',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
+            new Rune(0x0000), new Rune(0x0000),
 
             // 0xD0
-            '\u0000', '\u0000', '\u0000', '\u0000', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF',
+            new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0xFFFF), new Rune(0xFFFF),
+            new Rune(0xFFFF), new Rune(0xFFFF),
 
             // 0xD8
-            '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF',
+            new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF),
+            new Rune(0xFFFF), new Rune(0xFFFF),
 
             // 0xE0
-            '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF',
+            new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF),
+            new Rune(0xFFFF), new Rune(0xFFFF),
 
             // 0xE8
-            '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF',
+            new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF),
+            new Rune(0xFFFF), new Rune(0xFFFF),
 
             // 0xF0
-            '\uFFFF', '\u0000', '\u0000', '\uFFFF', '\uFFFF', '\u0000', '\uFFFF', '\uFFFF',
+            new Rune(0xFFFF), new Rune(0x0000), new Rune(0x0000), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0x0000),
+            new Rune(0xFFFF), new Rune(0xFFFF),
 
             // 0xF8
-            '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\uFFFF', '\u0000'
+            new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF), new Rune(0xFFFF),
+            new Rune(0xFFFF), new Rune(0x0000)
         };
 
         /// <summary>Converts a Unicode character to an ZX80 character</summary>
         /// <returns>ZX80 character.</returns>
         /// <param name="character">Unicode character.</param>
-        private protected override byte GetByte(char character)
+        private protected override byte GetByte(Rune character) => character.Value switch
         {
-            switch(character)
-            {
-                case '\u0020': return 0x00;
-                case '\u0022': return 0x01;
-                case '\u258C': return 0x02;
-                case '\u2584': return 0x03;
-                case '\u2598': return 0x04;
-                case '\u259D': return 0x05;
-                case '\u2596': return 0x06;
-                case '\u2597': return 0x07;
-                case '\u259E': return 0x08;
-                case '\u2592': return 0x09;
-                case '\u00A3': return 0x0C;
-                case '\u0024': return 0x0D;
-                case '\u003A': return 0x0E;
-                case '\u003F': return 0x0F;
-                case '\u0028': return 0x10;
-                case '\u0029': return 0x11;
-                case '\u002D': return 0x12;
-                case '\u002B': return 0x13;
-                case '\u002A': return 0x14;
-                case '\u002F': return 0x15;
-                case '\u003D': return 0x16;
-                case '\u003E': return 0x17;
-                case '\u003C': return 0x18;
-                case '\u003B': return 0x19;
-                case '\u002C': return 0x1A;
-                case '\u002E': return 0x1B;
-                case '\u0030': return 0x1C;
-                case '\u0031': return 0x1D;
-                case '\u0032': return 0x1E;
-                case '\u0033': return 0x1F;
-                case '\u0034': return 0x20;
-                case '\u0035': return 0x21;
-                case '\u0036': return 0x22;
-                case '\u0037': return 0x23;
-                case '\u0038': return 0x24;
-                case '\u0039': return 0x25;
-                case '\u0041': return 0x26;
-                case '\u0042': return 0x27;
-                case '\u0043': return 0x28;
-                case '\u0044': return 0x29;
-                case '\u0045': return 0x2A;
-                case '\u0046': return 0x2B;
-                case '\u0047': return 0x2C;
-                case '\u0048': return 0x2D;
-                case '\u0049': return 0x2E;
-                case '\u004A': return 0x2F;
-                case '\u004B': return 0x30;
-                case '\u004C': return 0x31;
-                case '\u004D': return 0x32;
-                case '\u004E': return 0x33;
-                case '\u004F': return 0x34;
-                case '\u0050': return 0x35;
-                case '\u0051': return 0x36;
-                case '\u0052': return 0x37;
-                case '\u0053': return 0x38;
-                case '\u0054': return 0x39;
-                case '\u0055': return 0x3A;
-                case '\u0056': return 0x3B;
-                case '\u0057': return 0x3C;
-                case '\u0058': return 0x3D;
-                case '\u0059': return 0x3E;
-                case '\u005A': return 0x3F;
-                case '\u000D': return 0x74;
-                case '\u000A': return 0x76;
-                case '\u0008': return 0x77;
-                case '\u2588': return 0x80;
-                case '\u2590': return 0x82;
-                case '\u2580': return 0x83;
-                case '\u259F': return 0x84;
-                case '\u2599': return 0x85;
-                case '\u259C': return 0x86;
-                case '\u259B': return 0x87;
-                case '\u259A': return 0x88;
-                default:
-                    // Fallback to '?'
-                    return 0x0F;
-            }
-        }
+            0x0020  => 0x00,
+            0x0022  => 0x01,
+            0x258C  => 0x02,
+            0x2584  => 0x03,
+            0x2598  => 0x04,
+            0x259D  => 0x05,
+            0x2596  => 0x06,
+            0x2597  => 0x07,
+            0x259E  => 0x08,
+            0x2592  => 0x09,
+            0x1FB8F => 0x0A,
+            0x1FB8E => 0x0B,
+            0x00A3  => 0x0C,
+            0x0024  => 0x0D,
+            0x003A  => 0x0E,
+            0x003F  => 0x0F,
+            0x0028  => 0x10,
+            0x0029  => 0x11,
+            0x002D  => 0x12,
+            0x002B  => 0x13,
+            0x002A  => 0x14,
+            0x002F  => 0x15,
+            0x003D  => 0x16,
+            0x003E  => 0x17,
+            0x003C  => 0x18,
+            0x003B  => 0x19,
+            0x002C  => 0x1A,
+            0x002E  => 0x1B,
+            0x0030  => 0x1C,
+            0x0031  => 0x1D,
+            0x0032  => 0x1E,
+            0x0033  => 0x1F,
+            0x0034  => 0x20,
+            0x0035  => 0x21,
+            0x0036  => 0x22,
+            0x0037  => 0x23,
+            0x0038  => 0x24,
+            0x0039  => 0x25,
+            0x0041  => 0x26,
+            0x0042  => 0x27,
+            0x0043  => 0x28,
+            0x0044  => 0x29,
+            0x0045  => 0x2A,
+            0x0046  => 0x2B,
+            0x0047  => 0x2C,
+            0x0048  => 0x2D,
+            0x0049  => 0x2E,
+            0x004A  => 0x2F,
+            0x004B  => 0x30,
+            0x004C  => 0x31,
+            0x004D  => 0x32,
+            0x004E  => 0x33,
+            0x004F  => 0x34,
+            0x0050  => 0x35,
+            0x0051  => 0x36,
+            0x0052  => 0x37,
+            0x0053  => 0x38,
+            0x0054  => 0x39,
+            0x0055  => 0x3A,
+            0x0056  => 0x3B,
+            0x0057  => 0x3C,
+            0x0058  => 0x3D,
+            0x0059  => 0x3E,
+            0x005A  => 0x3F,
+            0x000D  => 0x74,
+            0x000A  => 0x76,
+            0x0008  => 0x77,
+            0x2588  => 0x80,
+            0x2590  => 0x82,
+            0x2580  => 0x83,
+            0x259F  => 0x84,
+            0x2599  => 0x85,
+            0x259C  => 0x86,
+            0x259B  => 0x87,
+            0x259A  => 0x88,
+            0x1FB90 => 0x89,
+            0x1FB91 => 0x8A,
+            0x1FB92 => 0x8B,
+            _       => 0x0F
+        };
     }
 }
