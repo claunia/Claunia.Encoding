@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Mac Cyrillic character encoding of Unicode characters.</summary>
     public class MacCyrillic : SingleByteEncoding
     {
-        public override string BodyName        => "x-mac-cyrillic";
-        public override int    CodePage        => 10007;
-        public override string EncodingName    => "Cyrillic (Mac)";
-        public override string HeaderName      => "x-mac-cyrillic";
-        public override string WebName         => "x-mac-cyrillic";
-        public override int    WindowsCodePage => 10007;
+        /// <inheritdoc />
+        public override string BodyName => "x-mac-cyrillic";
+        /// <inheritdoc />
+        public override int CodePage => 10007;
+        /// <inheritdoc />
+        public override string EncodingName => "Cyrillic (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "x-mac-cyrillic";
+        /// <inheritdoc />
+        public override string WebName => "x-mac-cyrillic";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10007;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Macintosh Cyrillic to Unicode character map.</summary>
         protected override char[] CharTable => new[]

@@ -7,6 +7,9 @@ namespace Claunia.Encoding
     /// </summary>
     public abstract class SingleByteEncoding : Encoding
     {
+        /// <summary>
+        /// Character conversion table
+        /// </summary>
         protected abstract char[] CharTable { get; }
 
         /// <summary>Gets a value indicating whether the current encoding can be used by browser clients for displaying content.</summary>

@@ -31,19 +31,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Atari ST character encoding of Unicode characters.</summary>
     public class AtariSt : SingleByteEncodingWithRunes
     {
-        public override string BodyName        => "atarist";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Western European (Atari ST)";
-        public override string HeaderName      => "atarist";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "atarist";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Western European (Atari ST)";
+        /// <inheritdoc />
+        public override string HeaderName => "atarist";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Atari ST to Unicode character map.</summary>
         protected override Rune[] CharTable => new[]

@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Mac Farsi character encoding of Unicode characters.</summary>
     public class MacFarsi : SingleByteEncoding
     {
-        public override string BodyName        => "x-mac-farsi";
-        public override int    CodePage        => 10014;
-        public override string EncodingName    => "Farsi (Mac)";
-        public override string HeaderName      => "x-mac-farsi";
-        public override string WebName         => "x-mac-farsi";
-        public override int    WindowsCodePage => 10014;
+        /// <inheritdoc />
+        public override string BodyName => "x-mac-farsi";
+        /// <inheritdoc />
+        public override int CodePage => 10014;
+        /// <inheritdoc />
+        public override string EncodingName => "Farsi (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "x-mac-farsi";
+        /// <inheritdoc />
+        public override string WebName => "x-mac-farsi";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10014;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Macintosh Farsi to Unicode character map.</summary>
         protected override char[] CharTable => new[]

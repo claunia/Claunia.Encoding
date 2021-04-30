@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Mac Hebrew character encoding of Unicode characters.</summary>
     public class MacHebrew : SingleByteEncoding
     {
-        public override string BodyName        => "x-mac-hebrew";
-        public override int    CodePage        => 10005;
-        public override string EncodingName    => "Hebrew (Mac)";
-        public override string HeaderName      => "x-mac-hebrew";
-        public override string WebName         => "x-mac-hebrew";
-        public override int    WindowsCodePage => 10005;
+        /// <inheritdoc />
+        public override string BodyName => "x-mac-hebrew";
+        /// <inheritdoc />
+        public override int CodePage => 10005;
+        /// <inheritdoc />
+        public override string EncodingName => "Hebrew (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "x-mac-hebrew";
+        /// <inheritdoc />
+        public override string WebName => "x-mac-hebrew";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10005;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Macintosh Hebrew to Unicode character map.</summary>
 

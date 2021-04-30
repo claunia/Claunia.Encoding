@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Mac Croatian character encoding of Unicode characters.</summary>
     public class MacCroatian : SingleByteEncoding
     {
-        public override string BodyName        => "x-mac-croatian";
-        public override int    CodePage        => 10082;
-        public override string EncodingName    => "Croatian (Mac)";
-        public override string HeaderName      => "x-mac-croatian";
-        public override string WebName         => "x-mac-croatian";
-        public override int    WindowsCodePage => 10082;
+        /// <inheritdoc />
+        public override string BodyName => "x-mac-croatian";
+        /// <inheritdoc />
+        public override int CodePage => 10082;
+        /// <inheritdoc />
+        public override string EncodingName => "Croatian (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "x-mac-croatian";
+        /// <inheritdoc />
+        public override string WebName => "x-mac-croatian";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10082;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Macintosh Croatian to Unicode character map.</summary>
         protected override char[] CharTable => new[]

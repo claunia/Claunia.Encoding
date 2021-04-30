@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Mac Greek character encoding of Unicode characters.</summary>
     public class MacGreek : SingleByteEncoding
     {
-        public override string BodyName        => "x-mac-greek";
-        public override int    CodePage        => 10006;
-        public override string EncodingName    => "Greek (Mac)";
-        public override string HeaderName      => "x-mac-greek";
-        public override string WebName         => "x-mac-greek";
-        public override int    WindowsCodePage => 10006;
+        /// <inheritdoc />
+        public override string BodyName => "x-mac-greek";
+        /// <inheritdoc />
+        public override int CodePage => 10006;
+        /// <inheritdoc />
+        public override string EncodingName => "Greek (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "x-mac-greek";
+        /// <inheritdoc />
+        public override string WebName => "x-mac-greek";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10006;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Macintosh Greek to Unicode character map.</summary>
         protected override char[] CharTable => new[]

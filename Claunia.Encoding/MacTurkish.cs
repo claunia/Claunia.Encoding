@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Mac Turkish character encoding of Unicode characters.</summary>
     public class MacTurkish : SingleByteEncoding
     {
-        public override string BodyName        => "x-mac-turkish";
-        public override int    CodePage        => 10081;
-        public override string EncodingName    => "Turkish (Mac)";
-        public override string HeaderName      => "x-mac-turkish";
-        public override string WebName         => "x-mac-turkish";
-        public override int    WindowsCodePage => 10081;
+        /// <inheritdoc />
+        public override string BodyName => "x-mac-turkish";
+        /// <inheritdoc />
+        public override int CodePage => 10081;
+        /// <inheritdoc />
+        public override string EncodingName => "Turkish (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "x-mac-turkish";
+        /// <inheritdoc />
+        public override string WebName => "x-mac-turkish";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10081;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Macintosh Turkish to Unicode character map.</summary>
         protected override char[] CharTable => new[]

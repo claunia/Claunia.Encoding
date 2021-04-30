@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Mac CentralEuropean character encoding of Unicode characters.</summary>
     public class MacCentralEuropean : SingleByteEncoding
     {
-        public override string BodyName        => "x-mac-ce";
-        public override int    CodePage        => 10029;
-        public override string EncodingName    => "Central European (Mac)";
-        public override string HeaderName      => "x-mac-ce";
-        public override string WebName         => "x-mac-ce";
-        public override int    WindowsCodePage => 10029;
+        /// <inheritdoc />
+        public override string BodyName => "x-mac-ce";
+        /// <inheritdoc />
+        public override int CodePage => 10029;
+        /// <inheritdoc />
+        public override string EncodingName => "Central European (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "x-mac-ce";
+        /// <inheritdoc />
+        public override string WebName => "x-mac-ce";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10029;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Macintosh CentralEuropean to Unicode character map.</summary>
         protected override char[] CharTable => new[]

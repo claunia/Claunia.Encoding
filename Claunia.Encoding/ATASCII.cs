@@ -31,19 +31,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an ATARI Standard Code for Information Interchange character encoding of Unicode characters.</summary>
     public class Atascii : SingleByteEncodingWithRunes
     {
-        public override string BodyName        => "atascii";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Atari Standard Code for Information Interchange";
-        public override string HeaderName      => "atascii";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "atascii";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Atari Standard Code for Information Interchange";
+        /// <inheritdoc />
+        public override string HeaderName => "atascii";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The ATASCII to Unicode character map.</summary>
         protected override Rune[] CharTable => new[]
