@@ -31,19 +31,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Apple IIc character encoding of Unicode characters.</summary>
     public sealed class Apple2C : SingleByteEncodingWithRunes
     {
-        public override string BodyName        => "apple2c";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Western European (Apple IIc)";
-        public override string HeaderName      => "apple2c";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "apple2c";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Western European (Apple IIc)";
+        /// <inheritdoc />
+        public override string HeaderName => "apple2c";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Apple IIc to Unicode character map. Inverted screen characters are mapped to normal characters.</summary>
         protected override Rune[] CharTable => new[]

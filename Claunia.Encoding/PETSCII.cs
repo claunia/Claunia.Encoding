@@ -34,19 +34,31 @@ namespace Claunia.Encoding
     /// </summary>
     public class Petscii : SingleByteEncodingWithRunes
     {
-        public override string BodyName        => "petscii";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Commodore PET Standard Code for Information Interchange";
-        public override string HeaderName      => "petscii";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "petscii";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Commodore PET Standard Code for Information Interchange";
+        /// <inheritdoc />
+        public override string HeaderName => "petscii";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The PETSCII to Unicode character map, unshifted (default) variant.</summary>
         /// <remarks>Reference used: http://style64.org/petscii/ and others.</remarks>

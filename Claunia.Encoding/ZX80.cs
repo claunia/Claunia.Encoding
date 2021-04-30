@@ -31,19 +31,31 @@ namespace Claunia.Encoding
     /// <summary>Represents a ZX80 character encoding of Unicode characters.</summary>
     public class Zx80 : SingleByteEncodingWithRunes
     {
-        public override string BodyName        => "zx80";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Sinclair ZX80 character set";
-        public override string HeaderName      => "zx80";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "zx80";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Sinclair ZX80 character set";
+        /// <inheritdoc />
+        public override string HeaderName => "zx80";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The ZX80 to Unicode character map.</summary>
         protected override Rune[] CharTable => new[]

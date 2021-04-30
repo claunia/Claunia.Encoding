@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an GEOS character encoding of Unicode characters.</summary>
     public class Geos : SingleByteEncoding
     {
-        public override string BodyName        => "geos";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Western European (GEOS)";
-        public override string HeaderName      => "geos";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "geos";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Western European (GEOS)";
+        /// <inheritdoc />
+        public override string HeaderName => "geos";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>
         ///     The GEOS to Unicode character map. In the GEOS character map application lots of positions appears as '\u002E'

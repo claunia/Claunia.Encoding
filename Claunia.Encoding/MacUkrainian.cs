@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Mac Ukrainian character encoding of Unicode characters.</summary>
     public class MacUkrainian : SingleByteEncoding
     {
-        public override string BodyName        => "x-mac-ukrainian";
-        public override int    CodePage        => 10017;
-        public override string EncodingName    => "Ukrainian (Mac)";
-        public override string HeaderName      => "x-mac-ukrainian";
-        public override string WebName         => "x-mac-ukrainian";
-        public override int    WindowsCodePage => 10017;
+        /// <inheritdoc />
+        public override string BodyName => "x-mac-ukrainian";
+        /// <inheritdoc />
+        public override int CodePage => 10017;
+        /// <inheritdoc />
+        public override string EncodingName => "Ukrainian (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "x-mac-ukrainian";
+        /// <inheritdoc />
+        public override string WebName => "x-mac-ukrainian";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10017;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Macintosh Ukrainian to Unicode character map.</summary>
         protected override char[] CharTable => new[]

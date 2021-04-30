@@ -31,19 +31,31 @@ namespace Claunia.Encoding
     /// <summary>Represents a GEM character encoding of Unicode characters.</summary>
     public class Gem : SingleByteEncodingWithRunes
     {
-        public override string BodyName        => "gem";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Western European (GEM)";
-        public override string HeaderName      => "gem";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "gem";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Western European (GEM)";
+        /// <inheritdoc />
+        public override string HeaderName => "gem";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The GEM to Unicode character map.</summary>
         protected override Rune[] CharTable => new[]

@@ -11,6 +11,9 @@ namespace Claunia.Encoding
     /// </summary>
     public abstract class SingleByteEncodingWithRunes : Encoding
     {
+        /// <summary>
+        /// Rune conversion table
+        /// </summary>
         protected abstract Rune[] CharTable { get; }
 
         /// <summary>Gets a value indicating whether the current encoding can be used by browser clients for displaying content.</summary>

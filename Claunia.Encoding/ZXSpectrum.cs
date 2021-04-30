@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an ZX Spectrum character encoding of Unicode characters.</summary>
     public class ZxSpectrum : SingleByteEncoding
     {
-        public override string BodyName        => "spectrum";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Sinclair ZX Spectrum character set";
-        public override string HeaderName      => "spectrum";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "spectrum";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Sinclair ZX Spectrum character set";
+        /// <inheritdoc />
+        public override string HeaderName => "spectrum";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The ZX Spectrum to Unicode character map.</summary>
         protected override char[] CharTable => new[]

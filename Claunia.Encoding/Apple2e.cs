@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Apple IIe character encoding of Unicode characters.</summary>
     public class Apple2E : SingleByteEncoding
     {
-        public override string BodyName        => "apple2e";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Western European (Apple IIe)";
-        public override string HeaderName      => "apple2e";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "apple2e";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Western European (Apple IIe)";
+        /// <inheritdoc />
+        public override string HeaderName => "apple2e";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Apple IIe to Unicode character map.</summary>
         protected override char[] CharTable => new[]

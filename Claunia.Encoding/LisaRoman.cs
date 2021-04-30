@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Apple Lisa character encoding of Unicode characters.</summary>
     public class LisaRoman : SingleByteEncoding
     {
-        public override string BodyName        => "lisa";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Western European (Apple Lisa)";
-        public override string HeaderName      => "lisa";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 10000;
+        /// <inheritdoc />
+        public override string BodyName => "lisa";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Western European (Apple Lisa)";
+        /// <inheritdoc />
+        public override string HeaderName => "lisa";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10000;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Lisa to Unicode character map. MacRoman is a superset of LisaRoman.</summary>
         protected override char[] CharTable => new[]

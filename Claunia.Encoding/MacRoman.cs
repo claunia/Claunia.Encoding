@@ -29,19 +29,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Apple Mac character encoding of Unicode characters.</summary>
     public class MacRoman : SingleByteEncoding
     {
-        public override string BodyName        => "macintosh";
-        public override int    CodePage        => 10000;
-        public override string EncodingName    => "Western European (Mac)";
-        public override string HeaderName      => "macintosh";
-        public override string WebName         => "macintosh";
-        public override int    WindowsCodePage => 10000;
+        /// <inheritdoc />
+        public override string BodyName => "macintosh";
+        /// <inheritdoc />
+        public override int CodePage => 10000;
+        /// <inheritdoc />
+        public override string EncodingName => "Western European (Mac)";
+        /// <inheritdoc />
+        public override string HeaderName => "macintosh";
+        /// <inheritdoc />
+        public override string WebName => "macintosh";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 10000;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => true;
-        public override bool IsSingleByte      => true;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => true;
+        /// <inheritdoc />
+        public override bool IsSingleByte => true;
 
         /// <summary>The Mac to Unicode character map. MacRoman is a superset of LisaRoman.</summary>
         protected override char[] CharTable => new[]

@@ -31,19 +31,31 @@ namespace Claunia.Encoding
     /// <summary>Represents an Radix-50 (PDP-11) character encoding of Unicode characters.</summary>
     public class Radix50 : SingleByteEncoding
     {
-        public override string BodyName        => "radix50";
-        public override int    CodePage        => 0;
-        public override string EncodingName    => "Western European (Radix-50)";
-        public override string HeaderName      => "radix50";
-        public override string WebName         => "";
-        public override int    WindowsCodePage => 0;
+        /// <inheritdoc />
+        public override string BodyName => "radix50";
+        /// <inheritdoc />
+        public override int CodePage => 0;
+        /// <inheritdoc />
+        public override string EncodingName => "Western European (Radix-50)";
+        /// <inheritdoc />
+        public override string HeaderName => "radix50";
+        /// <inheritdoc />
+        public override string WebName => "";
+        /// <inheritdoc />
+        public override int WindowsCodePage => 0;
 
-        public override bool IsBrowserDisplay  => false;
-        public override bool IsBrowserSave     => false;
+        /// <inheritdoc />
+        public override bool IsBrowserDisplay => false;
+        /// <inheritdoc />
+        public override bool IsBrowserSave => false;
+        /// <inheritdoc />
         public override bool IsMailNewsDisplay => false;
-        public override bool IsMailNewsSave    => false;
-        public override bool IsReadOnly        => false;
-        public override bool IsSingleByte      => false;
+        /// <inheritdoc />
+        public override bool IsMailNewsSave => false;
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
+        /// <inheritdoc />
+        public override bool IsSingleByte => false;
 
         /// <summary>The Radix-50 to Unicode character map, when bits are shifted right</summary>
         protected override char[] CharTable => new[]
