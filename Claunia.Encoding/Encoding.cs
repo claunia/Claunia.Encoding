@@ -37,17 +37,17 @@ namespace Claunia.Encoding
         /// <summary>Static instance for the LisaRoman encoding</summary>
         public static System.Text.Encoding LisaEncoding = new LisaRoman();
         /// <summary>Static instance for the ATASCII encoding</summary>
-        public static System.Text.Encoding AtariEncoding = new Atascii();
+        public static System.Text.Encoding AtariEncoding = new ATASCII();
         /// <summary>Static instance for the Atari ST encoding</summary>
-        public static System.Text.Encoding AtariStEncoding = new AtariSt();
+        public static System.Text.Encoding AtariStEncoding = new AtariST();
         /// <summary>Static instance for the PETSCII encoding</summary>
-        public static System.Text.Encoding PetEncoding = new Petscii();
+        public static System.Text.Encoding PetEncoding = new PETSCII();
         /// <summary>Static instance for the DEC Radix-50 encoding</summary>
         public static System.Text.Encoding Radix50Encoding = new Radix50();
         /// <summary>Static instance for the GEM encoding</summary>
-        public static System.Text.Encoding GemEncoding = new Gem();
+        public static System.Text.Encoding GemEncoding = new GEM();
         /// <summary>Static instance for the GEM encoding</summary>
-        public static System.Text.Encoding GeosEncoding = new Geos();
+        public static System.Text.Encoding GeosEncoding = new GEOS();
 
         /// <summary>Gets a value indicating whether the current encoding can be used by browser clients for displaying content.</summary>
         public abstract override bool IsBrowserDisplay { get; }

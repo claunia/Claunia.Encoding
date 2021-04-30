@@ -27,7 +27,7 @@
 namespace Claunia.Encoding
 {
     /// <summary>Represents an ZX Spectrum character encoding of Unicode characters.</summary>
-    public class ZxSpectrum : SingleByteEncoding
+    public class ZXSpectrum : SingleByteEncoding
     {
         /// <inheritdoc />
         public override string BodyName => "spectrum";

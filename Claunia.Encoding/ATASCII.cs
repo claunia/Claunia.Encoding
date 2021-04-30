@@ -29,7 +29,7 @@ using System.Text;
 namespace Claunia.Encoding
 {
     /// <summary>Represents an ATARI Standard Code for Information Interchange character encoding of Unicode characters.</summary>
-    public class Atascii : SingleByteEncodingWithRunes
+    public class ATASCII : SingleByteEncodingWithRunes
     {
         /// <inheritdoc />
         public override string BodyName => "atascii";

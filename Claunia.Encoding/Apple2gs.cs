@@ -29,7 +29,7 @@ using System.Text;
 namespace Claunia.Encoding
 {
     /// <summary>Represents an Apple IIgs character encoding of Unicode characters.</summary>
-    public class Apple2Gs : SingleByteEncodingWithRunes
+    public class Apple2gs : SingleByteEncodingWithRunes
     {
         /// <inheritdoc />
         public override string BodyName => "apple2gs";

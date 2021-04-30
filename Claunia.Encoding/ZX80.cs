@@ -29,7 +29,7 @@ using System.Text;
 namespace Claunia.Encoding
 {
     /// <summary>Represents a ZX80 character encoding of Unicode characters.</summary>
-    public class Zx80 : SingleByteEncodingWithRunes
+    public class ZX80 : SingleByteEncodingWithRunes
     {
         /// <inheritdoc />
         public override string BodyName => "zx80";

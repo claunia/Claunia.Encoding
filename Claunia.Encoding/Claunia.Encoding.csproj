@@ -8,7 +8,7 @@
     <AssemblyName>Claunia.Encoding</AssemblyName>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Claunia.Encoding</PackageId>
-    <PackageVersion>1.9</PackageVersion>
+    <PackageVersion>1.9.1</PackageVersion>
     <Authors>Natalia Portillo</Authors>
     <Owners>Natalia Portillo</Owners>
     <PackageProjectUrl>https://github.com/claunia/Claunia.Encoding</PackageProjectUrl>
@@ -16,10 +16,10 @@
     <Title>Claunia.Encoding</Title>
     <Description>Library to provide codepage conversion to and from archaic and old computer systems and Unicode.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <ReleaseVersion>1.9</ReleaseVersion>
+    <ReleaseVersion>1.9.1</ReleaseVersion>
     <PackageReleaseNotes>Updated all codepages to include symbols defined as of Unicode 13.0</PackageReleaseNotes>
     <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
-    <VersionPrefix>1.9</VersionPrefix>
+    <VersionPrefix>1.9.1</VersionPrefix>
     <Company>Claunia.com</Company>
     <Copyright>© 2016-2021 Natalia Portillo</Copyright>
     <PackageProjectUrl>https://www.github.com/claunia/Claunia.Encoding</PackageProjectUrl>

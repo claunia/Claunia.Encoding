@@ -29,7 +29,7 @@ using System.Text;
 namespace Claunia.Encoding
 {
     /// <summary>Represents a GEM character encoding of Unicode characters.</summary>
-    public class Gem : SingleByteEncodingWithRunes
+    public class GEM : SingleByteEncodingWithRunes
     {
         /// <inheritdoc />
         public override string BodyName => "gem";

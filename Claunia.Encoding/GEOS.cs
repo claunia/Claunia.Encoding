@@ -27,7 +27,7 @@
 namespace Claunia.Encoding
 {
     /// <summary>Represents an GEOS character encoding of Unicode characters.</summary>
-    public class Geos : SingleByteEncoding
+    public class GEOS : SingleByteEncoding
     {
         /// <inheritdoc />
         public override string BodyName => "geos";

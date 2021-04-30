@@ -29,7 +29,7 @@ using System.Text;
 namespace Claunia.Encoding
 {
     /// <summary>Represents an Apple IIc character encoding of Unicode characters.</summary>
-    public sealed class Apple2C : SingleByteEncodingWithRunes
+    public sealed class Apple2c : SingleByteEncodingWithRunes
     {
         /// <inheritdoc />
         public override string BodyName => "apple2c";

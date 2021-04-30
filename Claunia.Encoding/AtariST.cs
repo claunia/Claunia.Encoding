@@ -29,7 +29,7 @@ using System.Text;
 namespace Claunia.Encoding
 {
     /// <summary>Represents an Atari ST character encoding of Unicode characters.</summary>
-    public class AtariSt : SingleByteEncodingWithRunes
+    public class AtariST : SingleByteEncodingWithRunes
     {
         /// <inheritdoc />
         public override string BodyName => "atarist";

@@ -27,7 +27,7 @@
 namespace Claunia.Encoding
 {
     /// <summary>Represents an Apple IIe character encoding of Unicode characters.</summary>
-    public class Apple2E : SingleByteEncoding
+    public class Apple2e : SingleByteEncoding
     {
         /// <inheritdoc />
         public override string BodyName => "apple2e";

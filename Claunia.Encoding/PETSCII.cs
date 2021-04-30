@@ -32,7 +32,7 @@ namespace Claunia.Encoding
     ///     Represents an Commodore PET Standard Code for Information Interchange (aka CBM ASCII) character encoding of
     ///     Unicode characters.
     /// </summary>
-    public class Petscii : SingleByteEncodingWithRunes
+    public class PETSCII : SingleByteEncodingWithRunes
     {
         /// <inheritdoc />
         public override string BodyName => "petscii";
