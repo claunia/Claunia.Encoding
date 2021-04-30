@@ -289,54 +289,49 @@ namespace Claunia.Encoding
         /// <summary>Converts a Unicode character to an Apple II character</summary>
         /// <returns>Apple II character.</returns>
         /// <param name="character">Unicode character.</param>
-        private protected override byte GetByte(char character)
+        private protected override byte GetByte(char character) => character switch
         {
-            switch(character)
-            {
-                case '\u0020': return 0x00;
-                case '\u0041': return 0x01;
-                case '\u0042': return 0x02;
-                case '\u0043': return 0x03;
-                case '\u0044': return 0x04;
-                case '\u0045': return 0x05;
-                case '\u0046': return 0x06;
-                case '\u0047': return 0x07;
-                case '\u0048': return 0x08;
-                case '\u0049': return 0x09;
-                case '\u004A': return 0x0A;
-                case '\u004B': return 0x0B;
-                case '\u004C': return 0x0C;
-                case '\u004D': return 0x0D;
-                case '\u004E': return 0x0E;
-                case '\u004F': return 0x0F;
-                case '\u0050': return 0x10;
-                case '\u0051': return 0x11;
-                case '\u0052': return 0x12;
-                case '\u0053': return 0x13;
-                case '\u0054': return 0x14;
-                case '\u0055': return 0x15;
-                case '\u0056': return 0x16;
-                case '\u0057': return 0x17;
-                case '\u0058': return 0x18;
-                case '\u0059': return 0x19;
-                case '\u005A': return 0x1A;
-                case '\u0024': return 0x1B;
-                case '\u002E': return 0x1C;
-                case '\u0025': return 0x1D;
-                case '\u0030': return 0x1E;
-                case '\u0031': return 0x1F;
-                case '\u0032': return 0x20;
-                case '\u0033': return 0x21;
-                case '\u0034': return 0x22;
-                case '\u0035': return 0x23;
-                case '\u0036': return 0x24;
-                case '\u0037': return 0x25;
-                case '\u0038': return 0x26;
-                case '\u0039': return 0x27;
-                default:
-                    // Fallback to '.'
-                    return 0x1C;
-            }
-        }
+            '\u0020' => 0x00,
+            '\u0041' => 0x01,
+            '\u0042' => 0x02,
+            '\u0043' => 0x03,
+            '\u0044' => 0x04,
+            '\u0045' => 0x05,
+            '\u0046' => 0x06,
+            '\u0047' => 0x07,
+            '\u0048' => 0x08,
+            '\u0049' => 0x09,
+            '\u004A' => 0x0A,
+            '\u004B' => 0x0B,
+            '\u004C' => 0x0C,
+            '\u004D' => 0x0D,
+            '\u004E' => 0x0E,
+            '\u004F' => 0x0F,
+            '\u0050' => 0x10,
+            '\u0051' => 0x11,
+            '\u0052' => 0x12,
+            '\u0053' => 0x13,
+            '\u0054' => 0x14,
+            '\u0055' => 0x15,
+            '\u0056' => 0x16,
+            '\u0057' => 0x17,
+            '\u0058' => 0x18,
+            '\u0059' => 0x19,
+            '\u005A' => 0x1A,
+            '\u0024' => 0x1B,
+            '\u002E' => 0x1C,
+            '\u0025' => 0x1D,
+            '\u0030' => 0x1E,
+            '\u0031' => 0x1F,
+            '\u0032' => 0x20,
+            '\u0033' => 0x21,
+            '\u0034' => 0x22,
+            '\u0035' => 0x23,
+            '\u0036' => 0x24,
+            '\u0037' => 0x25,
+            '\u0038' => 0x26,
+            '\u0039' => 0x27,
+            _        => 0x1C
+        };
     }
 }
