@@ -608,6 +608,7 @@ csharp_space_around_dot=false
 csharp_space_around_lambda_arrow=true
 csharp_space_before_pointer_asterik_declaration=false
 csharp_space_before_nullable_mark=false
+csharp_style_namespace_declarations = file_scoped:warning
 
 [*.cshtml]
 linebreaks_around_razor_statements=true
