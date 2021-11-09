@@ -27,48 +27,47 @@
 using System;
 using NUnit.Framework;
 
-namespace Claunia.Encoding.Tests
+namespace Claunia.Encoding.Tests;
+
+[TestFixture]
+public class GetEncs
 {
-    [TestFixture]
-    public class GetEncs
+    [Test]
+
+    // Well basically this is taken from MSDN's documentation :p
+    public void GetAllEncs()
     {
-        [Test]
+        // Print the header.
+        Console.Write("CodePage identifier and name     ");
+        Console.Write("BrDisp   BrSave   ");
+        Console.Write("MNDisp   MNSave   ");
+        Console.WriteLine("1-Byte   ReadOnly ");
 
-        // Well basically this is taken from MSDN's documentation :p
-        public void GetAllEncs()
+        // For every encoding, get the property values.
+        foreach(EncodingInfo ei in Encoding.GetEncodings())
         {
-            // Print the header.
-            Console.Write("CodePage identifier and name     ");
-            Console.Write("BrDisp   BrSave   ");
-            Console.Write("MNDisp   MNSave   ");
-            Console.WriteLine("1-Byte   ReadOnly ");
+            Encoding e = ei.GetEncoding();
 
-            // For every encoding, get the property values.
-            foreach(EncodingInfo ei in Encoding.GetEncodings())
-            {
-                Encoding e = ei.GetEncoding();
-
-                Console.Write("{0,-6} {1,-25} ", ei.CodePage, ei.Name);
-                Console.Write("{0,-8} {1,-8} ", e.IsBrowserDisplay, e.IsBrowserSave);
-                Console.Write("{0,-8} {1,-8} ", e.IsMailNewsDisplay, e.IsMailNewsSave);
-                Console.WriteLine("{0,-8} {1,-8} ", e.IsSingleByte, e.IsReadOnly);
-            }
+            Console.Write("{0,-6} {1,-25} ", ei.CodePage, ei.Name);
+            Console.Write("{0,-8} {1,-8} ", e.IsBrowserDisplay, e.IsBrowserSave);
+            Console.Write("{0,-8} {1,-8} ", e.IsMailNewsDisplay, e.IsMailNewsSave);
+            Console.WriteLine("{0,-8} {1,-8} ", e.IsSingleByte, e.IsReadOnly);
         }
+    }
 
-        [Test]
+    [Test]
 
-        // Well basically this is taken from MSDN's documentation :p
-        public void GetExternalEncoding()
-        {
-            System.Text.Encoding e = Encoding.GetEncoding("iso8859-1");
-        }
+    // Well basically this is taken from MSDN's documentation :p
+    public void GetExternalEncoding()
+    {
+        System.Text.Encoding e = Encoding.GetEncoding("iso8859-1");
+    }
 
-        [Test]
+    [Test]
 
-        // Well basically this is taken from MSDN's documentation :p
-        public void GetInternalEncoding()
-        {
-            System.Text.Encoding e = Encoding.GetEncoding("lisa");
-        }
+    // Well basically this is taken from MSDN's documentation :p
+    public void GetInternalEncoding()
+    {
+        System.Text.Encoding e = Encoding.GetEncoding("lisa");
     }
 }
