@@ -25,7 +25,6 @@
 // THE SOFTWARE.
 
 using System;
-using NUnit.Framework;
 
 namespace Claunia.Encoding.Tests;
 
