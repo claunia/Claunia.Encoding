@@ -111,20 +111,20 @@ public class PETSCII : SingleByteEncodingWithRunes
         new Rune(0x2191), new Rune(0x2190),
 
         // 0x60
-        new Rune(0x1FB79), new Rune(0x2660), new Rune(0x1FB72), new Rune(0x1FB78), new Rune(0x1FB77),
-        new Rune(0x1FB76), new Rune(0x1FB7A), new Rune(0x1FB71),
+        new Rune(0x1FB79), new Rune(0x2660), new Rune(0x1FB72), new Rune(0x1FB78), new Rune(0x1FB77), new Rune(0x1FB76),
+        new Rune(0x1FB7A), new Rune(0x1FB71),
 
         // 0x68
-        new Rune(0x1FB74), new Rune(0x256E), new Rune(0x2570), new Rune(0x256F), new Rune(0x1FB7C),
-        new Rune(0x2572), new Rune(0x2571), new Rune(0x1FB7D),
+        new Rune(0x1FB74), new Rune(0x256E), new Rune(0x2570), new Rune(0x256F), new Rune(0x1FB7C), new Rune(0x2572),
+        new Rune(0x2571), new Rune(0x1FB7D),
 
         // 0x70
-        new Rune(0x1FB7E), new Rune(0x25CF), new Rune(0x1FB7B), new Rune(0x2665), new Rune(0x1FB70),
-        new Rune(0x256D), new Rune(0x2573), new Rune(0x25CB),
+        new Rune(0x1FB7E), new Rune(0x25CF), new Rune(0x1FB7B), new Rune(0x2665), new Rune(0x1FB70), new Rune(0x256D),
+        new Rune(0x2573), new Rune(0x25CB),
 
         // 0x78
-        new Rune(0x2663), new Rune(0x1FB75), new Rune(0x2666), new Rune(0x253C), new Rune(0x1FB8C),
-        new Rune(0x2502), new Rune(0x03C0), new Rune(0x25E5),
+        new Rune(0x2663), new Rune(0x1FB75), new Rune(0x2666), new Rune(0x253C), new Rune(0x1FB8C), new Rune(0x2502),
+        new Rune(0x03C0), new Rune(0x25E5),
 
         // 0x80
         new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000), new Rune(0x0000),
@@ -147,48 +147,48 @@ public class PETSCII : SingleByteEncodingWithRunes
         new Rune(0x2592), new Rune(0x2595),
 
         // 0xA8
-        new Rune(0x1FB8F), new Rune(0x25E4), new Rune(0x1FB87), new Rune(0x251C), new Rune(0x2597),
-        new Rune(0x2514), new Rune(0x2510), new Rune(0x2582),
+        new Rune(0x1FB8F), new Rune(0x25E4), new Rune(0x1FB87), new Rune(0x251C), new Rune(0x2597), new Rune(0x2514),
+        new Rune(0x2510), new Rune(0x2582),
 
         // 0xB0
         new Rune(0x250C), new Rune(0x2534), new Rune(0x252C), new Rune(0x2524), new Rune(0x258E), new Rune(0x258D),
         new Rune(0x1FB88), new Rune(0x1FB82),
 
         // 0xB8
-        new Rune(0x1FB83), new Rune(0x2583), new Rune(0x1FB7F), new Rune(0x2596), new Rune(0x259D),
-        new Rune(0x2518), new Rune(0x2598), new Rune(0x259A),
+        new Rune(0x1FB83), new Rune(0x2583), new Rune(0x1FB7F), new Rune(0x2596), new Rune(0x259D), new Rune(0x2518),
+        new Rune(0x2598), new Rune(0x259A),
 
         // 0xC0 (repeats 0x60 - 0x67)
-        new Rune(0x1FB79), new Rune(0x2660), new Rune(0x1FB72), new Rune(0x1FB78), new Rune(0x1FB77),
-        new Rune(0x1FB76), new Rune(0x1FB7A), new Rune(0x1FB71),
+        new Rune(0x1FB79), new Rune(0x2660), new Rune(0x1FB72), new Rune(0x1FB78), new Rune(0x1FB77), new Rune(0x1FB76),
+        new Rune(0x1FB7A), new Rune(0x1FB71),
 
         // 0xC8 (repeats 0x68 - 0x6F)
-        new Rune(0x1FB74), new Rune(0x256E), new Rune(0x2570), new Rune(0x256F), new Rune(0x1FB7C),
-        new Rune(0x2572), new Rune(0x2571), new Rune(0x1FB7D),
+        new Rune(0x1FB74), new Rune(0x256E), new Rune(0x2570), new Rune(0x256F), new Rune(0x1FB7C), new Rune(0x2572),
+        new Rune(0x2571), new Rune(0x1FB7D),
 
         // 0xD0 (repeats 0x70 - 0x77)
-        new Rune(0x1FB7E), new Rune(0x25CF), new Rune(0x1FB7B), new Rune(0x2665), new Rune(0x1FB70),
-        new Rune(0x256D), new Rune(0x2573), new Rune(0x25CB),
+        new Rune(0x1FB7E), new Rune(0x25CF), new Rune(0x1FB7B), new Rune(0x2665), new Rune(0x1FB70), new Rune(0x256D),
+        new Rune(0x2573), new Rune(0x25CB),
 
         // 0xD8 (repeats 0x78 - 0x7F)
-        new Rune(0x2663), new Rune(0x1FB75), new Rune(0x2666), new Rune(0x253C), new Rune(0x1FB8C),
-        new Rune(0x2502), new Rune(0x03C0), new Rune(0x25E5),
+        new Rune(0x2663), new Rune(0x1FB75), new Rune(0x2666), new Rune(0x253C), new Rune(0x1FB8C), new Rune(0x2502),
+        new Rune(0x03C0), new Rune(0x25E5),
 
         // 0xE0 (repeats 0xA0 - 0xA7)
         new Rune(0x00A0), new Rune(0x258C), new Rune(0x2584), new Rune(0x2594), new Rune(0x2581), new Rune(0x258E),
         new Rune(0x2592), new Rune(0x2595),
 
         // 0xE8 (repeats 0xA8 - 0xAF)
-        new Rune(0x1FB8F), new Rune(0x25E4), new Rune(0x1FB87), new Rune(0x251C), new Rune(0x2597),
-        new Rune(0x2514), new Rune(0x2510), new Rune(0x2582),
+        new Rune(0x1FB8F), new Rune(0x25E4), new Rune(0x1FB87), new Rune(0x251C), new Rune(0x2597), new Rune(0x2514),
+        new Rune(0x2510), new Rune(0x2582),
 
         // 0xF0 (repeats 0xB0 - 0xB7)
         new Rune(0x250C), new Rune(0x2534), new Rune(0x252C), new Rune(0x2524), new Rune(0x258E), new Rune(0x258D),
         new Rune(0x1FB88), new Rune(0x1FB82),
 
         // 0xF8 (repeats 0xB8 - 0xBF)
-        new Rune(0x1FB83), new Rune(0x2583), new Rune(0x1FB7F), new Rune(0x2596), new Rune(0x259D),
-        new Rune(0x2518), new Rune(0x2598), new Rune(0x259A)
+        new Rune(0x1FB83), new Rune(0x2583), new Rune(0x1FB7F), new Rune(0x2596), new Rune(0x259D), new Rune(0x2518),
+        new Rune(0x2598), new Rune(0x259A)
     };
 
     /// <summary>Converts a Unicode character to an PETSCII character</summary>

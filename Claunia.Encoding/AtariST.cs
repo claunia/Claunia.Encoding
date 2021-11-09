@@ -63,16 +63,16 @@ public class AtariST : SingleByteEncodingWithRunes
         new Rune(0x1FBBE), new Rune(0x1FBBF),
 
         // 0x08
-        new Rune(0x2713), new Rune(0x1F552), new Rune(0x1F514), new Rune(0x266A), new Rune(0x000C),
-        new Rune(0x000D), new Rune(0xFFFD), new Rune(0xFFFD),
+        new Rune(0x2713), new Rune(0x1F552), new Rune(0x1F514), new Rune(0x266A), new Rune(0x000C), new Rune(0x000D),
+        new Rune(0xFFFD), new Rune(0xFFFD),
 
         // 0x10
         new Rune(0x1FBF0), new Rune(0x1FBF1), new Rune(0x1FBF2), new Rune(0x1FBF3), new Rune(0x1FBF4),
         new Rune(0x1FBF5), new Rune(0x1FBF6), new Rune(0x1FBF7),
 
         // 0x18
-        new Rune(0x1FBF8), new Rune(0x1FBF9), new Rune(0x0259), new Rune(0x001B), new Rune(0xFFFD),
-        new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+        new Rune(0x1FBF8), new Rune(0x1FBF9), new Rune(0x0259), new Rune(0x001B), new Rune(0xFFFD), new Rune(0xFFFD),
+        new Rune(0xFFFD), new Rune(0xFFFD),
 
         // 0x20
         new Rune(0x0020), new Rune(0x0021), new Rune(0x0022), new Rune(0x0023), new Rune(0x0024), new Rune(0x0025),

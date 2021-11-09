@@ -63,8 +63,8 @@ public class ZX81 : SingleByteEncodingWithRunes
         new Rune(0x259E), new Rune(0x259B),
 
         // 0x08
-        new Rune(0x2592), new Rune(0x1FB8F), new Rune(0x1FB8E), new Rune(0x0022), new Rune(0x00A3),
-        new Rune(0x0024), new Rune(0x003A), new Rune(0x003F),
+        new Rune(0x2592), new Rune(0x1FB8F), new Rune(0x1FB8E), new Rune(0x0022), new Rune(0x00A3), new Rune(0x0024),
+        new Rune(0x003A), new Rune(0x003F),
 
         // 0x10
         new Rune(0x0028), new Rune(0x0029), new Rune(0x003E), new Rune(0x003C), new Rune(0x003D), new Rune(0x002B),
@@ -127,8 +127,8 @@ public class ZX81 : SingleByteEncodingWithRunes
         new Rune(0x259A), new Rune(0x2597),
 
         // 0x88
-        new Rune(0x1FB90), new Rune(0x1FB91), new Rune(0x1FB92), new Rune(0xFFFD), new Rune(0xFFFD),
-        new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+        new Rune(0x1FB90), new Rune(0x1FB91), new Rune(0x1FB92), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),
+        new Rune(0xFFFD), new Rune(0xFFFD),
 
         // 0x90
         new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD), new Rune(0xFFFD),

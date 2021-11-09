@@ -7,6 +7,7 @@ Copyright © 2016-2021 Natalia Portillo <claunia@claunia.com>
 
 Supported encodings
 ==============================
+
 * Apple II, IIc, IIe and IIgs
 * Apple Lisa
 * Atari Standard Code for Information Interchange (ATASCII)

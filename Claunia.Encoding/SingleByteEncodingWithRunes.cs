@@ -5,14 +5,12 @@ using System.Linq;
 namespace Claunia.Encoding;
 
 /// <summary>
-/// Implements a class that converts to/from a single byte codepage and strings that contains elements that need
-/// surrogates in UTF-16, using runes.
+///     Implements a class that converts to/from a single byte codepage and strings that contains elements that need
+///     surrogates in UTF-16, using runes.
 /// </summary>
 public abstract class SingleByteEncodingWithRunes : Encoding
 {
-    /// <summary>
-    /// Rune conversion table
-    /// </summary>
+    /// <summary>Rune conversion table</summary>
     protected abstract Rune[] CharTable { get; }
 
     /// <summary>Gets a value indicating whether the current encoding can be used by browser clients for displaying content.</summary>
@@ -296,8 +294,7 @@ public abstract class SingleByteEncodingWithRunes : Encoding
     /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
     /// <param name="index">The index of the first byte to decode.</param>
     /// <param name="count">The number of bytes to decode.</param>
-    public override char[] GetChars(byte[] bytes, int index, int count) =>
-        GetString(bytes, index, count).ToCharArray();
+    public override char[] GetChars(byte[] bytes, int index, int count) => GetString(bytes, index, count).ToCharArray();
 
     /// <summary>Calculates the maximum number of bytes produced by encoding the specified number of characters.</summary>
     /// <returns>The maximum number of bytes produced by encoding the specified number of characters.</returns>
@@ -358,7 +355,7 @@ public abstract class SingleByteEncodingWithRunes : Encoding
 
         int outPos = 0;
 
-        foreach(var r in runes)
+        foreach(Rune r in runes)
             outPos += r.EncodeToUtf16(new Span<char>(chars, outPos, chars.Length - outPos));
 
         return new string(chars);

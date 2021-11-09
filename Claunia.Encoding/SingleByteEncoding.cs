@@ -2,14 +2,10 @@ using System;
 
 namespace Claunia.Encoding;
 
-/// <summary>
-/// Implements a class that converts to/from a single byte codepage and UTF-16 representable strings
-/// </summary>
+/// <summary>Implements a class that converts to/from a single byte codepage and UTF-16 representable strings</summary>
 public abstract class SingleByteEncoding : Encoding
 {
-    /// <summary>
-    /// Character conversion table
-    /// </summary>
+    /// <summary>Character conversion table</summary>
     protected abstract char[] CharTable { get; }
 
     /// <summary>Gets a value indicating whether the current encoding can be used by browser clients for displaying content.</summary>

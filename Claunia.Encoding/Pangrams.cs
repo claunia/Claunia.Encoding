@@ -30,15 +30,13 @@ namespace Claunia.Encoding;
 public static class Pangrams
 {
     /// <summary>A pangram that contains all (or most) Arabic characters.</summary>
-    public const string ARABIC =
-        "صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ";
+    public const string ARABIC = "صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ";
     /// <summary>A pangram that contains all (or most) Azeri characters.</summary>
     public const string AZERI = "Zəfər, jaketini də papağını da götür, bu axşam hava çox soyuq olacaq.";
     /// <summary>A pangram that contains all (or most) Basque characters.</summary>
     public const string BASQUE = "Vaudeville itxurako filmean, yogi ñaño bat jipoitzen dute Quebec-en, whiski truk";
     /// <summary>A pangram that contains all (or most) Breton characters.</summary>
-    public const string BRETON =
-        "Yec’hed mat Jakez ! Skarzhit ar gwerennoù-mañ, kavet e vo gwin betek fin ho puhez.";
+    public const string BRETON = "Yec’hed mat Jakez ! Skarzhit ar gwerennoù-mañ, kavet e vo gwin betek fin ho puhez.";
     /// <summary>A pangram that contains all (or most) Bulgarian characters.</summary>
     public const string BULGARIAN = "Хълцащ змей плюе шофьор стигнал чуждия бивак.";
     /// <summary>A pangram that contains all (or most) Catalan characters.</summary>

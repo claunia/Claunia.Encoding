@@ -155,20 +155,20 @@ public sealed class Apple2c : SingleByteEncodingWithRunes
         new Rune(0x0036), new Rune(0x0037),
 
         // 0xC0
-        new Rune(0xF8FF), new Rune(0x0000), new Rune(0x1FBB0), new Rune(0x231B), new Rune(0x2713),
-        new Rune(0x1FBB1), new Rune(0x1FBB2), new Rune(0x1FBB3),
+        new Rune(0xF8FF), new Rune(0x0000), new Rune(0x1FBB0), new Rune(0x231B), new Rune(0x2713), new Rune(0x1FBB1),
+        new Rune(0x1FBB2), new Rune(0x1FBB3),
 
         // 0xC8
         new Rune(0x2190), new Rune(0x2026), new Rune(0x2193), new Rune(0x2191), new Rune(0x1FB76), new Rune(0x21B5),
         new Rune(0x2589), new Rune(0x1FBB5),
 
         // 0xD0
-        new Rune(0x1FBB6), new Rune(0x1FBB7), new Rune(0x1FBB8), new Rune(0x2500), new Rune(0x1FB7C),
-        new Rune(0x2192), new Rune(0x2592), new Rune(0x1FB90),
+        new Rune(0x1FBB6), new Rune(0x1FBB7), new Rune(0x1FBB8), new Rune(0x2500), new Rune(0x1FB7C), new Rune(0x2192),
+        new Rune(0x2592), new Rune(0x1FB90),
 
         // 0xD8
-        new Rune(0x1FBB9), new Rune(0x1FBBA), new Rune(0x2595), new Rune(0x25c6), new Rune(0x1FB80),
-        new Rune(0x1FBBB), new Rune(0x1FBBC), new Rune(0x258F),
+        new Rune(0x1FBB9), new Rune(0x1FBBA), new Rune(0x2595), new Rune(0x25c6), new Rune(0x1FB80), new Rune(0x1FBBB),
+        new Rune(0x1FBBC), new Rune(0x258F),
 
         // 0xE0
         new Rune(0x0060), new Rune(0x0061), new Rune(0x0062), new Rune(0x0063), new Rune(0x0064), new Rune(0x0065),

@@ -63,8 +63,8 @@ public class GEM : SingleByteEncodingWithRunes
         new Rune(0x1F5D7), new Rune(0x25C6),
 
         // 0x08
-        new Rune(0x2713), new Rune(0x1F552), new Rune(0x1F514), new Rune(0x266A), new Rune(0x25B4),
-        new Rune(0x25BE), new Rune(0x25B8), new Rune(0x25C2),
+        new Rune(0x2713), new Rune(0x1F552), new Rune(0x1F514), new Rune(0x266A), new Rune(0x25B4), new Rune(0x25BE),
+        new Rune(0x25B8), new Rune(0x25C2),
 
         // 0x10
         new Rune(0x25BA), new Rune(0x25C4), new Rune(0x29D3), new Rune(0x2582), new Rune(0x00B6), new Rune(0x00A7),

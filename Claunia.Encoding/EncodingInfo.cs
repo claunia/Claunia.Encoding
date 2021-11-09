@@ -12,8 +12,7 @@ public sealed class EncodingInfo
     readonly Type _thisType;
     bool          _isSystem;
 
-    internal EncodingInfo(int codePage, string name, string displayName, bool system = true,
-                          Type internalType = null)
+    internal EncodingInfo(int codePage, string name, string displayName, bool system = true, Type internalType = null)
     {
         CodePage    = codePage;
         Name        = name;
@@ -41,7 +40,7 @@ public sealed class EncodingInfo
     /// </returns>
     public Encoding GetEncoding() => (Encoding)_thisType.GetConstructor(new Type[]
                                                                             {}).Invoke(new object[]
-        {});
+                                                                                           {});
 
     /// <summary>Gets a value indicating whether the specified object is equal to the current EncodingInfo object.</summary>
     /// <param name="value">An object to compare to the current <see cref="T:Claunia.Encoding.EncodingInfo" /> object.</param>
